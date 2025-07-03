@@ -98,7 +98,7 @@ snippets:
 
 **Rule-based Strategy**::
 
-   from pybroker import Strategy, YFinance, highest
+   from tibacktester import Strategy, YFinance, highest
 
    def exec_fn(ctx):
       # Get the rolling 10 day high.
@@ -119,8 +119,8 @@ snippets:
 
 **Model-based Strategy**::
 
-   import pybroker
-   from pybroker import Alpaca, Strategy
+   import tibacktester
+   from tibacktester import Alpaca, Strategy
 
    def train_fn(train_data, test_data, ticker):
       # Train the model using indicators stored in train_data.

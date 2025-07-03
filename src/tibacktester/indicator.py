@@ -11,12 +11,12 @@ import itertools
 import numpy as np
 import operator as op
 import pandas as pd
-import pybroker.vect as vect
-from pybroker.cache import CacheDateFields, IndicatorCacheKey
-from pybroker.common import BarData, DataCol, IndicatorSymbol, default_parallel
-from pybroker.eval import iqr, relative_entropy
-from pybroker.scope import StaticScope
-from pybroker.vect import highv, lowv, returnv
+import tibacktester.vect as vect
+from tibacktester.cache import CacheDateFields, IndicatorCacheKey
+from tibacktester.common import BarData, DataCol, IndicatorSymbol, default_parallel
+from tibacktester.eval import iqr, relative_entropy
+from tibacktester.scope import StaticScope
+from tibacktester.vect import highv, lowv, returnv
 from collections import defaultdict
 from dataclasses import asdict
 from joblib import delayed

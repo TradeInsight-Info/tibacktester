@@ -7,7 +7,7 @@ This code is licensed under Apache 2.0 with Commons Clause license
 """
 
 import os
-from pybroker.scope import StaticScope
+from tibacktester.scope import StaticScope
 from dataclasses import dataclass
 from datetime import datetime
 from diskcache import Cache

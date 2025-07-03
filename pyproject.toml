@@ -14,17 +14,11 @@ dependencies = [
     "joblib>=1.2.0",
     "jupyter>=1.0.0",
     "matplotlib>=3.9.1",
-    "mypy>=0.982",
     "nbsphinx>=0.8.11",
     "numba>=0.60.0",
     "numpy>=2.0.2",
     "pandas>=2.2.0",
     "progressbar2>=4.1.1",
-    "pytest>=7.2.0",
-    "pytest-cov>=4.0.0",
-    "pytest-instafail>=0.4.2",
-    "pytest-randomly>=3.12.0",
-    "pytest-xdist>=3.0.2",
     "pytz>=2025.2",
     "schedule>=1.2.2",
     "scikit-learn>=1.5.1",
@@ -44,6 +38,13 @@ dependencies = [
 [dependency-groups]
 dev = [
     "types-pytz>=2025.2.0.20250516",
+    "mypy>=0.982",
+    "pandas-stubs==2.3.0.250703",
+    "pytest>=7.2.0",
+    "pytest-cov>=4.0.0",
+    "pytest-instafail>=0.4.2",
+    "pytest-randomly>=3.12.0",
+    "pytest-xdist>=3.0.2",
 ]
 
 

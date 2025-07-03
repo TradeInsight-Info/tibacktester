@@ -11,7 +11,7 @@ This code is licensed under Apache 2.0 with Commons Clause license
 import itertools
 import numpy as np
 import pandas as pd
-from pybroker.common import (
+from tibacktester.common import (
     BarData,
     DataCol,
     FeeInfo,
@@ -21,7 +21,7 @@ from pybroker.common import (
     StopType,
     to_decimal,
 )
-from pybroker.scope import PriceScope, StaticScope
+from tibacktester.scope import PriceScope, StaticScope
 from collections import deque
 from dataclasses import dataclass, field
 from decimal import Decimal

@@ -6,7 +6,7 @@ This code is licensed under Apache 2.0 with Commons Clause license
 (see LICENSE for details).
 """
 
-from pybroker.cache import (
+from tibacktester.cache import (
     clear_caches as clear_caches,
     clear_data_source_cache as clear_data_source_cache,
     clear_indicator_cache as clear_indicator_cache,
@@ -20,7 +20,7 @@ from pybroker.cache import (
     enable_indicator_cache as enable_indicator_cache,
     enable_model_cache as enable_model_cache,
 )
-from pybroker.common import (
+from tibacktester.common import (
     BarData as BarData,
     DataCol as DataCol,
     Day as Day,
@@ -29,22 +29,22 @@ from pybroker.common import (
     PriceType as PriceType,
     StopType as StopType,
 )
-from pybroker.context import (
+from tibacktester.context import (
     ExecContext as ExecContext,
     ExecSignal as ExecSignal,
     PosSizeContext as PosSizeContext,
 )
-from pybroker.config import StrategyConfig as StrategyConfig
-from pybroker.data import (
+from tibacktester.config import StrategyConfig as StrategyConfig
+from tibacktester.data import (
     Alpaca as Alpaca,
     AlpacaCrypto as AlpacaCrypto,
     YFinance as YFinance,
 )
-from pybroker.eval import (
+from tibacktester.eval import (
     EvalMetrics as EvalMetrics,
     BootstrapResult as BootstrapResult,
 )
-from pybroker.indicator import (
+from tibacktester.indicator import (
     Indicator as Indicator,
     IndicatorSet as IndicatorSet,
     highest as highest,
@@ -52,19 +52,19 @@ from pybroker.indicator import (
     lowest as lowest,
     returns as returns,
 )
-from pybroker.model import (
+from tibacktester.model import (
     ModelLoader as ModelLoader,
     ModelSource as ModelSource,
     ModelTrainer as ModelTrainer,
     model as model,
 )
-from pybroker.portfolio import (
+from tibacktester.portfolio import (
     Entry as Entry,
     Order as Order,
     Position as Position,
     Trade as Trade,
 )
-from pybroker.scope import (
+from tibacktester.scope import (
     disable_logging as disable_logging,
     enable_logging as enable_logging,
     disable_progress_bar as disable_progress_bar,
@@ -73,9 +73,9 @@ from pybroker.scope import (
     register_columns as register_columns,
     unregister_columns as unregister_columns,
 )
-from pybroker.slippage import RandomSlippageModel as RandomSlippageModel
-from pybroker.strategy import Strategy as Strategy, TestResult as TestResult
-from pybroker.vect import (
+from tibacktester.slippage import RandomSlippageModel as RandomSlippageModel
+from tibacktester.strategy import Strategy as Strategy, TestResult as TestResult
+from tibacktester.vect import (
     cross as cross,
     highv as highv,
     lowv as lowv,

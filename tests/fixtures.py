@@ -11,7 +11,7 @@ import os
 import pandas as pd
 import pytest
 from decimal import Decimal
-from pybroker.cache import (
+from tibacktester.cache import (
     clear_data_source_cache,
     clear_indicator_cache,
     clear_model_cache,
@@ -22,10 +22,10 @@ from pybroker.cache import (
     enable_model_cache,
     enable_indicator_cache,
 )
-from pybroker.common import PriceType
-from pybroker.indicator import IndicatorSymbol, indicator
-from pybroker.model import ModelSymbol, TrainedModel, model
-from pybroker.scope import (
+from tibacktester.common import PriceType
+from tibacktester.indicator import IndicatorSymbol, indicator
+from tibacktester.model import ModelSymbol, TrainedModel, model
+from tibacktester.scope import (
     ColumnScope,
     IndicatorScope,
     ModelInputScope,
@@ -34,7 +34,7 @@ from pybroker.scope import (
     PredictionScope,
     StaticScope,
 )
-from pybroker.vect import highv, lowv, sumv
+from tibacktester.vect import highv, lowv, sumv
 from typing import NamedTuple
 
 MODEL_NAME = "fake_model"

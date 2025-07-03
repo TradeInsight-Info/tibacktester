@@ -8,7 +8,7 @@ This code is licensed under Apache 2.0 with Commons Clause license
 
 import logging
 from .fixtures import *  # noqa: F401
-from pybroker.log import Logger
+from tibacktester.log import Logger
 
 
 class TestLogger:

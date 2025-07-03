@@ -2035,6 +2035,19 @@ wheels = [
 ]
 
 [[package]]
+name = "pandas-stubs"
+version = "2.3.0.250703"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "types-pytz" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ec/df/c1c51c5cec087b8f4d04669308b700e9648745a77cdd0c8c5e16520703ca/pandas_stubs-2.3.0.250703.tar.gz", hash = "sha256:fb6a8478327b16ed65c46b1541de74f5c5947f3601850caf3e885e0140584717", size = 103910 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/75/cb/09d5f9bf7c8659af134ae0ffc1a349038a5d0ff93e45aedc225bde2872a3/pandas_stubs-2.3.0.250703-py3-none-any.whl", hash = "sha256:a9265fc69909f0f7a9cabc5f596d86c9d531499fed86b7838fd3278285d76b81", size = 154719 },
+]
+
+[[package]]
 name = "pandocfilters"
 version = "1.5.1"
 source = { registry = "https://pypi.org/simple" }
@@ -3196,17 +3209,12 @@ dependencies = [
     { name = "joblib" },
     { name = "jupyter" },
     { name = "matplotlib" },
-    { name = "mypy" },
     { name = "nbsphinx" },
     { name = "numba" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "pandas-stubs" },
     { name = "progressbar2" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "pytest-instafail" },
-    { name = "pytest-randomly" },
-    { name = "pytest-xdist" },
     { name = "pytz" },
     { name = "schedule" },
     { name = "scikit-learn" },
@@ -3224,6 +3232,12 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "mypy" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-instafail" },
+    { name = "pytest-randomly" },
+    { name = "pytest-xdist" },
     { name = "types-pytz" },
 ]
 
@@ -3238,17 +3252,12 @@ requires-dist = [
     { name = "joblib", specifier = ">=1.2.0" },
     { name = "jupyter", specifier = ">=1.0.0" },
     { name = "matplotlib", specifier = ">=3.9.1" },
-    { name = "mypy", specifier = ">=0.982" },
     { name = "nbsphinx", specifier = ">=0.8.11" },
     { name = "numba", specifier = ">=0.60.0" },
     { name = "numpy", specifier = ">=2.0.2" },
     { name = "pandas", specifier = ">=2.2.0" },
+    { name = "pandas-stubs", specifier = "==2.3.0.250703" },
     { name = "progressbar2", specifier = ">=4.1.1" },
-    { name = "pytest", specifier = ">=7.2.0" },
-    { name = "pytest-cov", specifier = ">=4.0.0" },
-    { name = "pytest-instafail", specifier = ">=0.4.2" },
-    { name = "pytest-randomly", specifier = ">=3.12.0" },
-    { name = "pytest-xdist", specifier = ">=3.0.2" },
     { name = "pytz", specifier = ">=2025.2" },
     { name = "schedule", specifier = ">=1.2.2" },
     { name = "scikit-learn", specifier = ">=1.5.1" },
@@ -3265,7 +3274,15 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "types-pytz", specifier = ">=2025.2.0.20250516" }]
+dev = [
+    { name = "mypy", specifier = ">=0.982" },
+    { name = "pytest", specifier = ">=7.2.0" },
+    { name = "pytest-cov", specifier = ">=4.0.0" },
+    { name = "pytest-instafail", specifier = ">=0.4.2" },
+    { name = "pytest-randomly", specifier = ">=3.12.0" },
+    { name = "pytest-xdist", specifier = ">=3.0.2" },
+    { name = "types-pytz", specifier = ">=2025.2.0.20250516" },
+]
 
 [[package]]
 name = "tinycss2"

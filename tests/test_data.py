@@ -14,16 +14,16 @@ import re
 import yfinance
 from .fixtures import *  # noqa: F401
 from datetime import datetime
-from pybroker.cache import DataSourceCacheKey
-from pybroker.common import to_seconds
-from pybroker.data import (
+from tibacktester.cache import DataSourceCacheKey
+from tibacktester.common import to_seconds
+from tibacktester.data import (
     Alpaca,
     AlpacaCrypto,
     DataSourceCacheMixin,
     YFinance,
 )
-from pybroker.ext.data import AKShare
-from pybroker.ext.data import YQuery
+from tibacktester.ext.data import AKShare
+from tibacktester.ext.data import YQuery
 from unittest import mock
 from yahooquery import Ticker
 

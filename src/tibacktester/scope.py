@@ -10,7 +10,7 @@ This code is licensed under Apache 2.0 with Commons Clause license
 
 import numpy as np
 import pandas as pd
-from pybroker.common import (
+from tibacktester.common import (
     BarData,
     DataCol,
     IndicatorSymbol,
@@ -19,7 +19,7 @@ from pybroker.common import (
     TrainedModel,
     to_decimal,
 )
-from pybroker.log import Logger
+from tibacktester.log import Logger
 from collections import defaultdict
 from decimal import Decimal
 from diskcache import Cache

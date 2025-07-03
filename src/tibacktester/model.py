@@ -8,8 +8,8 @@ This code is licensed under Apache 2.0 with Commons Clause license
 
 import functools
 import pandas as pd
-from pybroker.cache import CacheDateFields, ModelCacheKey
-from pybroker.common import (
+from tibacktester.cache import CacheDateFields, ModelCacheKey
+from tibacktester.common import (
     DataCol,
     IndicatorSymbol,
     ModelSymbol,
@@ -17,8 +17,8 @@ from pybroker.common import (
     get_unique_sorted_dates,
     to_datetime,
 )
-from pybroker.indicator import Indicator
-from pybroker.scope import StaticScope
+from tibacktester.indicator import Indicator
+from tibacktester.scope import StaticScope
 from dataclasses import asdict
 from datetime import datetime
 from numpy.typing import NDArray

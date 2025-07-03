@@ -10,10 +10,10 @@ import numpy as np
 import pandas as pd
 import pytest
 import re
-from pybroker.cache import CacheDateFields
+from tibacktester.cache import CacheDateFields
 from .fixtures import *  # noqa: F401
-from pybroker.common import BarData, DataCol, IndicatorSymbol, to_datetime
-from pybroker.indicator import (
+from tibacktester.common import BarData, DataCol, IndicatorSymbol, to_datetime
+from tibacktester.indicator import (
     _to_bar_data,
     Indicator,
     IndicatorsMixin,
@@ -51,7 +51,7 @@ from pybroker.indicator import (
     volume_weighted_ma_ratio,
     volume_momentum,
 )
-from pybroker.vect import lowv
+from tibacktester.vect import lowv
 
 TF_SECONDS = 60
 BETWEEN_TIME = ("10:00", "15:30")

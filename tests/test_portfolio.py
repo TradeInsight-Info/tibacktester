@@ -11,9 +11,9 @@ import pandas as pd
 import pytest
 from collections import deque
 from decimal import Decimal
-from pybroker.common import FeeMode, PositionMode, PriceType, StopType
-from pybroker.portfolio import Portfolio, Stop
-from pybroker.scope import ColumnScope, PriceScope
+from tibacktester.common import FeeMode, PositionMode, PriceType, StopType
+from tibacktester.portfolio import Portfolio, Stop
+from tibacktester.scope import ColumnScope, PriceScope
 
 SYMBOL_1 = "SPY"
 SYMBOL_2 = "AAPL"

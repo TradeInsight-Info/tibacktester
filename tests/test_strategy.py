@@ -15,21 +15,21 @@ from .fixtures import *  # noqa: F401
 from collections import defaultdict, deque
 from datetime import datetime
 from decimal import Decimal
-from pybroker.common import DataCol, PriceType, to_datetime
-from pybroker.config import StrategyConfig
-from pybroker.context import ExecContext
-from pybroker.data import DataSource
-from pybroker.eval import EvalMetrics
-from pybroker.portfolio import (
+from tibacktester.common import DataCol, PriceType, to_datetime
+from tibacktester.config import StrategyConfig
+from tibacktester.context import ExecContext
+from tibacktester.data import DataSource
+from tibacktester.eval import EvalMetrics
+from tibacktester.portfolio import (
     Order,
     Portfolio,
     PortfolioBar,
     PositionBar,
     Trade,
 )
-from pybroker.scope import PendingOrder
-from pybroker.slippage import SlippageModel
-from pybroker.strategy import (
+from tibacktester.scope import PendingOrder
+from tibacktester.slippage import SlippageModel
+from tibacktester.strategy import (
     BacktestMixin,
     Execution,
     Strategy,

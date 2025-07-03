@@ -10,8 +10,8 @@ import pytest
 import random
 import re
 from .fixtures import *
-from pybroker.context import ExecContext
-from pybroker.slippage import RandomSlippageModel
+from tibacktester.context import ExecContext
+from tibacktester.slippage import RandomSlippageModel
 from unittest.mock import patch
 
 

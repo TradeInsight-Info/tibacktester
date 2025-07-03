@@ -8,8 +8,8 @@ This code is licensed under Apache 2.0 with Commons Clause license
 
 import numpy as np
 import pandas as pd
-from pybroker.scope import StaticScope
-from pybroker.vect import highv, inverse_normal_cdf, normal_cdf
+from tibacktester.scope import StaticScope
+from tibacktester.vect import highv, inverse_normal_cdf, normal_cdf
 from collections import deque
 from dataclasses import dataclass, field
 from datetime import datetime

@@ -13,8 +13,8 @@ import akshare
 import pandas as pd
 from yahooquery import Ticker
 
-from pybroker.common import DataCol, to_datetime
-from pybroker.data import DataSource
+from tibacktester.common import DataCol, to_datetime
+from tibacktester.data import DataSource
 
 
 class AKShare(DataSource):

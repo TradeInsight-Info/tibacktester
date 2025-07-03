@@ -8,15 +8,15 @@ This code is licensed under Apache 2.0 with Commons Clause license
 
 import numpy as np
 import pandas as pd
-import pybroker
+import tibacktester
 import pytest
 import re
 from .fixtures import *
 from decimal import Decimal
-from pybroker.common import PriceType
-from pybroker.indicator import IndicatorSymbol
-from pybroker.model import model
-from pybroker.scope import (
+from tibacktester.common import PriceType
+from tibacktester.indicator import IndicatorSymbol
+from tibacktester.model import model
+from tibacktester.scope import (
     PriceScope,
     enable_logging,
     enable_progress_bar,

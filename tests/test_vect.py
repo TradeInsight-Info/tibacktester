@@ -9,7 +9,7 @@ This code is licensed under Apache 2.0 with Commons Clause license
 import numpy as np
 import pytest
 import re
-from pybroker.vect import (
+from tibacktester.vect import (
     adx,
     aroon_diff,
     aroon_down,

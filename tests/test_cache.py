@@ -11,7 +11,7 @@ import pytest
 import re
 from .fixtures import *
 from diskcache import Cache
-from pybroker.cache import (
+from tibacktester.cache import (
     clear_caches,
     clear_data_source_cache,
     clear_indicator_cache,

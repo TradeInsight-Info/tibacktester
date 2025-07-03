@@ -9,8 +9,8 @@ This code is licensed under Apache 2.0 with Commons Clause license
 import dataclasses
 import numpy as np
 import pandas as pd
-from pybroker.cache import CacheDateFields
-from pybroker.common import (
+from tibacktester.cache import CacheDateFields
+from tibacktester.common import (
     BarData,
     DataCol,
     Day,
@@ -25,19 +25,19 @@ from pybroker.common import (
     verify_data_source_columns,
     verify_date_range,
 )
-from pybroker.config import StrategyConfig
-from pybroker.context import (
+from tibacktester.config import StrategyConfig
+from tibacktester.context import (
     ExecContext,
     ExecResult,
     PosSizeContext,
     set_exec_ctx_data,
     set_pos_size_ctx_data,
 )
-from pybroker.data import AlpacaCrypto, DataSource
-from pybroker.eval import BootstrapResult, EvalMetrics, EvaluateMixin
-from pybroker.indicator import Indicator, IndicatorsMixin
-from pybroker.model import ModelSource, ModelsMixin, TrainedModel
-from pybroker.portfolio import (
+from tibacktester.data import AlpacaCrypto, DataSource
+from tibacktester.eval import BootstrapResult, EvalMetrics, EvaluateMixin
+from tibacktester.indicator import Indicator, IndicatorsMixin
+from tibacktester.model import ModelSource, ModelsMixin, TrainedModel
+from tibacktester.portfolio import (
     Order,
     Portfolio,
     PortfolioBar,
@@ -45,7 +45,7 @@ from pybroker.portfolio import (
     StopRecord,
     Trade,
 )
-from pybroker.scope import (
+from tibacktester.scope import (
     ColumnScope,
     IndicatorScope,
     ModelInputScope,
@@ -55,7 +55,7 @@ from pybroker.scope import (
     StaticScope,
     get_signals,
 )
-from pybroker.slippage import SlippageModel
+from tibacktester.slippage import SlippageModel
 from collections import defaultdict, deque
 from dataclasses import dataclass
 from datetime import datetime

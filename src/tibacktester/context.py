@@ -9,7 +9,7 @@ This code is licensed under Apache 2.0 with Commons Clause license
 
 import numpy as np
 import pandas as pd
-from pybroker.common import (
+from tibacktester.common import (
     BarData,
     DataCol,
     ModelSymbol,
@@ -18,10 +18,10 @@ from pybroker.common import (
     to_datetime,
     to_decimal,
 )
-from pybroker.config import StrategyConfig
-from pybroker.model import TrainedModel
-from pybroker.portfolio import Entry, Order, Portfolio, Position, Stop, Trade
-from pybroker.scope import (
+from tibacktester.config import StrategyConfig
+from tibacktester.model import TrainedModel
+from tibacktester.portfolio import Entry, Order, Portfolio, Position, Stop, Trade
+from tibacktester.scope import (
     ColumnScope,
     IndicatorScope,
     ModelInputScope,
