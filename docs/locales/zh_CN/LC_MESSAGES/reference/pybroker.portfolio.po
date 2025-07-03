@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../source/reference/pybroker.portfolio.rst:2
 #: 3d99a55d74c24586b07c142546e91794
-msgid "pybroker.portfolio module"
+msgid "tibacktester.portfolio module"
 msgstr ""
 
 #: d86a33a186d54995a6244d709917c482 of pybroker.portfolio:1
@@ -174,7 +174,7 @@ msgid "Stops set on the entry."
 msgstr ""
 
 #: bfc5507a2642473688fd063d9972c3ff of pybroker.portfolio.Entry:49
-msgid "set[pybroker.portfolio.Stop]"
+msgid "set[tibacktester.portfolio.Stop]"
 msgstr ""
 
 #: bff58404050842dd9dba8b0fd5a166bf e3c8f81d6be74777b4a82fdab6338875
@@ -427,7 +427,7 @@ msgstr ""
 
 #: 1128512ca2204dbfb9603729d937e4d9 of
 #: pybroker.portfolio.Portfolio.remove_stops:5
-msgid ":class:`pybroker.common.StopType`."
+msgid ":class:`tibacktester.common.StopType`."
 msgstr ""
 
 #: 068e866b1c504057ab7ce4f7c912f38b of pybroker.portfolio.Portfolio.sell:1
@@ -519,7 +519,7 @@ msgid ""
 msgstr ""
 
 #: 6303f13643db4c2c88579f4e767259de of pybroker.portfolio.Position:56
-msgid "collections.deque[pybroker.portfolio.Entry]"
+msgid "collections.deque[tibacktester.portfolio.Entry]"
 msgstr ""
 
 #: 1fb4bb4f148944cb95bd68bb24202cc5 of pybroker.portfolio.PositionBar:1
@@ -585,7 +585,7 @@ msgstr ""
 #: 8a55019a21e44607a8b523cba98ca728 of pybroker.portfolio.Stop:43
 msgid ""
 "int | float | numpy.floating | decimal.Decimal | "
-"pybroker.common.PriceType | Callable[[str, pybroker.common.BarData], int "
+"tibacktester.common.PriceType | Callable[[str, tibacktester.common.BarData], int "
 "| float | decimal.Decimal] | None"
 msgstr ""
 
@@ -595,13 +595,13 @@ msgstr ""
 
 #: 76df45b2f19e4d14bb3bd5d962a883ea of pybroker.portfolio.Stop:53
 msgid ""
-"Exit :class:`pybroker.common.PriceType` to use for the stop exit. If set,"
+"Exit :class:`tibacktester.common.PriceType` to use for the stop exit. If set,"
 " the stop is checked against the ``exit_price`` and exits at the "
 "``exit_price`` when triggered."
 msgstr ""
 
 #: 35482f13f83146e3ac4301345e1a265e of pybroker.portfolio.Stop:57
-msgid "pybroker.common.PriceType | None"
+msgid "tibacktester.common.PriceType | None"
 msgstr ""
 
 #: ../../docstring 4fc0dcc8b26a46ed8b6d3a7213b70502 of

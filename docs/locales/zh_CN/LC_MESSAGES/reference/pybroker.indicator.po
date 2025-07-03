@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../source/reference/pybroker.indicator.rst:2
 #: 8bba6309a31c444db53f7fea084965f0
-msgid "pybroker.indicator module"
+msgid "tibacktester.indicator module"
 msgstr ""
 
 #: e7df6eb089574529a2605611b73a85db of pybroker.indicator:1
@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 
 #: af3a42c831b84eafa38267365d922c94 of pybroker.indicator.IndicatorSet:1
-msgid "Bases: :py:class:`~pybroker.indicator.IndicatorsMixin`"
+msgid "Bases: :py:class:`~tibacktester.indicator.IndicatorsMixin`"
 msgstr ""
 
 #: ce274541c1fe4a40b9b3f980f85bfa9b of pybroker.indicator.IndicatorSet:1
@@ -138,7 +138,7 @@ msgstr ""
 #: pybroker.indicator.IndicatorsMixin.compute_indicators:1
 msgid ""
 "Computes indicator data for the provided "
-":class:`pybroker.common.IndicatorSymbol` pairs."
+":class:`tibacktester.common.IndicatorSymbol` pairs."
 msgstr ""
 
 #: 79f93d6d1b724c7cbfb5144d187a1dae of
@@ -149,7 +149,7 @@ msgstr ""
 #: 6f4442c626aa4b15abb35d946695cc6b of
 #: pybroker.indicator.IndicatorsMixin.compute_indicators:5
 msgid ""
-"``Iterable`` of :class:`pybroker.common.IndicatorSymbol` pairs of "
+"``Iterable`` of :class:`tibacktester.common.IndicatorSymbol` pairs of "
 "indicators to compute."
 msgstr ""
 
@@ -162,14 +162,14 @@ msgstr ""
 #: pybroker.indicator.IndicatorsMixin.compute_indicators:10
 msgid ""
 "If ``True``, indicator data is computed serially for all "
-":class:`pybroker.common.IndicatorSymbol` pairs. If ``False``, indicator "
+":class:`tibacktester.common.IndicatorSymbol` pairs. If ``False``, indicator "
 "data is computed in parallel using multiple processes."
 msgstr ""
 
 #: 2aa4c3d1389a417cb591fb7215ee5c36 of
 #: pybroker.indicator.IndicatorsMixin.compute_indicators:15
 msgid ""
-"``dict`` mapping each :class:`pybroker.common.IndicatorSymbol` pair to a "
+"``dict`` mapping each :class:`tibacktester.common.IndicatorSymbol` pair to a "
 "computed :class:`pandas.Series` of indicator values."
 msgstr ""
 
@@ -184,7 +184,7 @@ msgid "Indicator name."
 msgstr ""
 
 #: 29d49c055a384c1b9c2b24a8400253aa of pybroker.indicator.highest:4
-msgid ":class:`pybroker.common.BarData` field for computing the rolling high."
+msgid ":class:`tibacktester.common.BarData` field for computing the rolling high."
 msgstr ""
 
 #: c0b985d690f748139938004a5910c71a e1cd405072974b36ba89de5df18ddad1 of
@@ -225,7 +225,7 @@ msgid "Creates a rolling low :class:`.Indicator`."
 msgstr ""
 
 #: 5b6ccac2801b476a8cd8571d31c0c34a of pybroker.indicator.lowest:4
-msgid ":class:`pybroker.common.BarData` field for computing the rolling low."
+msgid ":class:`tibacktester.common.BarData` field for computing the rolling low."
 msgstr ""
 
 #: 6c9dca1cc55c453aaa66798dc58d99f6 of pybroker.indicator.lowest:8
@@ -237,7 +237,7 @@ msgid "Creates a rolling returns :class:`.Indicator`."
 msgstr ""
 
 #: 0b6ea2fd8dbd430fb2ef02c22d43a746 of pybroker.indicator.returns:4
-msgid ":class:`pybroker.common.BarData` field for computing the rolling returns."
+msgid ":class:`tibacktester.common.BarData` field for computing the rolling returns."
 msgstr ""
 
 #: a6607e4611394840a405e9a2e9d7fdb0 of pybroker.indicator.returns:6
@@ -249,7 +249,7 @@ msgid "Rolling returns :class:`.Indicator`."
 msgstr ""
 
 #~ msgid ""
-#~ "``Collection`` of :class:`pybroker.common.IndicatorSymbol`"
+#~ "``Collection`` of :class:`tibacktester.common.IndicatorSymbol`"
 #~ " pairs of indicators to compute."
 #~ msgstr ""
 

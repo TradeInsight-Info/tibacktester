@@ -40,7 +40,7 @@ class ModelSource:
     Args:
         name: Name of model.
         indicator_names: :class:`Iterable` of names of
-            :class:`pybroker.indicator.Indicator`\ s used as features of the
+            :class:`tibacktester.indicator.Indicator`\ s used as features of the
             model.
         input_data_fn: :class:`Callable[[DataFrame], DataFrame]` for
             preprocessing input data passed to the model when making
@@ -98,7 +98,7 @@ class ModelLoader(ModelSource):
             trained model instance and a :class:`Iterable` of column names to
             to be used as input for the model when making predictions.
         indicator_names: :class:`Iterable` of names of
-            :class:`pybroker.indicator.Indicator`\ s used as features of the
+            :class:`tibacktester.indicator.Indicator`\ s used as features of the
             model.
         input_data_fn: :class:`Callable[[DataFrame], DataFrame]` for
             preprocessing input data passed to the model when making
@@ -159,7 +159,7 @@ class ModelTrainer(ModelSource):
             :class:`Iterable` of column names to to be used as input for the
             model when making predictions.
         indicator_names: :class:`Iterable` of names of
-            :class:`pybroker.indicator.Indicator`\ s used as features of the
+            :class:`tibacktester.indicator.Indicator`\ s used as features of the
             model.
         input_data_fn: :class:`Callable[[DataFrame], DataFrame]` for
             preprocessing input data passed to the model when making
@@ -232,7 +232,7 @@ def model(
             trained model instance and a :class:`Iterable` of column names to
             to be used as input for the model when making predictions.
         indicators: :class:`Iterable` of
-            :class:`pybroker.indicator.Indicator`\ s used as features of the
+            :class:`tibacktester.indicator.Indicator`\ s used as features of the
             model.
         input_data_fn: :class:`Callable[[DataFrame], DataFrame]` for
             preprocessing input data passed to the model when making
@@ -304,23 +304,23 @@ class ModelsMixin:
         indicator_data: Mapping[IndicatorSymbol, pd.Series],
         cache_date_fields: CacheDateFields,
     ) -> dict[ModelSymbol, TrainedModel]:
-        """Trains models for the provided :class:`pybroker.common.ModelSymbol`
+        """Trains models for the provided :class:`tibacktester.common.ModelSymbol`
         pairs.
 
         Args:
             model_syms: ``Iterable`` of
-                :class:`pybroker.common.ModelSymbol` pairs of models to train.
+                :class:`tibacktester.common.ModelSymbol` pairs of models to train.
             train_data: :class:`pandas.DataFrame` of training data.
             test_data: :class:`pandas.DataFrame` of test data.
             indicator_data: ``Mapping`` of
-                :class:`pybroker.common.IndicatorSymbol` pairs to
-                ``pandas.Series`` of :class:`pybroker.indicator.Indicator`
+                :class:`tibacktester.common.IndicatorSymbol` pairs to
+                ``pandas.Series`` of :class:`tibacktester.indicator.Indicator`
                 values.
             cache_date_fields: Date fields used to key cache data.
 
         Returns:
-            ``dict`` mapping each :class:`pybroker.common.ModelSymbol` pair
-            to a :class:`pybroker.common.TrainedModel`.
+            ``dict`` mapping each :class:`tibacktester.common.ModelSymbol` pair
+            to a :class:`tibacktester.common.TrainedModel`.
         """
         if train_data.empty or not model_syms:
             return {}

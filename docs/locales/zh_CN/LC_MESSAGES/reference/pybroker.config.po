@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../source/reference/pybroker.config.rst:2
 #: bad4b2e38d8e424cb6df41840a39a017
-msgid "pybroker.config module"
+msgid "tibacktester.config module"
 msgstr ""
 
 #: 416cc1877d6442ae9ace860f30dcf9ee of pybroker.config:1
@@ -33,7 +33,7 @@ msgid "Bases: :py:class:`object`"
 msgstr ""
 
 #: 69ba4e3109864fa8be8dd89c74539c7e of pybroker.config.StrategyConfig:1
-msgid "Configuration options for :class:`pybroker.strategy.Strategy`."
+msgid "Configuration options for :class:`tibacktester.strategy.Strategy`."
 msgstr ""
 
 #: ccd601a3873c4700b694e950f6211ff0 of pybroker.config.StrategyConfig:5
@@ -58,7 +58,7 @@ msgstr ""
 
 #: 1eacb43b888c47bc87f2a8a6f78e49f7 of pybroker.config.StrategyConfig:11
 msgid ""
-":class:`pybroker.common.FeeMode` for calculating brokerage fees. Supports"
+":class:`tibacktester.common.FeeMode` for calculating brokerage fees. Supports"
 " one of:"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgid "``None``: Fees are disabled (default)."
 msgstr ""
 
 #: 3d84ccab6a684138bc9229e3d967b09d of pybroker.config.StrategyConfig:19
-msgid "pybroker.common.FeeMode | None"
+msgid "tibacktester.common.FeeMode | None"
 msgstr ""
 
 #: b4944ce618b54017919777d96dc9561c of pybroker.config.StrategyConfig:23
@@ -100,7 +100,7 @@ msgstr ""
 #: 1fe18107541f4cb2b49d21364c0e0b95 of pybroker.config.StrategyConfig:36
 msgid ""
 "Maximum number of long positions that can be held at any time in "
-":class:`pybroker.portfolio.Portfolio`. Unlimited when ``None``. Defaults "
+":class:`tibacktester.portfolio.Portfolio`. Unlimited when ``None``. Defaults "
 "to ``None``."
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 #: c80061a27c99438fb5bff8abf34c4319 of pybroker.config.StrategyConfig:44
 msgid ""
 "Maximum number of short positions that can be held at any time in "
-":class:`pybroker.portfolio.Portfolio`. Unlimited when ``None``. Defaults "
+":class:`tibacktester.portfolio.Portfolio`. Unlimited when ``None``. Defaults "
 "to ``None``."
 msgstr ""
 
@@ -158,13 +158,13 @@ msgstr ""
 msgid ""
 "Fill price for covering an open short position when "
 ":attr:`.exit_on_last_bar` is ``True``. Defaults to "
-":attr:`pybroker.common.PriceType.MIDDLE`."
+":attr:`tibacktester.common.PriceType.MIDDLE`."
 msgstr ""
 
 #: 2f6bd040180a4bdea4d4bba8cda40a0e c72e96457f5c4a2096e6468fbd9ff738 of
 #: pybroker.config.StrategyConfig:94 pybroker.config.StrategyConfig:102
 msgid ""
-"pybroker.common.PriceType | Callable[[str, pybroker.common.BarData], int "
+"tibacktester.common.PriceType | Callable[[str, tibacktester.common.BarData], int "
 "| float | decimal.Decimal]"
 msgstr ""
 
@@ -172,7 +172,7 @@ msgstr ""
 msgid ""
 "Fill price for selling an open long position when "
 ":attr:`.exit_on_last_bar` is ``True``. Defaults to "
-":attr:`pybroker.common.PriceType.MIDDLE`."
+":attr:`tibacktester.common.PriceType.MIDDLE`."
 msgstr ""
 
 #: ed184b69ba4b4dc3a92575c449d680f2 of pybroker.config.StrategyConfig:106

@@ -177,22 +177,22 @@ class IndicatorsMixin:
         disable_parallel: bool,
     ) -> dict[IndicatorSymbol, pd.Series]:
         """Computes indicator data for the provided
-        :class:`pybroker.common.IndicatorSymbol` pairs.
+        :class:`tibacktester.common.IndicatorSymbol` pairs.
 
         Args:
             df: :class:`pandas.DataFrame` used to compute the indicator values.
             indicator_syms: ``Iterable`` of
-                :class:`pybroker.common.IndicatorSymbol` pairs of indicators
+                :class:`tibacktester.common.IndicatorSymbol` pairs of indicators
                 to compute.
             cache_date_fields: Date fields used to key cache data. Pass
                 ``None`` to disable caching.
             disable_parallel: If ``True``, indicator data is computed
-                serially for all :class:`pybroker.common.IndicatorSymbol`
+                serially for all :class:`tibacktester.common.IndicatorSymbol`
                 pairs. If ``False``, indicator data is computed in parallel
                 using multiple processes.
 
         Returns:
-            ``dict`` mapping each :class:`pybroker.common.IndicatorSymbol` pair
+            ``dict`` mapping each :class:`tibacktester.common.IndicatorSymbol` pair
             to a computed :class:`pandas.Series` of indicator values.
         """
         if not indicator_syms or df.empty:
@@ -393,7 +393,7 @@ def highest(name: str, field: str, period: int) -> Indicator:
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field for computing the rolling
+        field: :class:`tibacktester.common.BarData` field for computing the rolling
             high.
         period: Lookback period.
 
@@ -413,7 +413,7 @@ def lowest(name: str, field: str, period: int) -> Indicator:
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field for computing the rolling
+        field: :class:`tibacktester.common.BarData` field for computing the rolling
             low.
         period: Lookback period.
 
@@ -433,7 +433,7 @@ def returns(name: str, field: str, period: int = 1) -> Indicator:
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field for computing the rolling
+        field: :class:`tibacktester.common.BarData` field for computing the rolling
             returns.
         period: Returns period. Defaults to 1.
 
@@ -455,7 +455,7 @@ def detrended_rsi(
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field name.
+        field: :class:`tibacktester.common.BarData` field name.
         short_length: Lookback for the short-term RSI.
         long_length: Lookback for the long-term RSI.
         reg_length: Number of bars used for linear regressions.
@@ -487,7 +487,7 @@ def macd(
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field name.
+        field: :class:`tibacktester.common.BarData` field name.
         short_length: Short-term lookback.
         long_length: Long-term lookback.
         smoothing: Compute MACD minus smoothed if >= 2.
@@ -548,7 +548,7 @@ def stochastic_rsi(
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field name.
+        field: :class:`tibacktester.common.BarData` field name.
         rsi_lookback: Lookback length for RSI calculation.
         sto_lookback: Lookback length for Stochastic calculation.
         smoothing: Amount of smoothing; <= 1 for none. Defaults to ``0``.
@@ -576,7 +576,7 @@ def linear_trend(
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field name.
+        field: :class:`tibacktester.common.BarData` field name.
         lookback: Number of lookback bars.
         atr_length: Lookback length used for Average True Range (ATR)
             normalization.
@@ -609,7 +609,7 @@ def quadratic_trend(
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field name.
+        field: :class:`tibacktester.common.BarData` field name.
         lookback: Number of lookback bars.
         atr_length: Lookback length used for Average True Range (ATR)
             normalization.
@@ -642,7 +642,7 @@ def cubic_trend(
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field name.
+        field: :class:`tibacktester.common.BarData` field name.
         lookback: Number of lookback bars.
         atr_length: Lookback length used for Average True Range (ATR)
             normalization.
@@ -775,7 +775,7 @@ def linear_deviation(
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field name.
+        field: :class:`tibacktester.common.BarData` field name.
         lookback: Number of lookback bars.
         scale: Increase > 1.0 for more compression of return values,
             decrease < 1.0 for less. Defaults to ``0.6``.
@@ -798,7 +798,7 @@ def quadratic_deviation(
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field name.
+        field: :class:`tibacktester.common.BarData` field name.
         lookback: Number of lookback bars.
         scale: Increase > 1.0 for more compression of return values,
             decrease < 1.0 for less. Defaults to ``0.6``.
@@ -821,7 +821,7 @@ def cubic_deviation(
 
     Args:
         name: Indicator name.
-        field: :class:`pybroker.common.BarData` field name.
+        field: :class:`tibacktester.common.BarData` field name.
         lookback: Number of lookback bars.
         scale: Increase > 1.0 for more compression of return values,
             decrease < 1.0 for less. Defaults to ``0.6``.

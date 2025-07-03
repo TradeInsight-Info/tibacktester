@@ -20,7 +20,7 @@ msgstr ""
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/reference/pybroker.data.rst:2 7a15c567fc4f47c7be9e79a016ae4a03
-msgid "pybroker.data module"
+msgid "tibacktester.data module"
 msgstr ""
 
 #: 9f8947ae58f84a2aaefe7bbd2ebe0a9b of pybroker.data:1
@@ -29,7 +29,7 @@ msgstr ""
 
 #: 33705d5b14734b7383edc267d4e5082a 7f47a97d02dc48568a70cdd2a2964670 of
 #: pybroker.data.Alpaca:1 pybroker.data.AlpacaCrypto:1 pybroker.data.YFinance:1
-msgid "Bases: :py:class:`~pybroker.data.DataSource`"
+msgid "Bases: :py:class:`~tibacktester.data.DataSource`"
 msgstr ""
 
 #: 373cd2699a684c9ea992cdabcf87bb34 of pybroker.data.Alpaca:1
@@ -40,7 +40,7 @@ msgstr ""
 #: pybroker.data.AlpacaCrypto.query:1 pybroker.data.DataSource.query:1
 msgid ""
 "Queries data. Cached data is returned if caching is enabled by calling "
-":meth:`pybroker.cache.enable_data_source_cache`."
+":meth:`tibacktester.cache.enable_data_source_cache`."
 msgstr ""
 
 #: b7d7325c52ae41fbacfcb9fd11d6a597 of pybroker.data.Alpaca.query
@@ -180,7 +180,7 @@ msgstr ""
 #: f01df335c666459eb824cddb11f4f364 of pybroker.data.DataSource:1
 msgid ""
 "Bases: :py:class:`~abc.ABC`, "
-":py:class:`~pybroker.data.DataSourceCacheMixin`"
+":py:class:`~tibacktester.data.DataSourceCacheMixin`"
 msgstr ""
 
 #: 66443ddec6184fe080fb634f74c906ac of pybroker.data.DataSource:1
@@ -188,7 +188,7 @@ msgid ""
 "Base class for querying data from an external source. Extend this class "
 "and override :meth:`._fetch_data` to implement a custom "
 ":class:`.DataSource` that can be used with "
-":class:`pybroker.strategy.Strategy`."
+":class:`tibacktester.strategy.Strategy`."
 msgstr ""
 
 #: 355925a69e5e431ea2eedd842a2f3466 of pybroker.data.DataSource._fetch_data:2
@@ -217,7 +217,7 @@ msgstr ""
 #: pybroker.data.DataSourceCacheMixin.get_cached:1
 msgid ""
 "Retrieves cached data from disk when caching is enabled with "
-":meth:`pybroker.cache.enable_data_source_cache`."
+":meth:`tibacktester.cache.enable_data_source_cache`."
 msgstr ""
 
 #: 223a4047d202488bb02a694bfc10ab46 of
@@ -265,7 +265,7 @@ msgstr ""
 #: pybroker.data.DataSourceCacheMixin.set_cached:1
 msgid ""
 "Stores data to disk cache when caching is enabled with "
-":meth:`pybroker.cache.enable_data_source_cache`."
+":meth:`tibacktester.cache.enable_data_source_cache`."
 msgstr ""
 
 #: d70275663b0f4f2198988c2b196811c6 of
@@ -331,7 +331,7 @@ msgstr ""
 #~ msgid "Contains :class:`.DataSource`\\ s used to fetch external data."
 #~ msgstr ""
 
-#~ msgid "Bases: :py:class:`~pybroker.data.DataSource`"
+#~ msgid "Bases: :py:class:`~tibacktester.data.DataSource`"
 #~ msgstr ""
 
 #~ msgid "Retrieves data from `AKShare <https://akshare.akfamily.xyz/>`_\\ ."
@@ -374,7 +374,7 @@ msgstr ""
 #~ msgid ""
 #~ "Queries data. Cached data is returned"
 #~ " if caching is enabled by calling "
-#~ ":meth:`pybroker.cache.enable_data_source_cache`."
+#~ ":meth:`tibacktester.cache.enable_data_source_cache`."
 #~ msgstr ""
 
 #~ msgid "Symbols of the data to query."
@@ -432,7 +432,7 @@ msgstr ""
 
 #~ msgid ""
 #~ "Bases: :py:class:`~abc.ABC`, "
-#~ ":py:class:`~pybroker.data.DataSourceCacheMixin`"
+#~ ":py:class:`~tibacktester.data.DataSourceCacheMixin`"
 #~ msgstr ""
 
 #~ msgid ""
@@ -441,7 +441,7 @@ msgstr ""
 #~ " and override :meth:`._fetch_data` to "
 #~ "implement a custom :class:`.DataSource` that"
 #~ " can be used with "
-#~ ":class:`pybroker.strategy.Strategy`."
+#~ ":class:`tibacktester.strategy.Strategy`."
 #~ msgstr ""
 
 #~ msgid ""
@@ -463,7 +463,7 @@ msgstr ""
 #~ msgid ""
 #~ "Retrieves cached data from disk when "
 #~ "caching is enabled with "
-#~ ":meth:`pybroker.cache.enable_data_source_cache`."
+#~ ":meth:`tibacktester.cache.enable_data_source_cache`."
 #~ msgstr ""
 
 #~ msgid ":class:`Iterable` of symbols for fetching cached data."
@@ -506,7 +506,7 @@ msgstr ""
 #~ msgid ""
 #~ "Stores data to disk cache when "
 #~ "caching is enabled with "
-#~ ":meth:`pybroker.cache.enable_data_source_cache`."
+#~ ":meth:`tibacktester.cache.enable_data_source_cache`."
 #~ msgstr ""
 
 #~ msgid ""

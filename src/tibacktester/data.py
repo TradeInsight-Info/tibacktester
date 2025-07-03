@@ -46,7 +46,7 @@ class DataSourceCacheMixin:
         adjust: Optional[Any],
     ) -> tuple[pd.DataFrame, Iterable[str]]:
         """Retrieves cached data from disk when caching is enabled with
-        :meth:`pybroker.cache.enable_data_source_cache`.
+        :meth:`tibacktester.cache.enable_data_source_cache`.
 
         Args:
             symbols: :class:`Iterable` of symbols for fetching cached data.
@@ -116,7 +116,7 @@ class DataSourceCacheMixin:
         data: pd.DataFrame,
     ):
         """Stores data to disk cache when caching is enabled with
-        :meth:`pybroker.cache.enable_data_source_cache`.
+        :meth:`tibacktester.cache.enable_data_source_cache`.
 
         Args:
             timeframe: Formatted string that specifies the timeframe
@@ -161,7 +161,7 @@ class DataSource(ABC, DataSourceCacheMixin):
     """Base class for querying data from an external source. Extend this class
     and override :meth:`._fetch_data` to implement a custom
     :class:`.DataSource` that can be used with
-    :class:`pybroker.strategy.Strategy`.
+    :class:`tibacktester.strategy.Strategy`.
     """
 
     def __init__(self):
@@ -177,7 +177,7 @@ class DataSource(ABC, DataSourceCacheMixin):
         adjust: Optional[Any] = None,
     ) -> pd.DataFrame:
         """Queries data. Cached data is returned if caching is enabled by
-        calling :meth:`pybroker.cache.enable_data_source_cache`.
+        calling :meth:`tibacktester.cache.enable_data_source_cache`.
 
         Args:
             symbols: Symbols of the data to query.

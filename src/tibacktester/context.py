@@ -1,5 +1,5 @@
 """Contains context related classes. A context provides data during the
-execution of a :class:`pybroker.strategy.Strategy`."""
+execution of a :class:`tibacktester.strategy.Strategy`."""
 
 """Copyright (C) 2023 Edward West. All rights reserved.
 
@@ -52,7 +52,7 @@ class BaseContext:
     """Base context class.
 
     Attributes:
-        config: :class:`pybroker.config.StrategyConfig`.
+        config: :class:`tibacktester.config.StrategyConfig`.
     """
 
     def __init__(
@@ -80,28 +80,28 @@ class BaseContext:
     @property
     def total_equity(self) -> Decimal:
         """Total equity currently held in the
-        :class:`pybroker.portfolio.Portfolio`.
+        :class:`tibacktester.portfolio.Portfolio`.
         """
         return self._portfolio.equity
 
     @property
     def cash(self) -> Decimal:
         """Total cash currently held in the
-        :class:`pybroker.portfolio.Portfolio`.
+        :class:`tibacktester.portfolio.Portfolio`.
         """
         return self._portfolio.cash
 
     @property
     def total_margin(self) -> Decimal:
         """Total amount of margin currently held in the
-        :class:`pybroker.portfolio.Portfolio`.
+        :class:`tibacktester.portfolio.Portfolio`.
         """
         return self._portfolio.margin
 
     @property
     def total_market_value(self) -> Decimal:
         """Total market value currently held in the
-        :class:`pybroker.portfolio.Portfolio`. The market value is defined as
+        :class:`tibacktester.portfolio.Portfolio`. The market value is defined as
         the amount of equity held in cash and long positions added together
         with the unrealized PnL of all open short positions.
         """
@@ -118,7 +118,7 @@ class BaseContext:
         return self._portfolio.loss_rate
 
     def orders(self) -> Iterator[Order]:
-        r""":class:`Iterator` of all :class:`pybroker.portfolio.Order`\ s that
+        r""":class:`Iterator` of all :class:`tibacktester.portfolio.Order`\ s that
         have been placed and filled.
         """
         for order in self._portfolio.orders:
@@ -131,7 +131,7 @@ class BaseContext:
             yield order
 
     def trades(self) -> Iterator[Trade]:
-        r""":class:`Iterator` of all :class:`pybroker.portfolio.Trade`\ s that
+        r""":class:`Iterator` of all :class:`tibacktester.portfolio.Trade`\ s that
         have been completed.
         """
         for trade in self._portfolio.trades:
@@ -143,7 +143,7 @@ class BaseContext:
         pos_type: Literal["long", "short"],
     ) -> Optional[Position]:
         r"""Retrieves a current long or short
-        :class:`pybroker.portfolio.Position` for a ``symbol``.
+        :class:`tibacktester.portfolio.Position` for a ``symbol``.
 
         Args:
             symbol: Ticker symbol of the position to return.
@@ -151,7 +151,7 @@ class BaseContext:
                 position.
 
         Returns:
-            :class:`pybroker.portfolio.Position` if one exists, otherwise
+            :class:`tibacktester.portfolio.Position` if one exists, otherwise
             ``None``.
         """
         self._verify_pos_type(pos_type)
@@ -176,7 +176,7 @@ class BaseContext:
 
         Returns:
             :class:`Iterator` of currently held
-            :class:`pybroker.portfolio.Position` \s.
+            :class:`tibacktester.portfolio.Position` \s.
         """
         if pos_type is not None:
             self._verify_pos_type(pos_type)
@@ -211,7 +211,7 @@ class BaseContext:
 
         Returns:
             :class:`Iterator` of currently held long
-            :class:`pybroker.portfolio.Position` \s.
+            :class:`tibacktester.portfolio.Position` \s.
         """
         return self.positions(symbol, "long")
 
@@ -227,7 +227,7 @@ class BaseContext:
 
         Returns:
             :class:`Iterator` of currently held short
-            :class:`pybroker.portfolio.Position` \s.
+            :class:`tibacktester.portfolio.Position` \s.
         """
         return self.positions(symbol, "short")
 
@@ -247,12 +247,12 @@ class BaseContext:
                 ``target_size`` of ``0.1`` would represent 10% of cash.
             price: Share price used to calculate the number of shares.
             cash: Cash used to calculate the number of shares. If
-                ``None``, then the :class:`pybroker.portfolio.Portfolio` equity
+                ``None``, then the :class:`tibacktester.portfolio.Portfolio` equity
                 is used to calculate the number of shares.
 
         Returns:
             Number of shares given ``target_size`` and share ``price``. If
-            :attr:`pybroker.config.StrategyConfig.enable_fractional_shares` is
+            :attr:`tibacktester.config.StrategyConfig.enable_fractional_shares` is
             ``True``, then a Decimal is returned.
         """
         shares = (
@@ -269,7 +269,7 @@ class BaseContext:
 
         Args:
             name: Name used to identify the model that was registered with
-                :meth:`pybroker.model.model`.
+                :meth:`tibacktester.model.model`.
             symbol: Ticker symbol of the data that was used to train the model.
 
         Returns:
@@ -285,7 +285,7 @@ class BaseContext:
 
         Args:
             name: Name used to identify the indicator that was registered with
-                :meth:`pybroker.indicator.indicator`.
+                :meth:`tibacktester.indicator.indicator`.
             symbol: Ticker symbol that was used to generate the indicator data.
 
         Returns:
@@ -328,7 +328,7 @@ class BaseContext:
 @dataclass
 class ExecResult:
     r"""Holds data that was set during the execution of a
-    :class:`pybroker.strategy.Strategy`.
+    :class:`tibacktester.strategy.Strategy`.
 
     Attributes:
         symbol: Ticker symbol that was used for the execution.
@@ -339,9 +339,9 @@ class ExecResult:
         score: Score used to rank ``symbol`` when ranking long and short
             signals. Orders are placed for symbols with the highest scores,
             where the number of positions held at any time in the
-            :class:`pybroker.portfolio.Portfolio` is specified by
-            :attr:`pybroker.config.StrategyConfig.max_long_positions` and
-            :attr:`pybroker.config.StrategyConfig.max_short_positions`
+            :class:`tibacktester.portfolio.Portfolio` is specified by
+            :attr:`tibacktester.config.StrategyConfig.max_long_positions` and
+            :attr:`tibacktester.config.StrategyConfig.max_short_positions`
             respectively. Buy and sell signals are ranked separately by
             ``score``.
         hold_bars: Number of bars to hold a long or short position for, after
@@ -351,12 +351,12 @@ class ExecResult:
         sell_shares: Number of shares to sell of ``symbol``.
         sell_limit_price: Limit price used for a sell (short) order of
             ``symbol``.
-        long_stops: Stops for long :class:`pybroker.portfolio.Entry`\ s.
-        short_stops: Stops for short :class:`pybroker.portfolio.Entry`\ s.
+        long_stops: Stops for long :class:`tibacktester.portfolio.Entry`\ s.
+        short_stops: Stops for short :class:`tibacktester.portfolio.Entry`\ s.
         cover: Whether ``buy_shares`` are used to cover a short position. If
             ``True``, the resulting buy order will be placed before sell
             orders.
-        pending_order_id: ID of :class:`pybroker.scope.PendingOrder` that was
+        pending_order_id: ID of :class:`tibacktester.scope.PendingOrder` that was
             created.
     """
 
@@ -397,10 +397,10 @@ class ExecSignal(NamedTuple):
         id: Unique ID.
         symbol: Ticker symbol.
         shares: Number of shares that was set by the
-            :class:`pybroker.strategy.Strategy` execution.
+            :class:`tibacktester.strategy.Strategy` execution.
         score: Score that was set by the
-            :class:`pybroker.strategy.Strategy` execution.
-        bar_data: :class:`pybroker.common.BarData` for ``symbol``.
+            :class:`tibacktester.strategy.Strategy` execution.
+        bar_data: :class:`tibacktester.common.BarData` for ``symbol``.
         type: ``buy`` or ``sell`` signal type.
     """
 
@@ -414,7 +414,7 @@ class ExecSignal(NamedTuple):
 
 class PosSizeContext(BaseContext):
     r"""Holds data for a position size handler set with
-    :meth:`pybroker.Strategy.set_pos_size_handler`. Used to set position sizes
+    :meth:`tibacktester.Strategy.set_pos_size_handler`. Used to set position sizes
     when placing orders from buy and sell signals.
 
     Attributes:
@@ -535,14 +535,14 @@ def set_pos_size_ctx_data(
 
 class ExecContext(BaseContext):
     r"""Contains context data during the execution of a
-    :class:`pybroker.strategy.Strategy`. Includes data about the current bar,
+    :class:`tibacktester.strategy.Strategy`. Includes data about the current bar,
     portfolio positions, and other relevant context. This class is also used to
     set buy and sell signals for placing orders.
 
     The data contained in this class is for the latest bar that has already
     completed. Placing an order will be executed on a future bar specified by
-    :attr:`pybroker.config.StrategyConfig.buy_delay` and
-    :attr:`pybroker.config.StrategyConfig.sell_delay`.
+    :attr:`tibacktester.config.StrategyConfig.buy_delay` and
+    :attr:`tibacktester.config.StrategyConfig.sell_delay`.
 
     Attributes:
         symbol: Current ticker symbol of the execution.
@@ -561,40 +561,40 @@ class ExecContext(BaseContext):
         score: Score used to rank ``symbol`` when ranking buy and sell signals.
             Orders are placed for symbols with the highest scores, where the
             number of positions held at any time in the
-            :class:`pybroker.portfolio.Portfolio` is specified by
-            :attr:`pybroker.config.StrategyConfig.max_long_positions` and
-            :attr:`pybroker.config.StrategyConfig.max_short_positions`
+            :class:`tibacktester.portfolio.Portfolio` is specified by
+            :attr:`tibacktester.config.StrategyConfig.max_long_positions` and
+            :attr:`tibacktester.config.StrategyConfig.max_short_positions`
             respectively. Long and short signals are ranked separately by
             ``score``.
         session: ``dict`` used to store custom data that persists for each
-            bar during the :class:`pybroker.strategy.Strategy`\ 's execution.
-        stop_loss: Sets stop loss on a new :class:`pybroker.portfolio.Entry`,
+            bar during the :class:`tibacktester.strategy.Strategy`\ 's execution.
+        stop_loss: Sets stop loss on a new :class:`tibacktester.portfolio.Entry`,
             where value is measured in points from entry price.
         stop_loss_pct: Sets stop loss on a new
-            :class:`pybroker.portfolio.Entry`, where value is measured in
+            :class:`tibacktester.portfolio.Entry`, where value is measured in
             percentage from entry price.
         stop_loss_limit: Limit price to use for the stop loss.
-        stop_loss_exit_price: Exit :class:`pybroker.common.PriceType` to use
+        stop_loss_exit_price: Exit :class:`tibacktester.common.PriceType` to use
             for the stop loss exit. If set, the stop is checked against the
             ``exit_price`` and exits at the ``exit_price`` when triggered.
         stop_profit: Sets profit stop on a new
-            :class:`pybroker.portfolio.Entry`, where value is measured in
+            :class:`tibacktester.portfolio.Entry`, where value is measured in
             points from entry price.
         stop_profit_pct: Sets profit stop on a new
-            :class:`pybroker.portfolio.Entry`, where value is measured in
+            :class:`tibacktester.portfolio.Entry`, where value is measured in
             percentage from entry price.
         stop_profit_limit: Limit price to use for the profit stop.
-        stop_profit_exit_price: Exit :class:`pybroker.common.PriceType` to use
+        stop_profit_exit_price: Exit :class:`tibacktester.common.PriceType` to use
             for the profit stop exit. If set, the stop is checked against the
             ``exit_price`` and exits at the ``exit_price`` when triggered.
         stop_trailing: Sets a trailing stop loss on a new
-            :class:`pybroker.portfolio.Entry`, where value is measured in
+            :class:`tibacktester.portfolio.Entry`, where value is measured in
             points from entry price.
         stop_trailing_pct: Sets a trailing stop loss on a new
-            :class:`pybroker.portfolio.Entry`, where value is measured in
+            :class:`tibacktester.portfolio.Entry`, where value is measured in
             percentage from entry price.
         stop_trailing_limit: Limit price to use for the trailing stop loss.
-        stop_trailing_exit_price: Exit :class:`pybroker.common.PriceType` to
+        stop_trailing_exit_price: Exit :class:`tibacktester.common.PriceType` to
             use for the trailing stop exit. If set, the stop is checked against
             the ``exit_price`` and exits at the ``exit_price`` when triggered.
     """
@@ -855,10 +855,10 @@ class ExecContext(BaseContext):
         Args:
             symbol: Ticker symbol of the bar data.
             col: Name of the data column to retrieve. If ``None``, all data
-                columns are returned in :class:`pybroker.common.BarData`.
+                columns are returned in :class:`tibacktester.common.BarData`.
 
         Returns:
-            If ``col`` is ``None``, a :class:`pybroker.common.BarData`
+            If ``col`` is ``None``, a :class:`tibacktester.common.BarData`
             instance containing data of all bars up to the current one.
             Otherwise, an :class:`numpy.ndarray` containing values of the
             column ``col``.
@@ -882,7 +882,7 @@ class ExecContext(BaseContext):
 
         Args:
             name: Name used to identify the model that was registered with
-                :meth:`pybroker.model.model`.
+                :meth:`tibacktester.model.model`.
             symbol: Ticker symbol of the data that was used to train the model.
                 If ``None``, the ``ExecContext``\ 's :attr:`.symbol` is used.
 
@@ -899,7 +899,7 @@ class ExecContext(BaseContext):
 
         Args:
             name: Name used to identify the indicator, registered with
-                :meth:`pybroker.indicator.indicator`.
+                :meth:`tibacktester.indicator.indicator`.
             symbol: Ticker symbol that was used to generate the indicator data.
                 If ``None``, the ``ExecContext``\ 's :attr:`.symbol` is used.
 
@@ -947,7 +947,7 @@ class ExecContext(BaseContext):
         self,
         symbol: Optional[str] = None,
     ) -> Optional[Position]:
-        r"""Retrieves a current long :class:`pybroker.portfolio.Position` for a
+        r"""Retrieves a current long :class:`tibacktester.portfolio.Position` for a
         ``symbol``.
 
         Args:
@@ -956,7 +956,7 @@ class ExecContext(BaseContext):
                 ``None``.
 
         Returns:
-            :class:`pybroker.portfolio.Position` if one exists, otherwise
+            :class:`tibacktester.portfolio.Position` if one exists, otherwise
             ``None``.
         """
         symbol = self._get_symbol(symbol)
@@ -966,7 +966,7 @@ class ExecContext(BaseContext):
         self,
         symbol: Optional[str] = None,
     ) -> Optional[Position]:
-        r"""Retrieves a current short :class:`pybroker.portfolio.Position` for
+        r"""Retrieves a current short :class:`tibacktester.portfolio.Position` for
         a ``symbol``.
 
         Args:
@@ -975,7 +975,7 @@ class ExecContext(BaseContext):
                 ``None``.
 
         Returns:
-            :class:`pybroker.portfolio.Position` if one exists, otherwise
+            :class:`tibacktester.portfolio.Position` if one exists, otherwise
             ``None``.
         """
         symbol = self._get_symbol(symbol)
@@ -998,29 +998,29 @@ class ExecContext(BaseContext):
                 ``None``, the share price of the ``ExecContext``\ 's
                 :attr:`.symbol` is used.
             cash: Cash used to calculate the number of number of shares. If
-                ``None``, then the :class:`pybroker.portfolio.Portfolio` equity
+                ``None``, then the :class:`tibacktester.portfolio.Portfolio` equity
                 is used to calculate the number of shares.
 
         Returns:
             Number of shares given ``target_size`` and share ``price``. If
-            :attr:`pybroker.config.StrategyConfig.enable_fractional_shares` is
+            :attr:`tibacktester.config.StrategyConfig.enable_fractional_shares` is
             ``True``, then a Decimal is returned.
         """
         price = self.close[-1] if price is None else price
         return super().calc_target_shares(target_size, price, cash)
 
     def cancel_pending_order(self, order_id: int) -> bool:
-        """Cancels a :class:`pybroker.scope.PendingOrder` with ``order_id``."""
+        """Cancels a :class:`tibacktester.scope.PendingOrder` with ``order_id``."""
         return self._pending_order_scope.remove(order_id)
 
     def cancel_all_pending_orders(self, symbol: Optional[str] = None):
-        r"""Cancels all :class:`pybroker.scope.PendingOrder`\ s for ``symbol``.
+        r"""Cancels all :class:`tibacktester.scope.PendingOrder`\ s for ``symbol``.
         When ``symbol`` is ``None``, all pending orders are canceled.
         """
         self._pending_order_scope.remove_all(symbol)
 
     def cancel_stop(self, stop_id: int) -> bool:
-        """Cancels a :class:`pybroker.portfolio.Stop` with ``stop_id``."""
+        """Cancels a :class:`tibacktester.portfolio.Stop` with ``stop_id``."""
         return self._portfolio.remove_stop(stop_id)
 
     def cancel_stops(
@@ -1028,12 +1028,12 @@ class ExecContext(BaseContext):
         val: Union[str, Position, Entry],
         stop_type: Optional[StopType] = None,
     ):
-        r"""Cancels :class:`pybroker.portfolio.Stop`\ s.
+        r"""Cancels :class:`tibacktester.portfolio.Stop`\ s.
 
         Args:
-            val: Ticker symbol, :class:`pybroker.portfolio.Position`, or
-                :class:`pybroker.portfolio.Entry` for which to cancel stops.
-            stop_type: :class:`pybroker.common.StopType`.
+            val: Ticker symbol, :class:`tibacktester.portfolio.Position`, or
+                :class:`tibacktester.portfolio.Entry` for which to cancel stops.
+            stop_type: :class:`tibacktester.common.StopType`.
         """
         self._portfolio.remove_stops(val, stop_type)
 

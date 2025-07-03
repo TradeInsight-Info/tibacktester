@@ -20,7 +20,7 @@ msgstr ""
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/reference/pybroker.eval.rst:2 4f14b0217a26441c8cf47cbb65cf0827
-msgid "pybroker.eval module"
+msgid "tibacktester.eval module"
 msgstr ""
 
 #: 1d746fb49cf548538c56e9ae44543089 of pybroker.eval:1
@@ -179,7 +179,7 @@ msgstr ""
 
 #: 95902100b2fc458aab91270879aafaa6 b98cd149c1964778972b2efce4fb7263 of
 #: pybroker.eval.BootstrapResult:21 pybroker.eval.BootstrapResult:27
-msgid "pybroker.eval.BootConfIntervals"
+msgid "tibacktester.eval.BootConfIntervals"
 msgstr ""
 
 #: 5f567a55810642999e580f20f00d0b9b of pybroker.eval.BootstrapResult:25
@@ -191,7 +191,7 @@ msgid "Contains drawdown confidence intervals."
 msgstr ""
 
 #: 19e7dfcaf56947bf9c86813aeadbdcde of pybroker.eval.BootstrapResult:33
-msgid "pybroker.eval.DrawdownMetrics"
+msgid "tibacktester.eval.DrawdownMetrics"
 msgstr ""
 
 #: 16541871bf8442d9b54791e9800205cd of pybroker.eval.ConfInterval:1
@@ -255,7 +255,7 @@ msgstr ""
 
 #: 4207d4c8caaf4514a31e1e477b679916 7fd6a9799702440781422b479b409a4c of
 #: pybroker.eval.DrawdownMetrics:8 pybroker.eval.DrawdownMetrics:15
-msgid "pybroker.eval.DrawdownConfs"
+msgid "tibacktester.eval.DrawdownConfs"
 msgstr ""
 
 #: 20a3bc72f74d4c22ac766727c614f5dd of pybroker.eval.DrawdownMetrics:12
@@ -270,7 +270,7 @@ msgid "Bases: :py:class:`object`"
 msgstr ""
 
 #: 405e183abd5344a5bab75a30058196b5 of pybroker.eval.EvalMetrics:1
-msgid "Contains metrics for evaluating a :class:`pybroker.strategy.Strategy`."
+msgid "Contains metrics for evaluating a :class:`tibacktester.strategy.Strategy`."
 msgstr ""
 
 #: b596c368a98a45eb974523d1cf1e671e of pybroker.eval.EvalMetrics:5
@@ -287,11 +287,11 @@ msgid "int"
 msgstr ""
 
 #: d55bbdd8835b4e8bbd1d50fbd223ea6b of pybroker.eval.EvalMetrics:11
-msgid "Initial market value of the :class:`pybroker.portfolio.Portfolio`."
+msgid "Initial market value of the :class:`tibacktester.portfolio.Portfolio`."
 msgstr ""
 
 #: 301aa6e156af4aa6a12b55511f951b61 of pybroker.eval.EvalMetrics:18
-msgid "Ending market value of the :class:`pybroker.portfolio.Portfolio`."
+msgid "Ending market value of the :class:`tibacktester.portfolio.Portfolio`."
 msgstr ""
 
 #: 1eb0bf2ad2e34220b981b9ba337b82e2 of pybroker.eval.EvalMetrics:25
@@ -327,7 +327,7 @@ msgstr ""
 
 #: 364ff2d4041e44ee89414246edc0e196 of pybroker.eval.EvalMetrics:62
 msgid ""
-"Total brokerage fees. See :attr:`pybroker.config.StrategyConfig.fee_mode`"
+"Total brokerage fees. See :attr:`tibacktester.config.StrategyConfig.fee_mode`"
 " for more info."
 msgstr ""
 
@@ -482,7 +482,7 @@ msgid "Evaluation metrics."
 msgstr ""
 
 #: 0cd0430644ec4764a4ed290e8b50e216 of pybroker.eval.EvalResult:7
-msgid "pybroker.eval.EvalMetrics"
+msgid "tibacktester.eval.EvalMetrics"
 msgstr ""
 
 #: 592b01bb5dea40f1b08a59998b4c6d87 of pybroker.eval.EvalResult:11
@@ -490,7 +490,7 @@ msgid "Randomized bootstrap metrics."
 msgstr ""
 
 #: 438f247cfefe43efa62db5ecda802f48 of pybroker.eval.EvalResult:13
-msgid "pybroker.eval.BootstrapResult | None"
+msgid "tibacktester.eval.BootstrapResult | None"
 msgstr ""
 
 #: 28b6fb3f39ce49de8333c39cd6a3400b of pybroker.eval.EvaluateMixin:1

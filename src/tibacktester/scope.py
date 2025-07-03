@@ -1,5 +1,5 @@
 """Contains scopes that store data and object references used to execute a
-:class:`pybroker.strategy.Strategy`.
+:class:`tibacktester.strategy.Strategy`.
 """
 
 """Copyright (C) 2023 Edward West. All rights reserved.
@@ -45,20 +45,20 @@ class StaticScope:
     """A static registry of data and object references.
 
     Attributes:
-        logger: :class:`pybroker.log.Logger`
+        logger: :class:`tibacktester.log.Logger`
         data_source_cache: :class:`diskcache.Cache` that stores data retrieved
-            from :class:`pybroker.data.DataSource`.
+            from :class:`tibacktester.data.DataSource`.
         data_source_cache_ns: Namespace set for  :attr:`.data_source_cache`.
         indicator_cache: :class:`diskcache.Cache` that stores
-            :class:`pybroker.indicator.Indicator` data.
+            :class:`tibacktester.indicator.Indicator` data.
         indicator_cache_ns: Namespace set for :attr:`.indicator_cache`.
         model_cache: :class:`diskcache.Cache` that stores trained models.
         model_cache_ns: Namespace set for :attr:`.model_cache`.
         default_data_cols: Default data columns in :class:`pandas.DataFrame`
-            retrieved from a :class:`pybroker.data.DataSource`.
+            retrieved from a :class:`tibacktester.data.DataSource`.
         custom_data_cols: User-defined data columns in
             :class:`pandas.DataFrame` retrieved from a
-            :class:`pybroker.data.DataSource`.
+            :class:`tibacktester.data.DataSource`.
     """
 
     __instance = None
@@ -89,17 +89,17 @@ class StaticScope:
         self._params: dict[str, Any] = {}
 
     def set_indicator(self, indicator):
-        """Stores :class:`pybroker.indicator.Indicator` in static scope."""
+        """Stores :class:`tibacktester.indicator.Indicator` in static scope."""
         self._indicators[indicator.name] = indicator
 
     def has_indicator(self, name: str) -> bool:
-        """Whether :class:`pybroker.indicator.Indicator` is stored in static
+        """Whether :class:`tibacktester.indicator.Indicator` is stored in static
         scope.
         """
         return name in self._indicators
 
     def get_indicator(self, name: str):
-        """Retrieves a :class:`pybroker.indicator.Indicator` from static
+        """Retrieves a :class:`tibacktester.indicator.Indicator` from static
         scope."""
         if not self.has_indicator(name):
             raise ValueError(f"Indicator {name!r} does not exist.")
@@ -107,23 +107,23 @@ class StaticScope:
 
     def get_indicator_names(self, model_name: str) -> tuple[str]:
         """Returns a ``tuple[str]`` of all
-        :class:`pybroker.indicator.Indicator` names that are registered with
-        :class:`pybroker.model.ModelSource` having ``model_name``.
+        :class:`tibacktester.indicator.Indicator` names that are registered with
+        :class:`tibacktester.model.ModelSource` having ``model_name``.
         """
         return self._model_sources[model_name].indicators
 
     def set_model_source(self, source):
-        """Stores :class:`pybroker.model.ModelSource` in static scope."""
+        """Stores :class:`tibacktester.model.ModelSource` in static scope."""
         self._model_sources[source.name] = source
 
     def has_model_source(self, name: str) -> bool:
-        """Whether :class:`pybroker.model.ModelSource` is stored in static
+        """Whether :class:`tibacktester.model.ModelSource` is stored in static
         scope.
         """
         return name in self._model_sources
 
     def get_model_source(self, name: str):
-        """Retrieves a :class:`pybroker.model.ModelSource` from static
+        """Retrieves a :class:`tibacktester.model.ModelSource` from static
         scope.
         """
         if not self.has_model_source(name):
@@ -164,7 +164,7 @@ class StaticScope:
 
     def unfreeze_data_cols(self):
         """Allows additional data columns to be registered if
-        :func:`pybroker.scope.StaticScope.freeze_data_cols` was called.
+        :func:`tibacktester.scope.StaticScope.freeze_data_cols` was called.
         """
         self._cols_frozen = False
 
@@ -299,7 +299,7 @@ class ColumnScope:
     def bar_data_from_data_columns(
         self, symbol: str, end_index: int
     ) -> BarData:
-        """Returns a new :class:`pybroker.common.BarData` instance containing
+        """Returns a new :class:`tibacktester.common.BarData` instance containing
         column data of default and custom data columns registered with
         :class:`.StaticScope`.
 
@@ -322,13 +322,13 @@ class ColumnScope:
 
 
 class IndicatorScope:
-    """Caches and retrieves :class:`pybroker.indicator.Indicator` data.
+    """Caches and retrieves :class:`tibacktester.indicator.Indicator` data.
 
     Args:
         indicator_data: :class:`Mapping` of
-            :class:`pybroker.common.IndicatorSymbol` pairs to ``pandas.Series``
-            of :class:`pybroker.indicator.Indicator` values.
-        filter_dates: Filters :class:`pybroker.indicator.Indicator` data on
+            :class:`tibacktester.common.IndicatorSymbol` pairs to ``pandas.Series``
+            of :class:`tibacktester.indicator.Indicator` values.
+        filter_dates: Filters :class:`tibacktester.indicator.Indicator` data on
             :class:`Sequence` of dates.
     """
 
@@ -344,17 +344,17 @@ class IndicatorScope:
     def fetch(
         self, symbol: str, name: str, end_index: Optional[int] = None
     ) -> NDArray[np.float64]:
-        """Fetches :class:`pybroker.indicator.Indicator` data.
+        """Fetches :class:`tibacktester.indicator.Indicator` data.
 
         Args:
             symbol: Ticker symbol to query.
-            name: Name of :class:`pybroker.indicator.Indicator` to query.
+            name: Name of :class:`tibacktester.indicator.Indicator` to query.
             end_index: Truncates the array of
-                :class:`pybroker.indicator.Indicator` data returned
+                :class:`tibacktester.indicator.Indicator` data returned
                 (exclusive). If ``None``, then indicator data is not truncated.
 
         Returns:
-            :class:`numpy.ndarray` of :class:`pybroker.indicator.Indicator`
+            :class:`numpy.ndarray` of :class:`tibacktester.indicator.Indicator`
             data for every bar until ``end_index`` (when specified).
         """
         ind_sym = IndicatorSymbol(name, symbol)
@@ -375,8 +375,8 @@ class ModelInputScope:
         col_scope: :class:`.ColumnScope`.
         ind_scope: :class:`.IndicatorScope`.
         models: :class:`Mapping` of
-            :class:`pybroker.common.ModelSymbol` pairs to
-            :class:`pybroker.common.TrainedModel`\ s.
+            :class:`tibacktester.common.ModelSymbol` pairs to
+            :class:`tibacktester.common.TrainedModel`\ s.
     """
 
     def __init__(
@@ -398,7 +398,7 @@ class ModelInputScope:
 
         Args:
             symbol: Ticker symbol to query.
-            name: Name of :class:`pybroker.model.ModelSource` to query input
+            name: Name of :class:`tibacktester.model.ModelSource` to query input
                 data.
             end_index: Truncates the array of model input data returned
                 (exclusive). If ``None``, then model input data is not
@@ -445,8 +445,8 @@ class PredictionScope:
 
     Args:
         models: :class:`Mapping` of
-            :class:`pybroker.common.ModelSymbol` pairs to
-            :class:`pybroker.common.TrainedModel`\ s.
+            :class:`tibacktester.common.ModelSymbol` pairs to
+            :class:`tibacktester.common.TrainedModel`\ s.
         input_scope: :class:`.ModelInputScope`.
     """
 
@@ -466,7 +466,7 @@ class PredictionScope:
 
         Args:
             symbol: Ticker symbol to query.
-            name: Name of :class:`pybroker.model.ModelSource` that made the
+            name: Name of :class:`tibacktester.model.ModelSource` that made the
                 predictions.
             end_index: Truncates the array of predictions returned (exclusive).
                 If ``None``, then predictions are not truncated.
@@ -482,7 +482,7 @@ class PredictionScope:
         if input_.empty:
             raise ValueError(
                 f"No input data found for model {name!r}. Consider "
-                "passing input_data_fn to pybroker#model() if custom columns "
+                "passing input_data_fn to tibacktester#model() if custom columns "
                 "were registered."
             )
         if model_sym not in self._models:
@@ -498,7 +498,7 @@ class PredictionScope:
                 raise ValueError(
                     f"Model instance trained for {model_sym.model_name!r} "
                     "does not define a predict function. Please pass a "
-                    "predict_fn to pybroker.model()."
+                    "predict_fn to tibacktester.model()."
                 )
         if len(pred.shape) > 1:
             pred = np.squeeze(pred)

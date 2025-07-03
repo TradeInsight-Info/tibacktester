@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../source/reference/pybroker.slippage.rst:2
 #: 348d4a1aa2554ad7bf2eee5dbbec654f
-msgid "pybroker.slippage module"
+msgid "tibacktester.slippage module"
 msgstr ""
 
 #: 9ec281cdafe84e168bf3fe90c0fa8bd9 of pybroker.slippage:1
@@ -29,7 +29,7 @@ msgid "Implements slippage models."
 msgstr ""
 
 #: aeb52ac88eb2475ab20fbeb1c4fa5864 of pybroker.slippage.RandomSlippageModel:1
-msgid "Bases: :py:class:`~pybroker.slippage.SlippageModel`"
+msgid "Bases: :py:class:`~tibacktester.slippage.SlippageModel`"
 msgstr ""
 
 #: 67996096585040ea95dd505974ea541b of pybroker.slippage.RandomSlippageModel:1
@@ -65,7 +65,7 @@ msgstr ""
 #~ msgid "Implements slippage models."
 #~ msgstr ""
 
-#~ msgid "Bases: :py:class:`~pybroker.slippage.SlippageModel`"
+#~ msgid "Bases: :py:class:`~tibacktester.slippage.SlippageModel`"
 #~ msgstr ""
 
 #~ msgid "Implements a simple random slippage model."

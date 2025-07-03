@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../source/reference/pybroker.ext.data.rst:2
 #: 584c2d772ec441b6b27a4243194e26b2
-msgid "pybroker.ext.data module"
+msgid "tibacktester.ext.data module"
 msgstr ""
 
 #: 6384c9cc54f04396997c6b8c9aa0e6da of pybroker.ext.data:1
@@ -29,7 +29,7 @@ msgid "Contains extension classes."
 msgstr ""
 
 #: 5192202d33704b05afe46161d79555ba of pybroker.ext.data.AKShare:1
-msgid "Bases: :py:class:`~pybroker.data.DataSource`"
+msgid "Bases: :py:class:`~tibacktester.data.DataSource`"
 msgstr ""
 
 #: 547b3a08d273474bbb3316bbefadbc97 of pybroker.ext.data.AKShare:1

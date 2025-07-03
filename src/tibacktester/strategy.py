@@ -98,9 +98,9 @@ class Execution(NamedTuple):
         id: Unique ID.
         symbols: Ticker symbols used for execution of ``fn``.
         fn: Implements trading logic.
-        model_names: Names of :class:`pybroker.model.ModelSource`\ s used for
+        model_names: Names of :class:`tibacktester.model.ModelSource`\ s used for
             execution of ``fn``.
-        indicator_names: Names of :class:`pybroker.indicator.Indicator`\ s
+        indicator_names: Names of :class:`tibacktester.indicator.Indicator`\ s
             used for execution of ``fn``.
     """
 
@@ -137,19 +137,19 @@ class BacktestMixin:
         trading logic.
 
         Args:
-            config: :class:`pybroker.config.StrategyConfig`.
+            config: :class:`tibacktester.config.StrategyConfig`.
             executions: :class:`.Execution`\ s to run.
             sessions: :class:`Mapping` of symbols to :class:`Mapping` of custom
                 data that persists for every bar during the
                 :class:`.Execution`.
-            models: :class:`Mapping` of :class:`pybroker.common.ModelSymbol`
-                pairs to :class:`pybroker.common.TrainedModel`\ s.
+            models: :class:`Mapping` of :class:`tibacktester.common.ModelSymbol`
+                pairs to :class:`tibacktester.common.TrainedModel`\ s.
             indicator_data: :class:`Mapping` of
-                :class:`pybroker.common.IndicatorSymbol` pairs to
-                :class:`pandas.Series` of :class:`pybroker.indicator.Indicator`
+                :class:`tibacktester.common.IndicatorSymbol` pairs to
+                :class:`pandas.Series` of :class:`tibacktester.indicator.Indicator`
                 values.
             test_data: :class:`pandas.DataFrame` of test data.
-            portfolio: :class:`pybroker.portfolio.Portfolio`.
+            portfolio: :class:`tibacktester.portfolio.Portfolio`.
             pos_size_handler: :class:`Callable` that sets position sizes when
                 placing orders for buy and sell signals.
             exit_dates: :class:`Mapping` of symbols to exit dates.
@@ -164,7 +164,7 @@ class BacktestMixin:
         Returns:
             Dictionary of :class:`pandas.DataFrame`\ s containing bar data,
             indicator data, and model predictions for each symbol when
-            :attr:`pybroker.config.StrategyConfig.return_signals` is ``True``.
+            :attr:`tibacktester.config.StrategyConfig.return_signals` is ``True``.
         """
         test_dates = get_unique_sorted_dates(test_data[DataCol.DATE.value])
         test_syms = sorted(test_data[DataCol.SYMBOL.value].unique())
@@ -776,9 +776,9 @@ class TestResult:
         start_date: Starting date of backtest.
         end_date: Ending date of backtest.
         portfolio: :class:`pandas.DataFrame` of
-            :class:`pybroker.portfolio.Portfolio` balances for every bar.
+            :class:`tibacktester.portfolio.Portfolio` balances for every bar.
         positions: :class:`pandas.DataFrame` of
-            :class:`pybroker.portfolio.Position` balances for every bar.
+            :class:`tibacktester.portfolio.Position` balances for every bar.
         orders: :class:`pandas.DataFrame` of all orders that were placed.
         trades: :class:`pandas.DataFrame` of all trades that were made.
         metrics: Evaluation metrics.
@@ -786,9 +786,9 @@ class TestResult:
         bootstrap: Randomized bootstrap evaluation metrics.
         signals: Dictionary of :class:`pandas.DataFrame`\ s containing bar
             data, indicator data, and model predictions for each symbol when
-            :attr:`pybroker.config.StrategyConfig.return_signals` is ``True``.
+            :attr:`tibacktester.config.StrategyConfig.return_signals` is ``True``.
         stops: :class:`pandas.DataFrame` containing stop data per-bar when
-            :attr:`pybroker.config.StrategyConfig.return_stops` is ``True``.
+            :attr:`tibacktester.config.StrategyConfig.return_stops` is ``True``.
     """
 
     start_date: datetime
@@ -814,13 +814,13 @@ class Strategy(
     """Class representing a trading strategy to backtest.
 
     Args:
-        data_source: :class:`pybroker.data.DataSource` or
+        data_source: :class:`tibacktester.data.DataSource` or
             :class:`pandas.DataFrame` of backtesting data.
         start_date: Starting date of the data to fetch from ``data_source``
             (inclusive).
         end_date: Ending date of the data to fetch from ``data_source``
             (inclusive).
-        config: ``Optional`` :class:`pybroker.config.StrategyConfig`.
+        config: ``Optional`` :class:`tibacktester.config.StrategyConfig`.
     """
 
     _execution_id: int = 0
@@ -887,7 +887,7 @@ class Strategy(
             raise TypeError(f"Invalid data_source type: {type(data_source)}")
 
     def set_slippage_model(self, slippage_model: Optional[SlippageModel]):
-        """Sets :class:`pybroker.slippage.SlippageModel`."""
+        """Sets :class:`tibacktester.slippage.SlippageModel`."""
         self._slippage_model = slippage_model
 
     def add_execution(
@@ -901,14 +901,14 @@ class Strategy(
 
         Args:
             fn: :class:`Callable` invoked on every bar of data during the
-                backtest and passed an :class:`pybroker.context.ExecContext`
+                backtest and passed an :class:`tibacktester.context.ExecContext`
                 for each ticker symbol in ``symbols``.
             symbols: Ticker symbols used to run ``fn``, where ``fn`` is called
                 separately for each symbol.
-            models: :class:`Iterable` of :class:`pybroker.model.ModelSource`\ s
+            models: :class:`Iterable` of :class:`tibacktester.model.ModelSource`\ s
                 to train/load for backtesting.
             indicators: :class:`Iterable` of
-                :class:`pybroker.indicator.Indicator`\ s to compute for
+                :class:`tibacktester.indicator.Indicator`\ s to compute for
                 backtesting.
         """
         symbols = (
@@ -1018,7 +1018,7 @@ class Strategy(
         Args:
             fn: :class:`Callable` invoked before placing orders for buy and
                 sell signals, and is passed a
-                :class:`pybroker.context.PosSizeContext`.
+                :class:`tibacktester.context.PosSizeContext`.
         """
         self._pos_size_handler = fn
 
@@ -1068,27 +1068,27 @@ class Strategy(
                 For example, predicting returns for the next bar would have a
                 ``lookahead`` of ``1``. This quantity is needed to prevent
                 training data from leaking into the test boundary.
-            train_size: Amount of :class:`pybroker.data.DataSource` data to use
+            train_size: Amount of :class:`tibacktester.data.DataSource` data to use
                 for training, where the max ``train_size`` is ``1``. For
                 example, a ``train_size`` of ``0.9`` would result in 90% of
                 data being used for training and the remaining 10% of data
                 being used for testing.
             shuffle: Whether to randomly shuffle the data used for training.
                 Defaults to ``False``. Disabled when model caching is enabled
-                via :meth:`pybroker.cache.enable_model_cache`.
+                via :meth:`tibacktester.cache.enable_model_cache`.
             calc_bootstrap: Whether to compute randomized bootstrap evaluation
                 metrics. Defaults to ``False``.
             disable_parallel: If ``True``,
-                :class:`pybroker.indicator.Indicator` data is computed
-                serially. If ``False``, :class:`pybroker.indicator.Indicator`
+                :class:`tibacktester.indicator.Indicator` data is computed
+                serially. If ``False``, :class:`tibacktester.indicator.Indicator`
                 data is computed in parallel using multiple processes.
                 Defaults to ``False``.
             warmup: Number of bars that need to pass before running the
                 executions.
-            portfolio: Custom :class:`pybroker.portfolio.Portfolio` to use for
+            portfolio: Custom :class:`tibacktester.portfolio.Portfolio` to use for
                 backtests.
             adjust: The type of adjustment to make to the
-                :class:`pybroker.data.DataSource`.
+                :class:`tibacktester.data.DataSource`.
 
         Returns:
             :class:`.TestResult` containing portfolio balances, order
@@ -1130,7 +1130,7 @@ class Strategy(
     ) -> TestResult:
         """Backtests the trading strategy using `Walkforward Analysis
         <https://www.pybroker.com/en/latest/notebooks/6.%20Training%20a%20Model.html#Walkforward-Analysis>`_.
-        Backtesting data supplied by the :class:`pybroker.data.DataSource` is
+        Backtesting data supplied by the :class:`tibacktester.data.DataSource` is
         divided into ``windows`` number of equal sized time windows, with each
         window split into train and test data as specified by ``train_size``.
         The backtest "walks forward" in time through each window, running
@@ -1164,27 +1164,27 @@ class Strategy(
                 For example, predicting returns for the next bar would have a
                 ``lookahead`` of ``1``. This quantity is needed to prevent
                 training data from leaking into the test boundary.
-            train_size: Amount of :class:`pybroker.data.DataSource` data to use
+            train_size: Amount of :class:`tibacktester.data.DataSource` data to use
                 for training, where the max ``train_size`` is ``1``. For
                 example, a ``train_size`` of ``0.9`` would result in 90% of
                 data being used for training and the remaining 10% of data
                 being used for testing.
             shuffle: Whether to randomly shuffle the data used for training.
                 Defaults to ``False``. Disabled when model caching is enabled
-                via :meth:`pybroker.cache.enable_model_cache`.
+                via :meth:`tibacktester.cache.enable_model_cache`.
             calc_bootstrap: Whether to compute randomized bootstrap evaluation
                 metrics. Defaults to ``False``.
             disable_parallel: If ``True``,
-                :class:`pybroker.indicator.Indicator` data is computed
-                serially. If ``False``, :class:`pybroker.indicator.Indicator`
+                :class:`tibacktester.indicator.Indicator` data is computed
+                serially. If ``False``, :class:`tibacktester.indicator.Indicator`
                 data is computed in parallel using multiple processes.
                 Defaults to ``False``.
             warmup: Number of bars that need to pass before running the
                 executions.
-            portfolio: Custom :class:`pybroker.portfolio.Portfolio` to use for
+            portfolio: Custom :class:`tibacktester.portfolio.Portfolio` to use for
                 backtests.
             adjust: The type of adjustment to make to the
-                :class:`pybroker.data.DataSource`.
+                :class:`tibacktester.data.DataSource`.
 
         Returns:
             :class:`.TestResult` containing portfolio balances, order

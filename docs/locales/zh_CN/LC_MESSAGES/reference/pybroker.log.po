@@ -20,7 +20,7 @@ msgstr ""
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/reference/pybroker.log.rst:2 5e7de119d38b4189af003cc5138e02d3
-msgid "pybroker.log module"
+msgid "tibacktester.log module"
 msgstr ""
 
 #: 1d856a05ed0549468e46b3b6d21cfc70 of pybroker.log:1
@@ -40,7 +40,7 @@ msgid "Parameters"
 msgstr ""
 
 #: d57b46f45ae2439ab79e640b11b41572 of pybroker.log.Logger:3
-msgid ":class:`pybroker.scope.StaticScope`."
+msgid ":class:`tibacktester.scope.StaticScope`."
 msgstr ""
 
 #: 3c7f76d61dc6412ebfa5b4685509103c of pybroker.log.Logger.disable:1

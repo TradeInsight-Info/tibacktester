@@ -390,7 +390,7 @@ class TestPredictionScope:
             match=re.escape(
                 f"Model instance trained for {MODEL_NAME!r} does not define a "
                 "predict function. Please pass a predict_fn to "
-                "pybroker.model()."
+                "tibacktester.model()."
             ),
         ):
             pred_scope.fetch("SPY", MODEL_NAME)
@@ -409,7 +409,7 @@ class TestPredictionScope:
             ValueError,
             match=re.escape(
                 f"No input data found for model {model_name!r}. Consider "
-                "passing input_data_fn to pybroker#model() if custom columns "
+                "passing input_data_fn to tibacktester#model() if custom columns "
                 "were registered."
             ),
         ):

@@ -39,7 +39,7 @@ class CacheDateFields:
 
 @dataclass(frozen=True)
 class DataSourceCacheKey:
-    """Cache key used for :class:`pybroker.data.DataSource` data."""
+    """Cache key used for :class:`tibacktester.data.DataSource` data."""
 
     symbol: str
     tf_seconds: int
@@ -91,7 +91,7 @@ def enable_data_source_cache(
     namespace: str, cache_dir: Optional[str] = None
 ) -> Cache:
     r"""Enables caching of data retrieved from
-    :class:`pybroker.data.DataSource`\ s.
+    :class:`tibacktester.data.DataSource`\ s.
 
     Args:
         namespace: Namespace of the cache.
@@ -111,7 +111,7 @@ def enable_data_source_cache(
 
 def disable_data_source_cache():
     r"""Disables caching data retrieved from
-    :class:`pybroker.data.DataSource`\ s.
+    :class:`tibacktester.data.DataSource`\ s.
     """
     scope = StaticScope.instance()
     scope.data_source_cache = None
@@ -120,7 +120,7 @@ def disable_data_source_cache():
 
 
 def clear_data_source_cache():
-    r"""Clears data cached from :class:`pybroker.data.DataSource`\ s.
+    r"""Clears data cached from :class:`tibacktester.data.DataSource`\ s.
     :meth:`enable_data_source_cache` must be called first before clearing.
     """
     scope = StaticScope.instance()

@@ -21,13 +21,13 @@ msgstr ""
 
 #: ../../source/reference/pybroker.context.rst:2
 #: 253e799bb2c24ee0893e651e40190634
-msgid "pybroker.context module"
+msgid "tibacktester.context module"
 msgstr ""
 
 #: aa12ce8ac7cd477db46b595364e9cd2c of pybroker.context:1
 msgid ""
 "Contains context related classes. A context provides data during the "
-"execution of a :class:`pybroker.strategy.Strategy`."
+"execution of a :class:`tibacktester.strategy.Strategy`."
 msgstr ""
 
 #: 06065225c8294e23917a497377e44036 ee82b13e74db40a4a552985f2b5fa71d of
@@ -40,7 +40,7 @@ msgid "Base context class."
 msgstr ""
 
 #: 963718c2fa8b41b7b8ef46ccc7433cdc of pybroker.context.BaseContext:5
-msgid ":class:`pybroker.config.StrategyConfig`."
+msgid ":class:`tibacktester.config.StrategyConfig`."
 msgstr ""
 
 #: 61db33781b0541119f810bc6c59c546e b4a62d642e484613aa2fc0a4d499158c of
@@ -92,7 +92,7 @@ msgstr ""
 #: pybroker.context.ExecContext.calc_target_shares:10
 msgid ""
 "Cash used to calculate the number of number of shares. If ``None``, then "
-"the :class:`pybroker.portfolio.Portfolio` equity is used to calculate the"
+"the :class:`tibacktester.portfolio.Portfolio` equity is used to calculate the"
 " number of shares."
 msgstr ""
 
@@ -122,7 +122,7 @@ msgid "Number of shares given ``target_size`` and share ``price``."
 msgstr ""
 
 #: 5c64e830b8e14a6d910a6d836ef85e58 of pybroker.context.BaseContext.cash:1
-msgid "Total cash currently held in the :class:`pybroker.portfolio.Portfolio`."
+msgid "Total cash currently held in the :class:`tibacktester.portfolio.Portfolio`."
 msgstr ""
 
 #: cc3fac0a4b7540c3b33aacfb14f07638 cf1ed82187e943318eae0149019e44f5 of
@@ -134,7 +134,7 @@ msgstr ""
 #: 5fd0052b5e9c48c982b78a0a9e3e1d38 of pybroker.context.BaseContext.indicator:3
 msgid ""
 "Name used to identify the indicator that was registered with "
-":meth:`pybroker.indicator.indicator`."
+":meth:`tibacktester.indicator.indicator`."
 msgstr ""
 
 #: 152fcfa9c5c84a4f881df697940457d9 of pybroker.context.BaseContext.indicator:5
@@ -185,7 +185,7 @@ msgstr ""
 #: pybroker.context.BaseContext.long_positions:7
 msgid ""
 ":class:`Iterator` of currently held long "
-":class:`pybroker.portfolio.Position` \\s."
+":class:`tibacktester.portfolio.Position` \\s."
 msgstr ""
 
 #: 5e1bf31c062d4d0e8d60d9e645c25bee of pybroker.context.BaseContext.loss_rate:1
@@ -201,7 +201,7 @@ msgstr ""
 #: pybroker.context.BaseContext.model:3 pybroker.context.ExecContext.model:3
 msgid ""
 "Name used to identify the model that was registered with "
-":meth:`pybroker.model.model`."
+":meth:`tibacktester.model.model`."
 msgstr ""
 
 #: 0087ff762c8844698c8f10b07866675d of pybroker.context.BaseContext.model:5
@@ -215,13 +215,13 @@ msgstr ""
 
 #: c18c308a444a4287a66b318bea9654a0 of pybroker.context.BaseContext.orders:1
 msgid ""
-":class:`Iterator` of all :class:`pybroker.portfolio.Order`\\ s that have "
+":class:`Iterator` of all :class:`tibacktester.portfolio.Order`\\ s that have "
 "been placed and filled."
 msgstr ""
 
 #: 315bdbab634944719efd9504b10cb451 of pybroker.context.BaseContext.pos:1
 msgid ""
-"Retrieves a current long or short :class:`pybroker.portfolio.Position` "
+"Retrieves a current long or short :class:`tibacktester.portfolio.Position` "
 "for a ``symbol``."
 msgstr ""
 
@@ -236,7 +236,7 @@ msgstr ""
 #: 5c02c7a082524e6cbc788da98e623573 a882c49589e843778b0cf2c603447dc3 of
 #: pybroker.context.BaseContext.pos:8 pybroker.context.ExecContext.long_pos:8
 #: pybroker.context.ExecContext.short_pos:8
-msgid ":class:`pybroker.portfolio.Position` if one exists, otherwise ``None``."
+msgid ":class:`tibacktester.portfolio.Position` if one exists, otherwise ``None``."
 msgstr ""
 
 #: d767fd54bf9444bbabf78d07fdff5634 of pybroker.context.BaseContext.positions:1
@@ -257,7 +257,7 @@ msgstr ""
 
 #: a8fbf18c65594310937be90a48d23346 of pybroker.context.BaseContext.positions:8
 msgid ""
-":class:`Iterator` of currently held :class:`pybroker.portfolio.Position` "
+":class:`Iterator` of currently held :class:`tibacktester.portfolio.Position` "
 "\\s."
 msgstr ""
 
@@ -298,33 +298,33 @@ msgstr ""
 #: pybroker.context.BaseContext.short_positions:7
 msgid ""
 ":class:`Iterator` of currently held short "
-":class:`pybroker.portfolio.Position` \\s."
+":class:`tibacktester.portfolio.Position` \\s."
 msgstr ""
 
 #: 3600230ef514487cbcd5d33abecc221b of
 #: pybroker.context.BaseContext.total_equity:1
-msgid "Total equity currently held in the :class:`pybroker.portfolio.Portfolio`."
+msgid "Total equity currently held in the :class:`tibacktester.portfolio.Portfolio`."
 msgstr ""
 
 #: f39aab3b2d6140fcaf7996da6f65e42c of
 #: pybroker.context.BaseContext.total_margin:1
 msgid ""
 "Total amount of margin currently held in the "
-":class:`pybroker.portfolio.Portfolio`."
+":class:`tibacktester.portfolio.Portfolio`."
 msgstr ""
 
 #: 96ebb8e62e1e486091bcb4bf492e3389 of
 #: pybroker.context.BaseContext.total_market_value:1
 msgid ""
 "Total market value currently held in the "
-":class:`pybroker.portfolio.Portfolio`. The market value is defined as the"
+":class:`tibacktester.portfolio.Portfolio`. The market value is defined as the"
 " amount of equity held in cash and long positions added together with the"
 " unrealized PnL of all open short positions."
 msgstr ""
 
 #: 4be100769b944938908e5e51375c24f5 of pybroker.context.BaseContext.trades:1
 msgid ""
-":class:`Iterator` of all :class:`pybroker.portfolio.Trade`\\ s that have "
+":class:`Iterator` of all :class:`tibacktester.portfolio.Trade`\\ s that have "
 "been completed."
 msgstr ""
 
@@ -334,13 +334,13 @@ msgstr ""
 
 #: 1c6f6b5c35f444129df9e8c53280d675 c975a5301d5848398caa971c38214481 of
 #: pybroker.context.ExecContext:1 pybroker.context.PosSizeContext:1
-msgid "Bases: :py:class:`~pybroker.context.BaseContext`"
+msgid "Bases: :py:class:`~tibacktester.context.BaseContext`"
 msgstr ""
 
 #: a8dcd5b3026c43a59392d81bbcc378f3 of pybroker.context.ExecContext:1
 msgid ""
 "Contains context data during the execution of a "
-":class:`pybroker.strategy.Strategy`. Includes data about the current bar,"
+":class:`tibacktester.strategy.Strategy`. Includes data about the current bar,"
 " portfolio positions, and other relevant context. This class is also used"
 " to set buy and sell signals for placing orders."
 msgstr ""
@@ -349,8 +349,8 @@ msgstr ""
 msgid ""
 "The data contained in this class is for the latest bar that has already "
 "completed. Placing an order will be executed on a future bar specified by"
-" :attr:`pybroker.config.StrategyConfig.buy_delay` and "
-":attr:`pybroker.config.StrategyConfig.sell_delay`."
+" :attr:`tibacktester.config.StrategyConfig.buy_delay` and "
+":attr:`tibacktester.config.StrategyConfig.sell_delay`."
 msgstr ""
 
 #: bd10df54fc8d4cf3a2395e8176fd7070 of pybroker.context.ExecContext:13
@@ -396,27 +396,27 @@ msgstr ""
 msgid ""
 "Score used to rank ``symbol`` when ranking buy and sell signals. Orders "
 "are placed for symbols with the highest scores, where the number of "
-"positions held at any time in the :class:`pybroker.portfolio.Portfolio` "
-"is specified by :attr:`pybroker.config.StrategyConfig.max_long_positions`"
-" and :attr:`pybroker.config.StrategyConfig.max_short_positions` "
+"positions held at any time in the :class:`tibacktester.portfolio.Portfolio` "
+"is specified by :attr:`tibacktester.config.StrategyConfig.max_long_positions`"
+" and :attr:`tibacktester.config.StrategyConfig.max_short_positions` "
 "respectively. Long and short signals are ranked separately by ``score``."
 msgstr ""
 
 #: cfd9f4d9e3a44b4aae8ac66a4cd4946d of pybroker.context.ExecContext:61
 msgid ""
 "``dict`` used to store custom data that persists for each bar during the "
-":class:`pybroker.strategy.Strategy`\\ 's execution."
+":class:`tibacktester.strategy.Strategy`\\ 's execution."
 msgstr ""
 
 #: a5a7017388d149598d4956fe77fea439 of pybroker.context.ExecContext:66
 msgid ""
-"Sets stop loss on a new :class:`pybroker.portfolio.Entry`, where value is"
+"Sets stop loss on a new :class:`tibacktester.portfolio.Entry`, where value is"
 " measured in points from entry price."
 msgstr ""
 
 #: 017f9070a3384c738ddf0ede90874062 of pybroker.context.ExecContext:71
 msgid ""
-"Sets stop loss on a new :class:`pybroker.portfolio.Entry`, where value is"
+"Sets stop loss on a new :class:`tibacktester.portfolio.Entry`, where value is"
 " measured in percentage from entry price."
 msgstr ""
 
@@ -426,20 +426,20 @@ msgstr ""
 
 #: a5b8670ceae249e3915927449c10e59e of pybroker.context.ExecContext:81
 msgid ""
-"Exit :class:`pybroker.common.PriceType` to use for the stop loss exit. If"
+"Exit :class:`tibacktester.common.PriceType` to use for the stop loss exit. If"
 " set, the stop is checked against the ``exit_price`` and exits at the "
 "``exit_price`` when triggered."
 msgstr ""
 
 #: 123214d4a1cb47fb9b06a208536f656a of pybroker.context.ExecContext:87
 msgid ""
-"Sets profit stop on a new :class:`pybroker.portfolio.Entry`, where value "
+"Sets profit stop on a new :class:`tibacktester.portfolio.Entry`, where value "
 "is measured in points from entry price."
 msgstr ""
 
 #: f79c0b55ddef4399be93e1fdc9690bf9 of pybroker.context.ExecContext:93
 msgid ""
-"Sets profit stop on a new :class:`pybroker.portfolio.Entry`, where value "
+"Sets profit stop on a new :class:`tibacktester.portfolio.Entry`, where value "
 "is measured in percentage from entry price."
 msgstr ""
 
@@ -449,20 +449,20 @@ msgstr ""
 
 #: 947cbe5d06634666b9084b169357ed26 of pybroker.context.ExecContext:103
 msgid ""
-"Exit :class:`pybroker.common.PriceType` to use for the profit stop exit. "
+"Exit :class:`tibacktester.common.PriceType` to use for the profit stop exit. "
 "If set, the stop is checked against the ``exit_price`` and exits at the "
 "``exit_price`` when triggered."
 msgstr ""
 
 #: a0868e634c9c4b4aa78059de6b443724 of pybroker.context.ExecContext:109
 msgid ""
-"Sets a trailing stop loss on a new :class:`pybroker.portfolio.Entry`, "
+"Sets a trailing stop loss on a new :class:`tibacktester.portfolio.Entry`, "
 "where value is measured in points from entry price."
 msgstr ""
 
 #: 4292402bf05d444f8861a61b9de9c26f of pybroker.context.ExecContext:115
 msgid ""
-"Sets a trailing stop loss on a new :class:`pybroker.portfolio.Entry`, "
+"Sets a trailing stop loss on a new :class:`tibacktester.portfolio.Entry`, "
 "where value is measured in percentage from entry price."
 msgstr ""
 
@@ -472,7 +472,7 @@ msgstr ""
 
 #: ec35a4b9cbf042d2a3e64ca0879351b6 of pybroker.context.ExecContext:125
 msgid ""
-"Exit :class:`pybroker.common.PriceType` to use for the trailing stop "
+"Exit :class:`tibacktester.common.PriceType` to use for the trailing stop "
 "exit. If set, the stop is checked against the ``exit_price`` and exits at"
 " the ``exit_price`` when triggered."
 msgstr ""
@@ -491,35 +491,35 @@ msgstr ""
 #: 4dca530586ad41879d796647e4e173f8 of
 #: pybroker.context.ExecContext.cancel_all_pending_orders:1
 msgid ""
-"Cancels all :class:`pybroker.scope.PendingOrder`\\ s for ``symbol``. When"
+"Cancels all :class:`tibacktester.scope.PendingOrder`\\ s for ``symbol``. When"
 " ``symbol`` is ``None``, all pending orders are canceled."
 msgstr ""
 
 #: eb7fdddade75488dab1d74ba7dc336ea of
 #: pybroker.context.ExecContext.cancel_pending_order:1
-msgid "Cancels a :class:`pybroker.scope.PendingOrder` with ``order_id``."
+msgid "Cancels a :class:`tibacktester.scope.PendingOrder` with ``order_id``."
 msgstr ""
 
 #: a70ef6dc69cd464d936623991145f5f7 of
 #: pybroker.context.ExecContext.cancel_stop:1
-msgid "Cancels a :class:`pybroker.portfolio.Stop` with ``stop_id``."
+msgid "Cancels a :class:`tibacktester.portfolio.Stop` with ``stop_id``."
 msgstr ""
 
 #: 5c7889e39e2c4142b2b30d606cc4635b of
 #: pybroker.context.ExecContext.cancel_stops:1
-msgid "Cancels :class:`pybroker.portfolio.Stop`\\ s."
+msgid "Cancels :class:`tibacktester.portfolio.Stop`\\ s."
 msgstr ""
 
 #: fe02cb7922e44e86865122ae97d24229 of
 #: pybroker.context.ExecContext.cancel_stops:3
 msgid ""
-"Ticker symbol, :class:`pybroker.portfolio.Position`, or "
-":class:`pybroker.portfolio.Entry` for which to cancel stops."
+"Ticker symbol, :class:`tibacktester.portfolio.Position`, or "
+":class:`tibacktester.portfolio.Entry` for which to cancel stops."
 msgstr ""
 
 #: 926e33b7e502445bb7e1ae2b98db9e9c of
 #: pybroker.context.ExecContext.cancel_stops:5
-msgid ":class:`pybroker.common.StopType`."
+msgid ":class:`tibacktester.common.StopType`."
 msgstr ""
 
 #: 06fa5c1ef9f44512a27bd22c0149e127 of pybroker.context.ExecContext.close:1
@@ -567,12 +567,12 @@ msgstr ""
 #: 857a04c2b42342b3bf24a7a10b168ee7 of pybroker.context.ExecContext.foreign:4
 msgid ""
 "Name of the data column to retrieve. If ``None``, all data columns are "
-"returned in :class:`pybroker.common.BarData`."
+"returned in :class:`tibacktester.common.BarData`."
 msgstr ""
 
 #: b46781fa426e4a559dda0c6f9a4eaebc of pybroker.context.ExecContext.foreign:7
 msgid ""
-"If ``col`` is ``None``, a :class:`pybroker.common.BarData` instance "
+"If ``col`` is ``None``, a :class:`tibacktester.common.BarData` instance "
 "containing data of all bars up to the current one. Otherwise, an "
 ":class:`numpy.ndarray` containing values of the column ``col``."
 msgstr ""
@@ -584,7 +584,7 @@ msgstr ""
 #: 22b326b98c7f45db9f1828d6c53d0c75 of pybroker.context.ExecContext.indicator:3
 msgid ""
 "Name used to identify the indicator, registered with "
-":meth:`pybroker.indicator.indicator`."
+":meth:`tibacktester.indicator.indicator`."
 msgstr ""
 
 #: 15bcff8893c649328451dfa09442bea2 of pybroker.context.ExecContext.indicator:5
@@ -607,7 +607,7 @@ msgstr ""
 
 #: f54a90526f7b4ac49483c5e2d9bb8722 of pybroker.context.ExecContext.long_pos:1
 msgid ""
-"Retrieves a current long :class:`pybroker.portfolio.Position` for a "
+"Retrieves a current long :class:`tibacktester.portfolio.Position` for a "
 "``symbol``."
 msgstr ""
 
@@ -645,7 +645,7 @@ msgstr ""
 
 #: 3165dff9b2e0421e9ef03eb84b21d320 of pybroker.context.ExecContext.short_pos:1
 msgid ""
-"Retrieves a current short :class:`pybroker.portfolio.Position` for a "
+"Retrieves a current short :class:`tibacktester.portfolio.Position` for a "
 "``symbol``."
 msgstr ""
 
@@ -666,7 +666,7 @@ msgstr ""
 #: f471808ae3d54793905ed20c89611569 of pybroker.context.ExecResult:1
 msgid ""
 "Holds data that was set during the execution of a "
-":class:`pybroker.strategy.Strategy`."
+":class:`tibacktester.strategy.Strategy`."
 msgstr ""
 
 #: c6f8146c51074815a7ed26297220555b of pybroker.context.ExecResult:6
@@ -704,7 +704,7 @@ msgstr ""
 #: pybroker.context.ExecResult:20 pybroker.context.ExecResult:27
 msgid ""
 "int | float | numpy.floating | decimal.Decimal | "
-"pybroker.common.PriceType | Callable[[str, pybroker.common.BarData], int "
+"tibacktester.common.PriceType | Callable[[str, tibacktester.common.BarData], int "
 "| float | decimal.Decimal]"
 msgstr ""
 
@@ -712,9 +712,9 @@ msgstr ""
 msgid ""
 "Score used to rank ``symbol`` when ranking long and short signals. Orders"
 " are placed for symbols with the highest scores, where the number of "
-"positions held at any time in the :class:`pybroker.portfolio.Portfolio` "
-"is specified by :attr:`pybroker.config.StrategyConfig.max_long_positions`"
-" and :attr:`pybroker.config.StrategyConfig.max_short_positions` "
+"positions held at any time in the :class:`tibacktester.portfolio.Portfolio` "
+"is specified by :attr:`tibacktester.config.StrategyConfig.max_long_positions`"
+" and :attr:`tibacktester.config.StrategyConfig.max_short_positions` "
 "respectively. Buy and sell signals are ranked separately by ``score``."
 msgstr ""
 
@@ -744,16 +744,16 @@ msgid "Limit price used for a sell (short) order of ``symbol``."
 msgstr ""
 
 #: 720fa1b1b7e245ab9f6f3c5f0afddf29 of pybroker.context.ExecResult:76
-msgid "Stops for long :class:`pybroker.portfolio.Entry`\\ s."
+msgid "Stops for long :class:`tibacktester.portfolio.Entry`\\ s."
 msgstr ""
 
 #: 4d728d8489cc40e28c1a47ecaffc20d3 6b80f1d8b99d4bec96566cbd412f8cce of
 #: pybroker.context.ExecResult:78 pybroker.context.ExecResult:84
-msgid "frozenset[pybroker.portfolio.Stop] | None"
+msgid "frozenset[tibacktester.portfolio.Stop] | None"
 msgstr ""
 
 #: 913dffde84cc491d9c9a6e8a83ee521c of pybroker.context.ExecResult:82
-msgid "Stops for short :class:`pybroker.portfolio.Entry`\\ s."
+msgid "Stops for short :class:`tibacktester.portfolio.Entry`\\ s."
 msgstr ""
 
 #: 275558c0296d46e0b05c9b8c6e825742 of pybroker.context.ExecResult:88
@@ -767,7 +767,7 @@ msgid "bool"
 msgstr ""
 
 #: 3e308823533441debea745cf5e7826ea of pybroker.context.ExecResult:96
-msgid "ID of :class:`pybroker.scope.PendingOrder` that was created."
+msgid "ID of :class:`tibacktester.scope.PendingOrder` that was created."
 msgstr ""
 
 #: 1fa05e0749ce494e942a7e6c86818ebe of pybroker.context.ExecSignal:1
@@ -792,7 +792,7 @@ msgstr ""
 
 #: 3a3289020e594aa89a5e665be9c9be2f of pybroker.context.ExecSignal:17
 msgid ""
-"Number of shares that was set by the :class:`pybroker.strategy.Strategy` "
+"Number of shares that was set by the :class:`tibacktester.strategy.Strategy` "
 "execution."
 msgstr ""
 
@@ -801,15 +801,15 @@ msgid "int | float | decimal.Decimal"
 msgstr ""
 
 #: 05579ccdc59544459339470e7d0436d5 of pybroker.context.ExecSignal:24
-msgid "Score that was set by the :class:`pybroker.strategy.Strategy` execution."
+msgid "Score that was set by the :class:`tibacktester.strategy.Strategy` execution."
 msgstr ""
 
 #: 2f9dc72aeaf34bb2a46fe70e10dce91c of pybroker.context.ExecSignal:31
-msgid ":class:`pybroker.common.BarData` for ``symbol``."
+msgid ":class:`tibacktester.common.BarData` for ``symbol``."
 msgstr ""
 
 #: e92f8ae9c2f1469f9e844c7fc16bfa15 of pybroker.context.ExecSignal:33
-msgid "pybroker.common.BarData"
+msgid "tibacktester.common.BarData"
 msgstr ""
 
 #: d3dbee4650554c40b57f8e853ee2af4b of pybroker.context.ExecSignal:37
@@ -823,7 +823,7 @@ msgstr ""
 #: 5836ab90d6e240ef8a07215103fde863 of pybroker.context.PosSizeContext:1
 msgid ""
 "Holds data for a position size handler set with "
-":meth:`pybroker.Strategy.set_pos_size_handler`. Used to set position "
+":meth:`tibacktester.Strategy.set_pos_size_handler`. Used to set position "
 "sizes when placing orders from buy and sell signals."
 msgstr ""
 

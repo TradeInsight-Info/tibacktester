@@ -20,7 +20,7 @@ msgstr ""
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/reference/pybroker.rst:2 8434e54d5fed4e9abe18d387ae188da9
-msgid "pybroker package"
+msgid "tibacktester package"
 msgstr ""
 
 #: b7f7b00cfe104e4386503a5b08cf3750 of pybroker:1

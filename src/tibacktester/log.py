@@ -20,7 +20,7 @@ class Logger:
     """Class for logging information about triggered events.
 
     Args:
-        scope: :class:`pybroker.scope.StaticScope`.
+        scope: :class:`tibacktester.scope.StaticScope`.
     """
 
     def __init__(self, scope):

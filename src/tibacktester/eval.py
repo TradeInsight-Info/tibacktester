@@ -683,14 +683,14 @@ class BootstrapResult(NamedTuple):
 
 @dataclass(frozen=True)
 class EvalMetrics:
-    """Contains metrics for evaluating a :class:`pybroker.strategy.Strategy`.
+    """Contains metrics for evaluating a :class:`tibacktester.strategy.Strategy`.
 
     Attributes:
         trade_count: Number of trades that were filled.
         initial_market_value: Initial market value of the
-            :class:`pybroker.portfolio.Portfolio`.
+            :class:`tibacktester.portfolio.Portfolio`.
         end_market_value: Ending market value of the
-            :class:`pybroker.portfolio.Portfolio`.
+            :class:`tibacktester.portfolio.Portfolio`.
         total_pnl: Total realized profit and loss (PnL).
         unrealized_pnl: Total unrealized profit and loss (PnL).
         total_return_pct: Total realized return measured in percentage.
@@ -699,7 +699,7 @@ class EvalMetrics:
         total_profit: Total realized profit.
         total_loss: Total realized loss.
         total_fees: Total brokerage fees. See
-            :attr:`pybroker.config.StrategyConfig.fee_mode` for more info.
+            :attr:`tibacktester.config.StrategyConfig.fee_mode` for more info.
         max_drawdown: Maximum drawdown, measured in cash.
         max_drawdown_pct: Maximum drawdown, measured in percentage.
         max_drawdown_date: Date of maximum drawdown.

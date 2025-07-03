@@ -20,13 +20,13 @@ msgstr ""
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/reference/pybroker.scope.rst:2 2b20c8f4bd834e839bcf5b50bbc6ca15
-msgid "pybroker.scope module"
+msgid "tibacktester.scope module"
 msgstr ""
 
 #: 445e26a7abf843f896f74e4ecaf68683 of pybroker.scope:1
 msgid ""
 "Contains scopes that store data and object references used to execute a "
-":class:`pybroker.strategy.Strategy`."
+":class:`tibacktester.strategy.Strategy`."
 msgstr ""
 
 #: 0c31fcd754ce4569b069e7f348c30fdd 10c909e2d5514eabaad8f3f8e296ef97
@@ -65,7 +65,7 @@ msgstr ""
 #: 32a23ecd2c72428ba61d76015b5d2327 of
 #: pybroker.scope.ColumnScope.bar_data_from_data_columns:1
 msgid ""
-"Returns a new :class:`pybroker.common.BarData` instance containing column"
+"Returns a new :class:`tibacktester.common.BarData` instance containing column"
 " data of default and custom data columns registered with "
 ":class:`.StaticScope`."
 msgstr ""
@@ -127,38 +127,38 @@ msgid ""
 msgstr ""
 
 #: af377a6f03224d4591c22bfd661ac9c7 of pybroker.scope.IndicatorScope:1
-msgid "Caches and retrieves :class:`pybroker.indicator.Indicator` data."
+msgid "Caches and retrieves :class:`tibacktester.indicator.Indicator` data."
 msgstr ""
 
 #: 274740bca15740c5af9c803e5bdda4b2 of pybroker.scope.IndicatorScope:3
 msgid ""
-":class:`Mapping` of :class:`pybroker.common.IndicatorSymbol` pairs to "
-"``pandas.Series`` of :class:`pybroker.indicator.Indicator` values."
+":class:`Mapping` of :class:`tibacktester.common.IndicatorSymbol` pairs to "
+"``pandas.Series`` of :class:`tibacktester.indicator.Indicator` values."
 msgstr ""
 
 #: adcaa43472514079b53accef01b18044 of pybroker.scope.IndicatorScope:6
 msgid ""
-"Filters :class:`pybroker.indicator.Indicator` data on :class:`Sequence` "
+"Filters :class:`tibacktester.indicator.Indicator` data on :class:`Sequence` "
 "of dates."
 msgstr ""
 
 #: 0ee214a176ca42d2b6f17152bde12946 of pybroker.scope.IndicatorScope.fetch:1
-msgid "Fetches :class:`pybroker.indicator.Indicator` data."
+msgid "Fetches :class:`tibacktester.indicator.Indicator` data."
 msgstr ""
 
 #: 6fef47f91513427593195b872aec7a84 of pybroker.scope.IndicatorScope.fetch:4
-msgid "Name of :class:`pybroker.indicator.Indicator` to query."
+msgid "Name of :class:`tibacktester.indicator.Indicator` to query."
 msgstr ""
 
 #: 820cbf4386a849d7bda91d02d4ebce31 of pybroker.scope.IndicatorScope.fetch:5
 msgid ""
-"Truncates the array of :class:`pybroker.indicator.Indicator` data "
+"Truncates the array of :class:`tibacktester.indicator.Indicator` data "
 "returned (exclusive). If ``None``, then indicator data is not truncated."
 msgstr ""
 
 #: d14eae9243ff4fac98937f793f82e18b of pybroker.scope.IndicatorScope.fetch:9
 msgid ""
-":class:`numpy.ndarray` of :class:`pybroker.indicator.Indicator` data for "
+":class:`numpy.ndarray` of :class:`tibacktester.indicator.Indicator` data for "
 "every bar until ``end_index`` (when specified)."
 msgstr ""
 
@@ -177,8 +177,8 @@ msgstr ""
 #: 026abffdd66743a99e490d9883a3beb9 37ec884576ff4877b2f36f957e10b376 of
 #: pybroker.scope.ModelInputScope:5 pybroker.scope.PredictionScope:3
 msgid ""
-":class:`Mapping` of :class:`pybroker.common.ModelSymbol` pairs to "
-":class:`pybroker.common.TrainedModel`\\ s."
+":class:`Mapping` of :class:`tibacktester.common.ModelSymbol` pairs to "
+":class:`tibacktester.common.TrainedModel`\\ s."
 msgstr ""
 
 #: c48e7db01b8b4e66bc3dd20e81ed7f37 of pybroker.scope.ModelInputScope.fetch:1
@@ -186,7 +186,7 @@ msgid "Fetches model input data."
 msgstr ""
 
 #: 276cf2cf8bd747b39c8184c15c85a0ba of pybroker.scope.ModelInputScope.fetch:4
-msgid "Name of :class:`pybroker.model.ModelSource` to query input data."
+msgid "Name of :class:`tibacktester.model.ModelSource` to query input data."
 msgstr ""
 
 #: c1c078aec2834338a01e2f88915c8d4e of pybroker.scope.ModelInputScope.fetch:6
@@ -284,7 +284,7 @@ msgstr ""
 #: a24be5b2040941ee8a2c2bc99c2a23ca of pybroker.scope.PendingOrder:49
 msgid ""
 "int | float | numpy.floating | decimal.Decimal | "
-"pybroker.common.PriceType | Callable[[str, pybroker.common.BarData], int "
+"tibacktester.common.PriceType | Callable[[str, tibacktester.common.BarData], int "
 "| float | decimal.Decimal]"
 msgstr ""
 
@@ -333,7 +333,7 @@ msgid "Fetches model predictions."
 msgstr ""
 
 #: 4b27184f80454a37afb63b0f7f85e29d of pybroker.scope.PredictionScope.fetch:4
-msgid "Name of :class:`pybroker.model.ModelSource` that made the predictions."
+msgid "Name of :class:`tibacktester.model.ModelSource` that made the predictions."
 msgstr ""
 
 #: 5a994f413a414fe7bf1463aa6b96218f of pybroker.scope.PredictionScope.fetch:6
@@ -357,13 +357,13 @@ msgid "A static registry of data and object references."
 msgstr ""
 
 #: 40a5ee175e794e4884e0713b8b300223 of pybroker.scope.StaticScope:5
-msgid ":class:`pybroker.log.Logger`"
+msgid ":class:`tibacktester.log.Logger`"
 msgstr ""
 
 #: ef9d5f3ac67a4e86b40588e5754b0147 of pybroker.scope.StaticScope:9
 msgid ""
 ":class:`diskcache.Cache` that stores data retrieved from "
-":class:`pybroker.data.DataSource`."
+":class:`tibacktester.data.DataSource`."
 msgstr ""
 
 #: 8358753b794e4c5b840c6527e5cd5e46 of pybroker.scope.StaticScope:14
@@ -373,7 +373,7 @@ msgstr ""
 #: 785e2866283a44e38e278279d0a721a4 of pybroker.scope.StaticScope:18
 msgid ""
 ":class:`diskcache.Cache` that stores "
-":class:`pybroker.indicator.Indicator` data."
+":class:`tibacktester.indicator.Indicator` data."
 msgstr ""
 
 #: 066005e780374ef489f96c15babee4f7 of pybroker.scope.StaticScope:23
@@ -391,13 +391,13 @@ msgstr ""
 #: d0f8263a036246d19bd738503b918493 of pybroker.scope.StaticScope:35
 msgid ""
 "Default data columns in :class:`pandas.DataFrame` retrieved from a "
-":class:`pybroker.data.DataSource`."
+":class:`tibacktester.data.DataSource`."
 msgstr ""
 
 #: 2fa91c1a86ae45d284b1e52746fcb377 of pybroker.scope.StaticScope:40
 msgid ""
 "User-defined data columns in :class:`pandas.DataFrame` retrieved from a "
-":class:`pybroker.data.DataSource`."
+":class:`tibacktester.data.DataSource`."
 msgstr ""
 
 #: 7974cb359f8445e390fa00bc912c4bbe of
@@ -412,30 +412,30 @@ msgstr ""
 
 #: cbe197ecdb48472ea7a78a57005915aa of
 #: pybroker.scope.StaticScope.get_indicator:1
-msgid "Retrieves a :class:`pybroker.indicator.Indicator` from static scope."
+msgid "Retrieves a :class:`tibacktester.indicator.Indicator` from static scope."
 msgstr ""
 
 #: 8f86a08ca32d4950aaf86c2280cf93c8 of
 #: pybroker.scope.StaticScope.get_indicator_names:1
 msgid ""
-"Returns a ``tuple[str]`` of all :class:`pybroker.indicator.Indicator` "
-"names that are registered with :class:`pybroker.model.ModelSource` having"
+"Returns a ``tuple[str]`` of all :class:`tibacktester.indicator.Indicator` "
+"names that are registered with :class:`tibacktester.model.ModelSource` having"
 " ``model_name``."
 msgstr ""
 
 #: 0265ba024b6f4069a7d69f8f47543044 of
 #: pybroker.scope.StaticScope.get_model_source:1
-msgid "Retrieves a :class:`pybroker.model.ModelSource` from static scope."
+msgid "Retrieves a :class:`tibacktester.model.ModelSource` from static scope."
 msgstr ""
 
 #: 259a206fb62d4b9e8fc9c56d03310c0d of
 #: pybroker.scope.StaticScope.has_indicator:1
-msgid "Whether :class:`pybroker.indicator.Indicator` is stored in static scope."
+msgid "Whether :class:`tibacktester.indicator.Indicator` is stored in static scope."
 msgstr ""
 
 #: 75ee476465d8441d83666303ed413a18 of
 #: pybroker.scope.StaticScope.has_model_source:1
-msgid "Whether :class:`pybroker.model.ModelSource` is stored in static scope."
+msgid "Whether :class:`tibacktester.model.ModelSource` is stored in static scope."
 msgstr ""
 
 #: 7c0372c38a224150849a117debe171b5 of pybroker.scope.StaticScope.instance:1
@@ -454,19 +454,19 @@ msgstr ""
 
 #: dcad584881d649c78d5ace4950206393 of
 #: pybroker.scope.StaticScope.set_indicator:1
-msgid "Stores :class:`pybroker.indicator.Indicator` in static scope."
+msgid "Stores :class:`tibacktester.indicator.Indicator` in static scope."
 msgstr ""
 
 #: ee37fa2b72084168bc00380681c3ab9b of
 #: pybroker.scope.StaticScope.set_model_source:1
-msgid "Stores :class:`pybroker.model.ModelSource` in static scope."
+msgid "Stores :class:`tibacktester.model.ModelSource` in static scope."
 msgstr ""
 
 #: cf3f289f318742b5974673da0f77243a of
 #: pybroker.scope.StaticScope.unfreeze_data_cols:1
 msgid ""
 "Allows additional data columns to be registered if "
-":func:`pybroker.scope.StaticScope.freeze_data_cols` was called."
+":func:`tibacktester.scope.StaticScope.freeze_data_cols` was called."
 msgstr ""
 
 #: ae82860ab87044cfb34fb0c6d5deb9f1 of

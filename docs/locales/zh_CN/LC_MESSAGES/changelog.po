@@ -30,7 +30,7 @@ msgstr ""
 #: ../../source/changelog.rst:8 1918a59aee4e4cc5a491319e3f68d6cd
 msgid ""
 "`Adds support for the following stop types: "
-"<https://www.pybroker.com/en/latest/notebooks/8.%20Applying%20Stops.html>`_"
+"<https://www.tibacktester.com/en/latest/notebooks/8.%20Applying%20Stops.html>`_"
 msgstr ""
 
 #: ../../source/changelog.rst:10 4d94ac547c724baf93d1a8ec2b0f35f4
@@ -48,7 +48,7 @@ msgstr ""
 #: ../../source/changelog.rst:14 a99daf0195da4507bba82c4e474a9cae
 msgid ""
 "`Allows canceling pending orders. "
-"<https://www.pybroker.com/en/latest/notebooks/FAQs.html#...-cancel-"
+"<https://www.tibacktester.com/en/latest/notebooks/FAQs.html#...-cancel-"
 "pending-orders?>`_"
 msgstr ""
 

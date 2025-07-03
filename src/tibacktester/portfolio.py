@@ -51,7 +51,7 @@ class Stop(NamedTuple):
         bars: Number of bars after which to trigger the stop.
         fill_price: Price that the stop will be filled at.
         limit_price: Limit price to use for the stop.
-        exit_price: Exit :class:`pybroker.common.PriceType` to use for the
+        exit_price: Exit :class:`tibacktester.common.PriceType` to use for the
             stop exit. If set, the stop is checked against the ``exit_price``
             and exits at the ``exit_price`` when triggered.
     """
@@ -93,7 +93,7 @@ class StopRecord(NamedTuple):
         bars: Number of bars after which to trigger the stop.
         fill_price: Price that the stop will be filled at.
         limit_price: Limit price to use for the stop.
-        exit_price: Exit :class:`pybroker.common.PriceType` to use for the
+        exit_price: Exit :class:`tibacktester.common.PriceType` to use for the
             stop exit. If set, the stop is checked against the ``exit_price``
             and exits at the ``exit_price`` when triggered.
     """
@@ -1098,7 +1098,7 @@ class Portfolio:
         Args:
             val: Ticker symbol, :class:`.Position`, or :class:`.Entry` for
                 which to cancel stops.
-            stop_type: :class:`pybroker.common.StopType`.
+            stop_type: :class:`tibacktester.common.StopType`.
         """
         if isinstance(val, str):
             if val in self.long_positions:

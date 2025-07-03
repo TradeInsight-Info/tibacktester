@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../source/reference/pybroker.common.rst:2
 #: db727290665642cfbf4b9930e44eeba3
-msgid "pybroker.common module"
+msgid "tibacktester.common module"
 msgstr ""
 
 #: 81d35e2fd1864305bd727fac7a35600d of pybroker.common:1
@@ -116,7 +116,7 @@ msgid "Bases: :py:class:`~typing.NamedTuple`"
 msgstr ""
 
 #: 5f8840b7a8894c4f94cbdbab80ca7c0c of pybroker.common.IndicatorSymbol:1
-msgid ":class:`pybroker.indicator.Indicator`/symbol identifier."
+msgid ":class:`tibacktester.indicator.Indicator`/symbol identifier."
 msgstr ""
 
 #: 779f26622c064667b79a399e5100c28d of pybroker.common.IndicatorSymbol:5
@@ -146,7 +146,7 @@ msgid "Ticker symbol."
 msgstr ""
 
 #: a247d127ab8a468eaa8cb72eab5293be of pybroker.common.ModelSymbol:1
-msgid ":class:`pybroker.model.ModelSource`/symbol identifier."
+msgid ":class:`tibacktester.model.ModelSource`/symbol identifier."
 msgstr ""
 
 #: 4c46f1de22334d88b07694b7908bc6cc of pybroker.common.ModelSymbol:5
@@ -156,7 +156,7 @@ msgstr ""
 #: 26bd3f34b013445cad8796cdb1f064ff of pybroker.common.PriceType:1
 msgid ""
 "Enumeration of price types used to specify fill price with "
-":class:`pybroker.context.ExecContext`."
+":class:`tibacktester.context.ExecContext`."
 msgstr ""
 
 #: 9a0445b11504497d80f8a6cf3e8f475f of pybroker.common.PriceType:6
@@ -335,7 +335,7 @@ msgstr ""
 #: pybroker.common.verify_data_source_columns:1
 msgid ""
 "Verifies that a :class:`pandas.DataFrame` contains all of the columns "
-"required by a :class:`pybroker.data.DataSource`."
+"required by a :class:`tibacktester.data.DataSource`."
 msgstr ""
 
 #: 96d470321453435faf96f6d3bd485768 of pybroker.common.verify_date_range:1

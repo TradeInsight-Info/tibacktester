@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../source/reference/pybroker.strategy.rst:2
 #: 94e79828193941e98def5a039269ba32
-msgid "pybroker.strategy module"
+msgid "tibacktester.strategy module"
 msgstr ""
 
 #: b651a1d496b44fef9b2b144c6e821a7f of pybroker.strategy:1
@@ -63,7 +63,7 @@ msgstr ""
 
 #: cd0578cbfe17471c8e60afbf33269fb7 of
 #: pybroker.strategy.BacktestMixin.backtest_executions:4
-msgid ":class:`pybroker.config.StrategyConfig`."
+msgid ":class:`tibacktester.config.StrategyConfig`."
 msgstr ""
 
 #: 6948ccfa951e4c2188ad5b2ac77e64e4 of
@@ -81,15 +81,15 @@ msgstr ""
 #: 3f09604d744c415e9eb1f60c0a1df6ff of
 #: pybroker.strategy.BacktestMixin.backtest_executions:9
 msgid ""
-":class:`Mapping` of :class:`pybroker.common.ModelSymbol` pairs to "
-":class:`pybroker.common.TrainedModel`\\ s."
+":class:`Mapping` of :class:`tibacktester.common.ModelSymbol` pairs to "
+":class:`tibacktester.common.TrainedModel`\\ s."
 msgstr ""
 
 #: 9d81d3a381db4a20a70c4ac24e303d9e of
 #: pybroker.strategy.BacktestMixin.backtest_executions:11
 msgid ""
-":class:`Mapping` of :class:`pybroker.common.IndicatorSymbol` pairs to "
-":class:`pandas.Series` of :class:`pybroker.indicator.Indicator` values."
+":class:`Mapping` of :class:`tibacktester.common.IndicatorSymbol` pairs to "
+":class:`pandas.Series` of :class:`tibacktester.indicator.Indicator` values."
 msgstr ""
 
 #: c97ff21879f54b4cb1b3edfd565f23a8 of
@@ -99,7 +99,7 @@ msgstr ""
 
 #: 2ebce8fbbf444ae5ab181ca115b4d4ef of
 #: pybroker.strategy.BacktestMixin.backtest_executions:16
-msgid ":class:`pybroker.portfolio.Portfolio`."
+msgid ":class:`tibacktester.portfolio.Portfolio`."
 msgstr ""
 
 #: 600436baa08d40f8803dcc13a2f56e63 of
@@ -187,28 +187,28 @@ msgid "Implements trading logic."
 msgstr ""
 
 #: eeb1d2ece7594476b66894a423becf77 of pybroker.strategy.Execution:20
-msgid "Callable[[pybroker.context.ExecContext], None] | None"
+msgid "Callable[[tibacktester.context.ExecContext], None] | None"
 msgstr ""
 
 #: e1a9be45ab694941b1d4fdfcd112ff8a of pybroker.strategy.Execution:24
 msgid ""
-"Names of :class:`pybroker.model.ModelSource`\\ s used for execution of "
+"Names of :class:`tibacktester.model.ModelSource`\\ s used for execution of "
 "``fn``."
 msgstr ""
 
 #: a2daf2c4b9844c6da058ee20f204828b of pybroker.strategy.Execution:31
 msgid ""
-"Names of :class:`pybroker.indicator.Indicator`\\ s used for execution of "
+"Names of :class:`tibacktester.indicator.Indicator`\\ s used for execution of "
 "``fn``."
 msgstr ""
 
 #: 6e38aa9f9dd14cfbb2afc6ecf8f31d59 of pybroker.strategy.Strategy:1
 msgid ""
-"Bases: :py:class:`~pybroker.strategy.BacktestMixin`, "
-":py:class:`~pybroker.eval.EvaluateMixin`, "
-":py:class:`~pybroker.indicator.IndicatorsMixin`, "
-":py:class:`~pybroker.model.ModelsMixin`, "
-":py:class:`~pybroker.strategy.WalkforwardMixin`"
+"Bases: :py:class:`~tibacktester.strategy.BacktestMixin`, "
+":py:class:`~tibacktester.eval.EvaluateMixin`, "
+":py:class:`~tibacktester.indicator.IndicatorsMixin`, "
+":py:class:`~tibacktester.model.ModelsMixin`, "
+":py:class:`~tibacktester.strategy.WalkforwardMixin`"
 msgstr ""
 
 #: 197409859f2a4a14b6b27fa5787c6ca0 of pybroker.strategy.Strategy:1
@@ -217,7 +217,7 @@ msgstr ""
 
 #: a3ffb0b1344a479b8ab5053c3253cc87 of pybroker.strategy.Strategy:3
 msgid ""
-":class:`pybroker.data.DataSource` or :class:`pandas.DataFrame` of "
+":class:`tibacktester.data.DataSource` or :class:`pandas.DataFrame` of "
 "backtesting data."
 msgstr ""
 
@@ -230,7 +230,7 @@ msgid "Ending date of the data to fetch from ``data_source`` (inclusive)."
 msgstr ""
 
 #: eacafb544fc443959c216aa6ab9e26b8 of pybroker.strategy.Strategy:9
-msgid "``Optional`` :class:`pybroker.config.StrategyConfig`."
+msgid "``Optional`` :class:`tibacktester.config.StrategyConfig`."
 msgstr ""
 
 #: 7b00b0ef7fd24791ba9fc1a4be768e54 of
@@ -242,7 +242,7 @@ msgstr ""
 #: pybroker.strategy.Strategy.add_execution:3
 msgid ""
 ":class:`Callable` invoked on every bar of data during the backtest and "
-"passed an :class:`pybroker.context.ExecContext` for each ticker symbol in"
+"passed an :class:`tibacktester.context.ExecContext` for each ticker symbol in"
 " ``symbols``."
 msgstr ""
 
@@ -256,14 +256,14 @@ msgstr ""
 #: b432bfaa3ad94b94858cc00868b20ec3 of
 #: pybroker.strategy.Strategy.add_execution:8
 msgid ""
-":class:`Iterable` of :class:`pybroker.model.ModelSource`\\ s to "
+":class:`Iterable` of :class:`tibacktester.model.ModelSource`\\ s to "
 "train/load for backtesting."
 msgstr ""
 
 #: 058a87b472424ccebd9e9166f98b9651 of
 #: pybroker.strategy.Strategy.add_execution:10
 msgid ""
-":class:`Iterable` of :class:`pybroker.indicator.Indicator`\\ s to compute"
+":class:`Iterable` of :class:`tibacktester.indicator.Indicator`\\ s to compute"
 " for backtesting."
 msgstr ""
 
@@ -379,7 +379,7 @@ msgstr ""
 #: pybroker.strategy.Strategy.walkforward:37
 #, python-format
 msgid ""
-"Amount of :class:`pybroker.data.DataSource` data to use for training, "
+"Amount of :class:`tibacktester.data.DataSource` data to use for training, "
 "where the max ``train_size`` is ``1``. For example, a ``train_size`` of "
 "``0.9`` would result in 90% of data being used for training and the "
 "remaining 10% of data being used for testing."
@@ -391,7 +391,7 @@ msgstr ""
 msgid ""
 "Whether to randomly shuffle the data used for training. Defaults to "
 "``False``. Disabled when model caching is enabled via "
-":meth:`pybroker.cache.enable_model_cache`."
+":meth:`tibacktester.cache.enable_model_cache`."
 msgstr ""
 
 #: 9d968197b009401f9cb2ccb0e0ae744f e241805cf80e4ee39f6d7eb71a2f6a13 of
@@ -406,8 +406,8 @@ msgstr ""
 #: pybroker.strategy.Strategy.backtest:41
 #: pybroker.strategy.Strategy.walkforward:47
 msgid ""
-"If ``True``, :class:`pybroker.indicator.Indicator` data is computed "
-"serially. If ``False``, :class:`pybroker.indicator.Indicator` data is "
+"If ``True``, :class:`tibacktester.indicator.Indicator` data is computed "
+"serially. If ``False``, :class:`tibacktester.indicator.Indicator` data is "
 "computed in parallel using multiple processes. Defaults to ``False``."
 msgstr ""
 
@@ -457,20 +457,20 @@ msgstr ""
 #: pybroker.strategy.Strategy.set_pos_size_handler:4
 msgid ""
 ":class:`Callable` invoked before placing orders for buy and sell signals,"
-" and is passed a :class:`pybroker.context.PosSizeContext`."
+" and is passed a :class:`tibacktester.context.PosSizeContext`."
 msgstr ""
 
 #: e21e4ee33efc44c685a3fec6e72fb1d4 of
 #: pybroker.strategy.Strategy.set_slippage_model:1
-msgid "Sets :class:`pybroker.slippage.SlippageModel`."
+msgid "Sets :class:`tibacktester.slippage.SlippageModel`."
 msgstr ""
 
 #: ad85b02ba2f14ed5a02b2014d00fcd30 of pybroker.strategy.Strategy.walkforward:1
 msgid ""
 "Backtests the trading strategy using `Walkforward Analysis "
-"<https://www.pybroker.com/en/latest/notebooks/6.%20Training%20a%20Model.html"
+"<https://www.tibacktester.com/en/latest/notebooks/6.%20Training%20a%20Model.html"
 "#Walkforward-Analysis>`_. Backtesting data supplied by the "
-":class:`pybroker.data.DataSource` is divided into ``windows`` number of "
+":class:`tibacktester.data.DataSource` is divided into ``windows`` number of "
 "equal sized time windows, with each window split into train and test data"
 " as specified by ``train_size``. The backtest \"walks forward\" in time "
 "through each window, running executions that were added with "
@@ -518,7 +518,7 @@ msgstr ""
 
 #: 099c025996f342b7b7bf66c4015d6891 of pybroker.strategy.TestResult:17
 msgid ""
-":class:`pandas.DataFrame` of :class:`pybroker.portfolio.Portfolio` "
+":class:`pandas.DataFrame` of :class:`tibacktester.portfolio.Portfolio` "
 "balances for every bar."
 msgstr ""
 
@@ -532,7 +532,7 @@ msgstr ""
 
 #: c13460ef6cb6479cb1ae9fe130385391 of pybroker.strategy.TestResult:24
 msgid ""
-":class:`pandas.DataFrame` of :class:`pybroker.portfolio.Position` "
+":class:`pandas.DataFrame` of :class:`tibacktester.portfolio.Position` "
 "balances for every bar."
 msgstr ""
 
@@ -549,7 +549,7 @@ msgid "Evaluation metrics."
 msgstr ""
 
 #: 5bc8d33d657948508eeba72e54c08dbf of pybroker.strategy.TestResult:45
-msgid "pybroker.eval.EvalMetrics"
+msgid "tibacktester.eval.EvalMetrics"
 msgstr ""
 
 #: 7c1cc8a7e05840b394a9b9c48e0e796c of pybroker.strategy.TestResult:49
@@ -561,13 +561,13 @@ msgid "Randomized bootstrap evaluation metrics."
 msgstr ""
 
 #: 6f34d0d30b3b4476946705728d4ff651 of pybroker.strategy.TestResult:57
-msgid "pybroker.eval.BootstrapResult | None"
+msgid "tibacktester.eval.BootstrapResult | None"
 msgstr ""
 
 #: a1ae29436cfb4aad9b69e676de39d0de of pybroker.strategy.WalkforwardMixin:1
 msgid ""
 "Mixin implementing logic for `Walkforward Analysis "
-"<https://www.pybroker.com/en/latest/notebooks/6.%20Training%20a%20Model.html"
+"<https://www.tibacktester.com/en/latest/notebooks/6.%20Training%20a%20Model.html"
 "#Walkforward-Analysis>`_."
 msgstr ""
 
@@ -577,7 +577,7 @@ msgid ""
 "Splits a :class:`pandas.DataFrame` containing data for multiple ticker "
 "symbols into an :class:`Iterator` of train/test time windows for "
 "`Walkforward Analysis "
-"<https://www.pybroker.com/en/latest/notebooks/6.%20Training%20a%20Model.html"
+"<https://www.tibacktester.com/en/latest/notebooks/6.%20Training%20a%20Model.html"
 "#Walkforward-Analysis>`_."
 msgstr ""
 
@@ -616,7 +616,7 @@ msgstr ""
 msgid ""
 "Contains ``train_data`` and ``test_data`` of a time window used for "
 "`Walkforward Analysis "
-"<https://www.pybroker.com/en/latest/notebooks/6.%20Training%20a%20Model.html"
+"<https://www.tibacktester.com/en/latest/notebooks/6.%20Training%20a%20Model.html"
 "#Walkforward-Analysis>`_."
 msgstr ""
 
@@ -656,7 +656,7 @@ msgstr ""
 #~ msgid "Parameters"
 #~ msgstr ""
 
-#~ msgid ":class:`pybroker.config.StrategyConfig`."
+#~ msgid ":class:`tibacktester.config.StrategyConfig`."
 #~ msgstr ""
 
 #~ msgid ":class:`.Execution`\\ s to run."
@@ -670,22 +670,22 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ ":class:`Mapping` of :class:`pybroker.common.ModelSymbol`"
-#~ " pairs to :class:`pybroker.common.TrainedModel`\\ "
+#~ ":class:`Mapping` of :class:`tibacktester.common.ModelSymbol`"
+#~ " pairs to :class:`tibacktester.common.TrainedModel`\\ "
 #~ "s."
 #~ msgstr ""
 
 #~ msgid ""
 #~ ":class:`Mapping` of "
-#~ ":class:`pybroker.common.IndicatorSymbol` pairs to "
+#~ ":class:`tibacktester.common.IndicatorSymbol` pairs to "
 #~ ":class:`pandas.Series` of "
-#~ ":class:`pybroker.indicator.Indicator` values."
+#~ ":class:`tibacktester.indicator.Indicator` values."
 #~ msgstr ""
 
 #~ msgid ":class:`pandas.DataFrame` of test data."
 #~ msgstr ""
 
-#~ msgid ":class:`pybroker.portfolio.Portfolio`."
+#~ msgid ":class:`tibacktester.portfolio.Portfolio`."
 #~ msgstr ""
 
 #~ msgid ""
@@ -737,32 +737,32 @@ msgstr ""
 #~ msgid "Implements trading logic."
 #~ msgstr ""
 
-#~ msgid "Callable[[pybroker.context.ExecContext], None] | None"
+#~ msgid "Callable[[tibacktester.context.ExecContext], None] | None"
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Names of :class:`pybroker.model.ModelSource`\\ s "
+#~ "Names of :class:`tibacktester.model.ModelSource`\\ s "
 #~ "used for execution of ``fn``."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Names of :class:`pybroker.indicator.Indicator`\\ s"
+#~ "Names of :class:`tibacktester.indicator.Indicator`\\ s"
 #~ " used for execution of ``fn``."
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Bases: :py:class:`~pybroker.strategy.BacktestMixin`, "
-#~ ":py:class:`~pybroker.eval.EvaluateMixin`, "
-#~ ":py:class:`~pybroker.indicator.IndicatorsMixin`, "
-#~ ":py:class:`~pybroker.model.ModelsMixin`, "
-#~ ":py:class:`~pybroker.strategy.WalkforwardMixin`"
+#~ "Bases: :py:class:`~tibacktester.strategy.BacktestMixin`, "
+#~ ":py:class:`~tibacktester.eval.EvaluateMixin`, "
+#~ ":py:class:`~tibacktester.indicator.IndicatorsMixin`, "
+#~ ":py:class:`~tibacktester.model.ModelsMixin`, "
+#~ ":py:class:`~tibacktester.strategy.WalkforwardMixin`"
 #~ msgstr ""
 
 #~ msgid "Class representing a trading strategy to backtest."
 #~ msgstr ""
 
 #~ msgid ""
-#~ ":class:`pybroker.data.DataSource` or "
+#~ ":class:`tibacktester.data.DataSource` or "
 #~ ":class:`pandas.DataFrame` of backtesting data."
 #~ msgstr ""
 
@@ -772,7 +772,7 @@ msgstr ""
 #~ msgid "Ending date of the data to fetch from ``data_source`` (inclusive)."
 #~ msgstr ""
 
-#~ msgid "``Optional`` :class:`pybroker.config.StrategyConfig`."
+#~ msgid "``Optional`` :class:`tibacktester.config.StrategyConfig`."
 #~ msgstr ""
 
 #~ msgid "Adds an execution to backtest."
@@ -781,7 +781,7 @@ msgstr ""
 #~ msgid ""
 #~ ":class:`Callable` invoked on every bar "
 #~ "of data during the backtest and "
-#~ "passed an :class:`pybroker.context.ExecContext` for"
+#~ "passed an :class:`tibacktester.context.ExecContext` for"
 #~ " each ticker symbol in ``symbols``."
 #~ msgstr ""
 
@@ -792,13 +792,13 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ ":class:`Iterable` of :class:`pybroker.model.ModelSource`\\"
+#~ ":class:`Iterable` of :class:`tibacktester.model.ModelSource`\\"
 #~ " s to train/load for backtesting."
 #~ msgstr ""
 
 #~ msgid ""
 #~ ":class:`Iterable` of "
-#~ ":class:`pybroker.indicator.Indicator`\\ s to compute"
+#~ ":class:`tibacktester.indicator.Indicator`\\ s to compute"
 #~ " for backtesting."
 #~ msgstr ""
 
@@ -885,7 +885,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Amount of :class:`pybroker.data.DataSource` data "
+#~ "Amount of :class:`tibacktester.data.DataSource` data "
 #~ "to use for training, where the max"
 #~ " ``train_size`` is ``1``. For example, "
 #~ "a ``train_size`` of ``0.9`` would result"
@@ -899,7 +899,7 @@ msgstr ""
 #~ "used for training. Defaults to "
 #~ "``False``. Disabled when model caching "
 #~ "is enabled via "
-#~ ":meth:`pybroker.cache.enable_model_cache`."
+#~ ":meth:`tibacktester.cache.enable_model_cache`."
 #~ msgstr ""
 
 #~ msgid ""
@@ -908,9 +908,9 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "If ``True``, :class:`pybroker.indicator.Indicator` "
+#~ "If ``True``, :class:`tibacktester.indicator.Indicator` "
 #~ "data is computed serially. If ``False``,"
-#~ " :class:`pybroker.indicator.Indicator` data is "
+#~ " :class:`tibacktester.indicator.Indicator` data is "
 #~ "computed in parallel using multiple "
 #~ "processes. Defaults to ``False``."
 #~ msgstr ""
@@ -950,10 +950,10 @@ msgstr ""
 #~ ":class:`Callable` invoked before placing "
 #~ "orders for buy and sell signals, "
 #~ "and is passed a "
-#~ ":class:`pybroker.context.PosSizeContext`."
+#~ ":class:`tibacktester.context.PosSizeContext`."
 #~ msgstr ""
 
-#~ msgid "Sets :class:`pybroker.slippage.SlippageModel`."
+#~ msgid "Sets :class:`tibacktester.slippage.SlippageModel`."
 #~ msgstr ""
 
 #~ msgid ""
@@ -961,7 +961,7 @@ msgstr ""
 #~ "`Walkforward Analysis "
 #~ "<https://www.pybroker.com/en/latest/notebooks/6.%20Training%20a%20Model.html"
 #~ "#Walkforward-Analysis>`_. Backtesting data "
-#~ "supplied by the :class:`pybroker.data.DataSource`"
+#~ "supplied by the :class:`tibacktester.data.DataSource`"
 #~ " is divided into ``windows`` number "
 #~ "of equal sized time windows, with "
 #~ "each window split into train and "
@@ -1003,7 +1003,7 @@ msgstr ""
 
 #~ msgid ""
 #~ ":class:`pandas.DataFrame` of "
-#~ ":class:`pybroker.portfolio.Portfolio` balances for "
+#~ ":class:`tibacktester.portfolio.Portfolio` balances for "
 #~ "every bar."
 #~ msgstr ""
 
@@ -1012,7 +1012,7 @@ msgstr ""
 
 #~ msgid ""
 #~ ":class:`pandas.DataFrame` of "
-#~ ":class:`pybroker.portfolio.Position` balances for "
+#~ ":class:`tibacktester.portfolio.Position` balances for "
 #~ "every bar."
 #~ msgstr ""
 
@@ -1025,7 +1025,7 @@ msgstr ""
 #~ msgid "Evaluation metrics."
 #~ msgstr ""
 
-#~ msgid "pybroker.eval.EvalMetrics"
+#~ msgid "tibacktester.eval.EvalMetrics"
 #~ msgstr ""
 
 #~ msgid ":class:`pandas.DataFrame` of evaluation metrics."
@@ -1034,7 +1034,7 @@ msgstr ""
 #~ msgid "Randomized bootstrap evaluation metrics."
 #~ msgstr ""
 
-#~ msgid "pybroker.eval.BootstrapResult | None"
+#~ msgid "tibacktester.eval.BootstrapResult | None"
 #~ msgstr ""
 
 #~ msgid ""

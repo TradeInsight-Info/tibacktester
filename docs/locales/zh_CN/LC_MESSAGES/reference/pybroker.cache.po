@@ -20,7 +20,7 @@ msgstr ""
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/reference/pybroker.cache.rst:2 21a415b240554ed6a05d3c6d1ed36308
-msgid "pybroker.cache module"
+msgid "tibacktester.cache module"
 msgstr ""
 
 #: 6774c2dfb5874b248089fa201679afa6 of pybroker.cache:1
@@ -86,7 +86,7 @@ msgid "tuple[int] | None"
 msgstr ""
 
 #: 8827871b16b04ec18d08fdc5a82c73e6 of pybroker.cache.DataSourceCacheKey:1
-msgid "Cache key used for :class:`pybroker.data.DataSource` data."
+msgid "Cache key used for :class:`tibacktester.data.DataSource` data."
 msgstr ""
 
 #: fc2fc916172449569428990713b5213e of pybroker.cache.IndicatorCacheKey:1
@@ -105,7 +105,7 @@ msgstr ""
 
 #: 374d2682c60b4bb2afc7ed293357b8fa of pybroker.cache.clear_data_source_cache:1
 msgid ""
-"Clears data cached from :class:`pybroker.data.DataSource`\\ s. "
+"Clears data cached from :class:`tibacktester.data.DataSource`\\ s. "
 ":meth:`enable_data_source_cache` must be called first before clearing."
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 #: c870be12f96247c6af19a1b029bb2598 of
 #: pybroker.cache.disable_data_source_cache:1
 msgid ""
-"Disables caching data retrieved from :class:`pybroker.data.DataSource`\\ "
+"Disables caching data retrieved from :class:`tibacktester.data.DataSource`\\ "
 "s."
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 #: pybroker.cache.enable_data_source_cache:1
 msgid ""
 "Enables caching of data retrieved from "
-":class:`pybroker.data.DataSource`\\ s."
+":class:`tibacktester.data.DataSource`\\ s."
 msgstr ""
 
 #: 5dafa754d5c647b8a69fac0bd8daa81a be61983da6044c429befa24a772cfe20

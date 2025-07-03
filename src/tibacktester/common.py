@@ -38,7 +38,7 @@ _CENTS: Final = Decimal(".01")
 
 
 class IndicatorSymbol(NamedTuple):
-    """:class:`pybroker.indicator.Indicator`/symbol identifier.
+    """:class:`tibacktester.indicator.Indicator`/symbol identifier.
 
     Attributes:
         ind_name: Indicator name.
@@ -50,7 +50,7 @@ class IndicatorSymbol(NamedTuple):
 
 
 class ModelSymbol(NamedTuple):
-    """:class:`pybroker.model.ModelSource`/symbol identifier.
+    """:class:`tibacktester.model.ModelSource`/symbol identifier.
 
     Attributes:
         model_name: Model name.
@@ -106,7 +106,7 @@ class Day(Enum):
 
 class PriceType(Enum):
     """Enumeration of price types used to specify fill price with
-    :class:`pybroker.context.ExecContext`.
+    :class:`tibacktester.context.ExecContext`.
 
     Attributes:
         OPEN: Open price of the current bar.
@@ -337,7 +337,7 @@ def quantize(df: pd.DataFrame, col: str, round: bool) -> pd.Series:
 
 def verify_data_source_columns(df: pd.DataFrame):
     """Verifies that a :class:`pandas.DataFrame` contains all of the
-    columns required by a :class:`pybroker.data.DataSource`.
+    columns required by a :class:`tibacktester.data.DataSource`.
     """
     required_cols = (
         DataCol.SYMBOL,

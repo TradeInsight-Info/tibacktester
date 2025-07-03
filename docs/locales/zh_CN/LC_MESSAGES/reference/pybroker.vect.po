@@ -20,7 +20,7 @@ msgstr ""
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/reference/pybroker.vect.rst:2 b4a5a43e81c54d8b80895153b8757993
-msgid "pybroker.vect module"
+msgid "tibacktester.vect module"
 msgstr ""
 
 #: 1d2e4832be3a474d8a4ee760fa040508 of pybroker.vect:1

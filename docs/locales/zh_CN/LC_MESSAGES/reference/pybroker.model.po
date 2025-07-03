@@ -20,7 +20,7 @@ msgstr ""
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/reference/pybroker.model.rst:2 4bf218f06c58486ca40632a1e8c3a284
-msgid "pybroker.model module"
+msgid "tibacktester.model module"
 msgstr ""
 
 #: c944c4f0930f41efb4ed7829870a55df of pybroker.model:1
@@ -70,7 +70,7 @@ msgstr ""
 
 #: b5a7b2b4047a4fdb829c0de7efb3843f f062a147e6d44cb2bafd0970e6e2c378 of
 #: pybroker.model.ModelLoader:1 pybroker.model.ModelTrainer:1
-msgid "Bases: :py:class:`~pybroker.model.ModelSource`"
+msgid "Bases: :py:class:`~tibacktester.model.ModelSource`"
 msgstr ""
 
 #: 0cf866016bfa4fd8a10a97ebe09132ca of pybroker.model.ModelLoader:1
@@ -104,7 +104,7 @@ msgstr ""
 #: pybroker.model.ModelLoader:10 pybroker.model.ModelSource:5
 #: pybroker.model.ModelTrainer:10
 msgid ""
-":class:`Iterable` of names of :class:`pybroker.indicator.Indicator`\\ s "
+":class:`Iterable` of names of :class:`tibacktester.indicator.Indicator`\\ s "
 "used as features of the model."
 msgstr ""
 
@@ -224,13 +224,13 @@ msgstr ""
 
 #: 0af03f1df69d41beb7ea0a35771f255b of
 #: pybroker.model.ModelsMixin.train_models:1
-msgid "Trains models for the provided :class:`pybroker.common.ModelSymbol` pairs."
+msgid "Trains models for the provided :class:`tibacktester.common.ModelSymbol` pairs."
 msgstr ""
 
 #: 908fca967c7f4ee48a3fafc9d46c9e35 of
 #: pybroker.model.ModelsMixin.train_models:4
 msgid ""
-"``Iterable`` of :class:`pybroker.common.ModelSymbol` pairs of models to "
+"``Iterable`` of :class:`tibacktester.common.ModelSymbol` pairs of models to "
 "train."
 msgstr ""
 
@@ -247,8 +247,8 @@ msgstr ""
 #: 6f4e9b1a728d428a8f58a6bb31e3ee0d of
 #: pybroker.model.ModelsMixin.train_models:8
 msgid ""
-"``Mapping`` of :class:`pybroker.common.IndicatorSymbol` pairs to "
-"``pandas.Series`` of :class:`pybroker.indicator.Indicator` values."
+"``Mapping`` of :class:`tibacktester.common.IndicatorSymbol` pairs to "
+"``pandas.Series`` of :class:`tibacktester.indicator.Indicator` values."
 msgstr ""
 
 #: 89e6ea9924ac4d2ab5ea3b53bedef911 of
@@ -259,8 +259,8 @@ msgstr ""
 #: 8976848bbaf34a94b61cac318a0b5702 of
 #: pybroker.model.ModelsMixin.train_models:14
 msgid ""
-"``dict`` mapping each :class:`pybroker.common.ModelSymbol` pair to a "
-":class:`pybroker.common.TrainedModel`."
+"``dict`` mapping each :class:`tibacktester.common.ModelSymbol` pair to a "
+":class:`tibacktester.common.TrainedModel`."
 msgstr ""
 
 #: 77f55418cf27460383fca88fb1f46049 of pybroker.model.model:1
@@ -287,7 +287,7 @@ msgstr ""
 
 #: fae54e4545d341ed8be5d4749a279516 of pybroker.model.model:14
 msgid ""
-":class:`Iterable` of :class:`pybroker.indicator.Indicator`\\ s used as "
+":class:`Iterable` of :class:`tibacktester.indicator.Indicator`\\ s used as "
 "features of the model."
 msgstr ""
 
@@ -332,7 +332,7 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "``Collection`` of :class:`pybroker.common.ModelSymbol` "
+#~ "``Collection`` of :class:`tibacktester.common.ModelSymbol` "
 #~ "pairs of models to train."
 #~ msgstr ""
 
