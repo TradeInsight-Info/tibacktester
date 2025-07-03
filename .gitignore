@@ -1,6 +1,7 @@
 .numba_config.yaml
 __pycache__
 .pybrokercache
+.tibacktestercache
 .venv*
 .tox
 **/.coverage
@@ -9,7 +10,8 @@ docs/build
 docs/_build/
 docs/source/notebooks/.ipynb_checkpoints
 dist/
-src/lib_pybroker.egg-info
+src/lib_tibacktester.egg-info
 .idea/
 .pytest_cache/
 **/locales/*/LC_MESSAGES/*.mo
+*.egg-info
