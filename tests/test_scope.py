@@ -398,7 +398,7 @@ class TestPredictionScope:
     def test_fetch_when_input_data_empty_then_error(self, col_scope):
         model_name = "no_input_data"
         ind_scope = IndicatorScope({}, [])
-        pybroker.model(model_name, lambda sym, train, test: {})
+        tibacktester.model(model_name, lambda sym, train, test: {})
         model = TrainedModel(
             name=model_name, instance={}, predict_fn=None, input_cols=None
         )
