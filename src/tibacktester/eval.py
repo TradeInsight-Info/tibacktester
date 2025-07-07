@@ -196,10 +196,22 @@ def calculate_sharpe_ratio(
             compute the standard deviation. Defaults to ``False``.
         annualized_risk_free_rate_in_pct: Annualized risk-free rate
     """
+    if obs is not None and annualized_risk_free_rate_in_pct:
+        # Convert annualized risk-free rate from yearly percentage to per-bar rate.
+        risk_free_rate_per_bar = (1 + annualized_risk_free_rate_in_pct / 100) ** (1 / obs) - 1
+    elif annualized_risk_free_rate_in_pct and not obs:
+        print('Warning: annualized risk-free rate is set but OBS is none.')
+        risk_free_rate_per_bar = 0
+    else:
+        # If obs is None or risk-free rate is 0, assume the risk-free rate per bar is 0.
+        risk_free_rate_per_bar = 0
+    excess_return = returns - risk_free_rate_per_bar
+
+
     std_changes = returns[returns < 0] if downside_only else returns
     if not len(std_changes):
         return np.float64(0)
-    std = np.std(std_changes)
+    std = np.std(excess_return) if risk_free_rate_per_bar > 0 else np.std(std_changes)
     if std == 0:
         return np.float64(0)
 
@@ -214,6 +226,7 @@ def calculate_sharpe_ratio(
         risk_free_rate_per_bar = 0
 
     excess_return = returns - risk_free_rate_per_bar
+    std = np.std(excess_return) if risk_free_rate_per_bar > 0 else std
     sr = np.mean(excess_return) / std
 
     if obs is not None:
