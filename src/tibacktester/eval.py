@@ -209,7 +209,7 @@ def calculate_sharpe_ratio(
         # Convert annualized risk-free rate from yearly percentage to per-bar rate.
         riskt_free_rate_per_bar = (1 + annualized_risk_free_rate_in_pct / 100) ** (1 / obs) - 1
 
-    excess_return = returns - annualized_risk_free_rate_in_pct
+    excess_return = returns - riskt_free_rate_per_bar
     sr = np.mean(excess_return) / std
     if obs is not None:
         sr *= np.sqrt(obs)
