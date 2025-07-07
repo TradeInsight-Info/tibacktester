@@ -6,16 +6,17 @@ This code is licensed under Apache 2.0 with Commons Clause license
 (see LICENSE for details).
 """
 
-import numpy as np
-import pandas as pd
-from tibacktester.scope import StaticScope
-from tibacktester.vect import highv, inverse_normal_cdf, normal_cdf
 from collections import deque
 from dataclasses import dataclass, field
 from datetime import datetime
+from typing import Callable, NamedTuple, Optional
+
+import numpy as np
+import pandas as pd
 from numba import njit
 from numpy.typing import NDArray
-from typing import Callable, NamedTuple, Optional
+from tibacktester.scope import StaticScope
+from tibacktester.vect import highv, inverse_normal_cdf, normal_cdf
 
 
 class BootConfIntervals(NamedTuple):
@@ -40,10 +41,10 @@ class BootConfIntervals(NamedTuple):
 
 @njit
 def bca_boot_conf(
-    x: NDArray[np.float64],
-    n: int,
-    n_boot: int,
-    fn: Callable[[NDArray[np.float64]], float],
+        x: NDArray[np.float64],
+        n: int,
+        n_boot: int,
+        fn: Callable[[NDArray[np.float64]], float],
 ) -> BootConfIntervals:
     """Computes confidence intervals for a user-defined parameter using the
     `bias corrected and accelerated (BCa) bootstrap method.
@@ -102,7 +103,7 @@ def bca_boot_conf(
     numer = denom = 0
     for i in range(n):
         diff = theta_dot - x_buff[i]
-        diff_sq = diff**2
+        diff_sq = diff ** 2
         denom += diff_sq
         numer += diff_sq * diff
     denom = np.power(np.sqrt(denom), 3)
@@ -143,7 +144,7 @@ def bca_boot_conf(
 
 @njit
 def profit_factor(
-    changes: NDArray[np.float64], use_log: bool = False
+        changes: NDArray[np.float64], use_log: bool = False
 ) -> np.floating:
     """Computes the profit factor, which is the ratio of gross profit to gross
     loss.
@@ -177,10 +178,11 @@ def log_profit_factor(changes: NDArray[np.float64]) -> np.floating:
 
 
 @njit
-def sharpe_ratio(
-    returns: NDArray[np.float64],
-    obs: Optional[int] = None,
-    downside_only: bool = False,
+def calculate_sharpe_ratio(
+        returns: NDArray[np.float64],
+        obs: Optional[int] = None,
+        downside_only: bool = False,
+        annualized_risk_free_rate_in_pct: float = 0.0,
 ) -> np.floating:
     """Computes the
     `Sharpe Ratio <https://en.wikipedia.org/wiki/Sharpe_ratio>`_.
@@ -190,6 +192,9 @@ def sharpe_ratio(
         obs: Number of observations used to annualize the Sharpe Ratio. For
             example, a value of ``252`` would be used to annualize daily
             returns.
+        downside_only: If ``True``, then only downside changes are used to
+            compute the standard deviation. Defaults to ``False``.
+        annualized_risk_free_rate_in_pct: Annualized risk-free rate
     """
     std_changes = returns[returns < 0] if downside_only else returns
     if not len(std_changes):
@@ -197,14 +202,25 @@ def sharpe_ratio(
     std = np.std(std_changes)
     if std == 0:
         return np.float64(0)
-    sr = np.mean(returns) / std
+
+    if obs is None:
+        riskt_free_rate_per_bar = 0
+    else:
+        # Convert annualized risk-free rate from yearly percentage to per-bar rate.
+        riskt_free_rate_per_bar = (1 + annualized_risk_free_rate_in_pct / 100) ** (1 / obs) - 1
+
+    excess_return = returns - annualized_risk_free_rate_in_pct
+    sr = np.mean(excess_return) / std
     if obs is not None:
         sr *= np.sqrt(obs)
     return sr
 
 
-def sortino_ratio(
-    returns: NDArray[np.float64], obs: Optional[int] = None
+sharpe_ratio = calculate_sharpe_ratio
+
+
+def calculate_sortino_ratio(
+        returns: NDArray[np.float64], obs: Optional[int] = None
 ) -> float:
     """Computes the
     `Sortino Ratio <https://en.wikipedia.org/wiki/Sortino_ratio>`_.
@@ -215,11 +231,14 @@ def sortino_ratio(
             example, a value of ``252`` would be used to annualize daily
             returns.
     """
-    return float(sharpe_ratio(returns, obs, downside_only=True))
+    return float(calculate_sharpe_ratio(returns, obs, downside_only=True))
+
+
+sortino_ratio = calculate_sortino_ratio
 
 
 def conf_profit_factor(
-    x: NDArray[np.float64], n: int, n_boot: int
+        x: NDArray[np.float64], n: int, n_boot: int
 ) -> BootConfIntervals:
     """Computes confidence intervals for :func:`.profit_factor`."""
     intervals = bca_boot_conf(x, n, n_boot, log_profit_factor)
@@ -234,10 +253,10 @@ def conf_profit_factor(
 
 
 def conf_sharpe_ratio(
-    x: NDArray[np.float64], n: int, n_boot: int, obs: Optional[int] = None
+        x: NDArray[np.float64], n: int, n_boot: int, obs: Optional[int] = None
 ) -> BootConfIntervals:
     """Computes confidence intervals for :func:`.sharpe_ratio`."""
-    intervals = bca_boot_conf(x, n, n_boot, sharpe_ratio)
+    intervals = bca_boot_conf(x, n, n_boot, calculate_sharpe_ratio)
     if obs is not None:
         factor = np.sqrt(obs)
         intervals = BootConfIntervals(
@@ -292,7 +311,7 @@ def calmar_ratio(returns: NDArray[np.float64], bars_per_year: int) -> float:
 
 @njit
 def max_drawdown_percent(
-    returns: NDArray[np.float64],
+        returns: NDArray[np.float64],
 ) -> tuple[float, Optional[int]]:
     """Computes maximum drawdown, measured in percentage loss.
 
@@ -374,10 +393,10 @@ def _dd_confs(boot: NDArray[np.float64]) -> DrawdownConfs:
 
 @njit
 def drawdown_conf(
-    changes: NDArray[np.float64],
-    returns: NDArray[np.float64],
-    n: int,
-    n_boot: int,
+        changes: NDArray[np.float64],
+        returns: NDArray[np.float64],
+        n: int,
+        n_boot: int,
 ) -> DrawdownMetrics:
     """Computes upper bounds of confidence intervals for maximum drawdown using
     the bootstrap method.
@@ -482,7 +501,7 @@ def ulcer_index(values: NDArray[np.float64], period: int = 14) -> float:
 
 @njit
 def upi(
-    values: NDArray[np.float64], period: int = 14, ui: Optional[float] = None
+        values: NDArray[np.float64], period: int = 14, ui: Optional[float] = None
 ) -> float:
     """Computes the `Ulcer Performance Index
     <https://en.wikipedia.org/wiki/Ulcer_index>`_ of ``values``.
@@ -622,7 +641,7 @@ def total_return_percent(initial_value: float, pnl: float) -> float:
 
 
 def annual_total_return_percent(
-    initial_value: float, pnl: float, bars_per_year: int, total_bars: int
+        initial_value: float, pnl: float, bars_per_year: int, total_bars: int
 ) -> float:
     """Computes annualized total return as percentage.
 
@@ -635,10 +654,10 @@ def annual_total_return_percent(
     if initial_value == 0 or total_bars == 0:
         return 0
     return (
-        np.power(
-            (pnl + initial_value) / initial_value, bars_per_year / total_bars
-        )
-        - 1
+            np.power(
+                (pnl + initial_value) / initial_value, bars_per_year / total_bars
+            )
+            - 1
     ) * 100
 
 
@@ -833,17 +852,19 @@ class EvaluateMixin:
     """Mixin for computing evaluation metrics."""
 
     def evaluate(
-        self,
-        portfolio_df: pd.DataFrame,
-        trades_df: pd.DataFrame,
-        calc_bootstrap: bool,
-        bootstrap_sample_size: int,
-        bootstrap_samples: int,
-        bars_per_year: Optional[int],
+            self,
+            portfolio_df: pd.DataFrame,
+            trades_df: pd.DataFrame,
+            calc_bootstrap: bool,
+            bootstrap_sample_size: int,
+            bootstrap_samples: int,
+            bars_per_year: Optional[int],
+            annualized_risk_free_rate_in_pct: float = 0.0,
     ) -> EvalResult:
         """Computes evaluation metrics.
 
         Args:
+            annualized_risk_free_rate_in_pct: Annualized risk-free rate
             portfolio_df: :class:`pandas.DataFrame` of portfolio market values
                 per bar.
             trades_df: :class:`pandas.DataFrame` of trades.
@@ -865,9 +886,9 @@ class EvaluateMixin:
         bar_returns = bar_returns.to_numpy()
         bar_changes = self._calc_bar_changes(portfolio_df)
         if (
-            not len(market_values)
-            or not len(bar_returns)
-            or not len(bar_changes)
+                not len(market_values)
+                or not len(bar_returns)
+                or not len(bar_changes)
         ):
             return EvalResult(EvalMetrics(), None)
         pnls = trades_df["pnl"].to_numpy()
@@ -879,7 +900,7 @@ class EvaluateMixin:
         losing_bars = losing_trades["bars"].to_numpy()
         largest_win = winning_trades[
             winning_trades["pnl"] == winning_trades["pnl"].max()
-        ]
+            ]
         largest_win_pct = (
             0 if largest_win.empty else largest_win["return_pct"].values[0]
         )
@@ -888,7 +909,7 @@ class EvaluateMixin:
         )
         largest_loss = losing_trades[
             losing_trades["pnl"] == losing_trades["pnl"].min()
-        ]
+            ]
         largest_loss_pct = (
             0 if largest_loss.empty else largest_loss["return_pct"].values[0]
         )
@@ -911,6 +932,7 @@ class EvaluateMixin:
             largest_loss_pct=largest_loss_pct,
             fees=fees,
             bars_per_year=bars_per_year,
+            annualized_risk_free_rate_in_pct=annualized_risk_free_rate_in_pct,
         )
         logger = StaticScope.instance().logger
         if not calc_bootstrap:
@@ -955,22 +977,23 @@ class EvaluateMixin:
         return changes.dropna().to_numpy()
 
     def _calc_eval_metrics(
-        self,
-        market_values: NDArray[np.float64],
-        bar_changes: NDArray[np.float64],
-        bar_returns: NDArray[np.float64],
-        bar_return_dates: pd.Series,
-        pnls: NDArray[np.float64],
-        return_pcts: NDArray[np.float64],
-        bars: NDArray[np.int_],
-        winning_bars: NDArray[np.int_],
-        losing_bars: NDArray[np.int_],
-        largest_win_num_bars: int,
-        largest_win_pct: float,
-        largest_loss_num_bars: int,
-        largest_loss_pct: float,
-        fees: NDArray[np.float64],
-        bars_per_year: Optional[int],
+            self,
+            market_values: NDArray[np.float64],
+            bar_changes: NDArray[np.float64],
+            bar_returns: NDArray[np.float64],
+            bar_return_dates: pd.Series,
+            pnls: NDArray[np.float64],
+            return_pcts: NDArray[np.float64],
+            bars: NDArray[np.int_],
+            winning_bars: NDArray[np.int_],
+            losing_bars: NDArray[np.int_],
+            largest_win_num_bars: int,
+            largest_win_pct: float,
+            largest_loss_num_bars: int,
+            largest_loss_pct: float,
+            fees: NDArray[np.float64],
+            bars_per_year: Optional[int],
+            annualized_risk_free_rate_in_pct: float = 0.0,
     ) -> EvalMetrics:
         total_fees = fees[-1] if len(fees) else 0
         max_dd = max_drawdown(bar_changes)
@@ -980,8 +1003,9 @@ class EvaluateMixin:
             if max_dd_index
             else None
         )
-        sharpe = sharpe_ratio(bar_returns, bars_per_year)
-        sortino = sortino_ratio(bar_returns, bars_per_year)
+        sharpe = calculate_sharpe_ratio(bar_returns, obs=bars_per_year,
+                                        annualized_risk_free_rate_in_pct=annualized_risk_free_rate_in_pct)
+        sortino = calculate_sortino_ratio(bar_returns, bars_per_year)
         pf = profit_factor(bar_changes)
         r2 = r_squared(market_values)
         ui = ulcer_index(market_values)
@@ -1096,12 +1120,12 @@ class EvaluateMixin:
         )
 
     def _calc_conf_intervals(
-        self,
-        changes: NDArray[np.float64],
-        returns: NDArray[np.float64],
-        sample_size: int,
-        samples: int,
-        bars_per_year: Optional[int],
+            self,
+            changes: NDArray[np.float64],
+            returns: NDArray[np.float64],
+            sample_size: int,
+            samples: int,
+            bars_per_year: Optional[int],
     ) -> _ConfsResult:
         pf_intervals = conf_profit_factor(changes, sample_size, samples)
         pf_conf = self._to_conf_intervals("Profit Factor", pf_intervals)
@@ -1118,7 +1142,7 @@ class EvaluateMixin:
         )
 
     def _to_conf_intervals(
-        self, name: str, conf: BootConfIntervals
+            self, name: str, conf: BootConfIntervals
     ) -> deque[ConfInterval]:
         results: deque[ConfInterval] = deque()
         results.append(
@@ -1129,11 +1153,11 @@ class EvaluateMixin:
         return results
 
     def _calc_drawdown_conf(
-        self,
-        changes: NDArray[np.float64],
-        returns: NDArray[np.float64],
-        sample_size: int,
-        samples: int,
+            self,
+            changes: NDArray[np.float64],
+            returns: NDArray[np.float64],
+            sample_size: int,
+            samples: int,
     ) -> _DrawdownResult:
         metrics = drawdown_conf(changes, returns, sample_size, samples)
         df = pd.DataFrame(

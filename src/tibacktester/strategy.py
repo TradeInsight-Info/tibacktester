@@ -1552,6 +1552,7 @@ class Strategy(
             bootstrap_sample_size=self._config.bootstrap_sample_size,
             bootstrap_samples=self._config.bootstrap_samples,
             bars_per_year=self._config.bars_per_year,
+            annualized_risk_free_rate_in_pct=self._config.annualized_risk_free_rate_in_pct,
         )
         metrics = [
             (k, v)

@@ -77,6 +77,7 @@ class StrategyConfig:
         round_test_result: When ``True``, round values in
             :class:`tibacktester.strategy.TestResult` up to the nearest cent.
             Defaults to ``True``.
+        annualized_risk_free_rate_in_pct: Annual risk-free rate used to calculate Sharpe Ratio.
     """
 
     initial_cash: float = field(default=100_000)
@@ -102,6 +103,7 @@ class StrategyConfig:
         PriceType, Callable[[str, BarData], Union[int, float, Decimal]]
     ] = field(default=PriceType.MIDDLE)
     bars_per_year: Optional[int] = field(default=None)
+    annualized_risk_free_rate_in_pct: float = field(default=0)  # Default 0% annual risk-free rate
     return_signals: bool = field(default=False)
     return_stops: bool = field(default=False)
     round_test_result: bool = field(default=True)
