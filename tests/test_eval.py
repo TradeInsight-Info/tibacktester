@@ -179,10 +179,10 @@ def test_sharpe_ratio(values, obs, expected_sharpe):
 @pytest.mark.parametrize(
     "values, obs, risk_free_rate, expected_sharpe",
     [
-        ([0.1, -0.2, 0.3, 0, -0.4, 0.5], None, 0.04, 0.033488),
-        ([1, 1, 1, 1], None, 0.04, 0),
-        ([1], None, 0.04, 0),
-        ([], None, 0.04, 0),
+        ([0.1, -0.2, 0.3, 0, -0.4, 0.5], 252, 4,  2.649811 ),
+        ([1, 1, 1, 1], 252, 4, 0),
+        ([1], 252, 4, 0),
+        ([], 252, 4, 0),
     ],
 )
 def test_sharpe_ratio_with_risk_free_rate(values, obs, risk_free_rate, expected_sharpe):
@@ -196,12 +196,28 @@ def test_sharpe_ratio_with_risk_free_rate(values, obs, risk_free_rate, expected_
         (
                 [0.1, -0.2, 0.3, 0, -0.4, 0.5],
                 252,
-                0.04,
-                0.531617,
+                4,
+                2.649811, # 0.167443 * np.sqrt(252),
         ),
     ],
 )
 def test_sharpe_ratio_with_obs_risk_free_rate(values, obs, risk_free_rate, expected_sharpe):
+    sharpe = calculate_sharpe_ratio(np.array(values), obs=obs, annualized_risk_free_rate_in_pct=risk_free_rate)
+    assert truncate(sharpe, 6) == truncate(expected_sharpe, 6)
+
+
+@pytest.mark.parametrize(
+    "values, obs, risk_free_rate, expected_sharpe",
+    [
+        (
+                [0.1, -0.2, 0.3, 0, -0.4, 0.5],
+                None,
+                4,
+                0.167443,
+        ),
+    ],
+)
+def test_sharpe_ratio_without_obs_to_return_sr_per_bar(values, obs, risk_free_rate, expected_sharpe):
     sharpe = calculate_sharpe_ratio(np.array(values), obs=obs, annualized_risk_free_rate_in_pct=risk_free_rate)
     assert truncate(sharpe, 6) == truncate(expected_sharpe, 6)
 
