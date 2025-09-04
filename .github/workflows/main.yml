@@ -17,9 +17,9 @@ jobs:
           version: '0.5.x'
           cache-dependency-glob: "uv.lock"
           python-version: '3.12'
-      - name: install dev dependencies
+      - &install-dev
+        name: install dev dependencies
         run: uv sync --all-extras --dev
-        &install-dev
       - name: Run ruff
         run: ruff format --check
 
