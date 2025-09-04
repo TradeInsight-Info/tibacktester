@@ -328,7 +328,7 @@ class Alpaca(DataSource):
         start_date: Union[str, datetime],
         end_date: Union[str, datetime],
         timeframe: Optional[str] = "1d",
-        adjust: Optional[Any] = None,
+        adjust: Optional[Any] = "all",
     ) -> pd.DataFrame:
         _parse_alpaca_timeframe(timeframe)
         return super().query(symbols, start_date, end_date, timeframe, adjust)
