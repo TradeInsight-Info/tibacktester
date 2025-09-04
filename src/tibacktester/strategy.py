@@ -719,11 +719,11 @@ class WalkforwardMixin:
                 (dates[date_col] >= window_dates[test_start])
                 & (dates[date_col] <= window_dates[test_end])
             ]
-            train_idx = train_idx.index.to_numpy() # type: ignore
-            test_idx = test_idx.index.to_numpy() # type: ignore
+            train_idx = train_idx.index.to_numpy()  # type: ignore
+            test_idx = test_idx.index.to_numpy()  # type: ignore
             if shuffle:
                 np.random.shuffle(train_idx)
-            yield WalkforwardWindow(train_idx, test_idx) # type: ignore
+            yield WalkforwardWindow(train_idx, test_idx)  # type: ignore
         else:
             res = len(window_dates) - (lookahead - 1) * windows
             window_length = res / windows  # type: ignore[assignment]
@@ -761,11 +761,11 @@ class WalkforwardMixin:
                     (dates[date_col] > window_dates[test_start])
                     & (dates[date_col] <= window_dates[test_end])
                 ]
-                train_idx = train_idx.index.to_numpy() # type: ignore
-                test_idx = test_idx.index.to_numpy() # type: ignore
+                train_idx = train_idx.index.to_numpy()  # type: ignore
+                test_idx = test_idx.index.to_numpy()  # type: ignore
                 if shuffle:
                     np.random.shuffle(train_idx)
-                yield WalkforwardWindow(train_idx, test_idx) # type: ignore
+                yield WalkforwardWindow(train_idx, test_idx)  # type: ignore
 
 
 @dataclass(frozen=True)
@@ -1327,7 +1327,7 @@ class Strategy(
                         DataCol.DATE.value
                     ].values
                     if len(sym_dates):
-                        sym_dates.sort() # type: ignore
+                        sym_dates.sort()  # type: ignore
                         exit_dates[sym] = sym_dates[-1]
         signals: dict[str, pd.DataFrame] = {}
         for train_idx, test_idx in self.walkforward_split(
@@ -1410,7 +1410,7 @@ class Strategy(
             df = df.reset_index(drop=True).set_index(DataCol.DATE.value)
         if days is not None:
             self._logger.info_walkforward_on_days(days)
-            df = df[df.index.weekday.isin(frozenset(days))] # type: ignore
+            df = df[df.index.weekday.isin(frozenset(days))]  # type: ignore
         if between_time is not None:
             if len(between_time) != 2:
                 raise ValueError(

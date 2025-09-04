@@ -2161,7 +2161,7 @@ class TestStrategy:
 
     def test_backtest_when_slippage_and_sell_all_shares(self, data_source_df):
         class FakeSlippageModel(SlippageModel):
-            def apply_slippage( # type: ignore
+            def apply_slippage(  # type: ignore
                 self, ctx: ExecContext, buy_shares, sell_shares
             ):
                 if sell_shares:
