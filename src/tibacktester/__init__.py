@@ -74,7 +74,10 @@ from tibacktester.scope import (
     unregister_columns as unregister_columns,
 )
 from tibacktester.slippage import RandomSlippageModel as RandomSlippageModel
-from tibacktester.strategy import Strategy as Strategy, TestResult as TestResult
+from tibacktester.strategy import (
+    Strategy as Strategy,
+    TestResult as TestResult,
+)
 from tibacktester.vect import (
     cross as cross,
     highv as highv,
@@ -85,6 +88,6 @@ from tibacktester.vect import (
 
 # Temporary fix for regression in Numba 0.57.0
 # https://github.com/numba/numba/issues/8940
-from numba.np.unsafe import ndarray
+# from numba.np.unsafe import ndarray
 
 __version__ = "1.2.11"
