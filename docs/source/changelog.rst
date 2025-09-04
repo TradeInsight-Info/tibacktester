@@ -3,12 +3,15 @@ Changelog
 #########
 
 
-
+25.9.5-11
+===
+* Use price adjust by default for Alpaca data source
 
 
 25.9.5
 ===
 * Dependency update
+* Remove support of Python 3.9
 
 
 1.2.3
