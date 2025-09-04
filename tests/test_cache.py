@@ -44,7 +44,7 @@ def cache_dir(request, tmp_path):
 
 @pytest.fixture()
 def cache_path(tmp_path, cache_dir):
-    return tmp_path / ".pybrokercache" if cache_dir is None else cache_dir
+    return tmp_path / ".tibacktester-cache" if cache_dir is None else cache_dir
 
 
 @pytest.mark.usefixtures("setup_teardown")

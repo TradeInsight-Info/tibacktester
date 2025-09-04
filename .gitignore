@@ -1,6 +1,6 @@
 .numba_config.yaml
 __pycache__
-.pybrokercache
+.tibacktester-cache
 .tibacktestercache
 .venv*
 .tox

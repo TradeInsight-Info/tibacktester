@@ -13,7 +13,7 @@ from datetime import datetime
 from diskcache import Cache
 from typing import Final, Optional
 
-_DEFAULT_CACHE_DIRNAME: Final = ".pybrokercache"
+_DEFAULT_CACHE_DIRNAME: Final = ".tibacktester-cache"
 
 
 @dataclass(frozen=True)
