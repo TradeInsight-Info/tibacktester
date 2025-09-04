@@ -364,8 +364,8 @@ class IndicatorScope:
             raise ValueError(f"Indicator {name!r} not found for {symbol}.")
         ind_series = self._indicator_data[ind_sym]
         ind_data = ind_series[ind_series.index.isin(self._filter_dates)].values
-        self._sym_inds[ind_sym] = ind_data
-        return ind_data[:end_index]
+        self._sym_inds[ind_sym] = ind_data  # type: ignore
+        return ind_data[:end_index]  # type: ignore
 
 
 class ModelInputScope:
@@ -763,15 +763,15 @@ def get_signals(
     for sym in symbols:
         data = {DataCol.DATE.value: dates}
         for col in cols:
-            data[col] = col_scope.fetch(sym, col)
+            data[col] = col_scope.fetch(sym, col)  # type: ignore
         for ind in inds:
             try:
-                data[ind] = ind_scope.fetch(sym, ind)
+                data[ind] = ind_scope.fetch(sym, ind)  # type: ignore
             except ValueError:
                 continue
         for model in models:
             try:
-                data[f"{model}_pred"] = pred_scope.fetch(sym, model)
+                data[f"{model}_pred"] = pred_scope.fetch(sym, model)  # type: ignore
             except ValueError:
                 continue
         dfs[sym] = pd.DataFrame(data)

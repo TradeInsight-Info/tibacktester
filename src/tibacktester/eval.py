@@ -908,7 +908,7 @@ class EvaluateMixin:
         fees = portfolio_df["fees"].to_numpy()
         bar_returns = self._calc_bar_returns(portfolio_df)
         bar_return_dates = bar_returns.index.to_series().reset_index(drop=True)
-        bar_returns = bar_returns.to_numpy()
+        bar_returns = bar_returns.to_numpy()  # type: ignore
         bar_changes = self._calc_bar_changes(portfolio_df)
         if (
             not len(market_values)
@@ -944,7 +944,7 @@ class EvaluateMixin:
         metrics = self._calc_eval_metrics(
             market_values,
             bar_changes,
-            bar_returns,
+            bar_returns,  # type: ignore
             bar_return_dates,
             pnls,
             return_pcts,
@@ -971,14 +971,14 @@ class EvaluateMixin:
         )
         confs_result = self._calc_conf_intervals(
             changes=bar_changes,
-            returns=bar_returns,
+            returns=bar_returns,  # type: ignore
             sample_size=bootstrap_sample_size,
             samples=bootstrap_samples,
             bars_per_year=bars_per_year,
         )
         dd_result = self._calc_drawdown_conf(
             changes=bar_changes,
-            returns=bar_returns,
+            returns=bar_returns,  # type: ignore
             sample_size=bootstrap_sample_size,
             samples=bootstrap_samples,
         )

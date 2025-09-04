@@ -993,14 +993,14 @@ class Portfolio:
             low = None
             high = None
             if index in df.index:
-                df_row = df.loc[index].squeeze()
+                df_row = df.loc[index].squeeze()  # type: ignore
                 if isinstance(df_row, pd.core.frame.DataFrame):
                     raise ValueError(
                         "df has the same index. index:" + str(index)
                     )
-                close = to_decimal(df_row[DataCol.CLOSE.value])
-                low = to_decimal(df_row[DataCol.LOW.value])
-                high = to_decimal(df_row[DataCol.HIGH.value])
+                close = to_decimal(df_row[DataCol.CLOSE.value])  # type: ignore
+                low = to_decimal(df_row[DataCol.LOW.value])  # type: ignore
+                high = to_decimal(df_row[DataCol.HIGH.value])  # type: ignore
             pos_long_shares = Decimal()
             pos_short_shares = Decimal()
             pos_equity = Decimal()

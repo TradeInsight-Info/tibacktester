@@ -89,7 +89,7 @@ def yfinance_single_df():
     )
 
 
-@pytest.fixture()
+@pytest.fixture()  # type: ignore
 def symbols(alpaca_df):
     return list(alpaca_df["symbol"].unique())
 

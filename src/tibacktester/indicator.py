@@ -97,7 +97,7 @@ class Indicator:
         `interquartile range (IQR)
         <https://en.wikipedia.org/wiki/Interquartile_range>`_.
         """
-        return iqr(self(data).values)
+        return iqr(self(data).values)  # type: ignore
 
     def __call__(self, data: Union[BarData, pd.DataFrame]) -> pd.Series:
         """Computes indicator values."""

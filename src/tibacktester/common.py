@@ -380,4 +380,4 @@ def get_unique_sorted_dates(col: pd.Series) -> Sequence[np.datetime64]:
     if hasattr(result, "to_numpy"):
         result = result.to_numpy()
     result.sort()
-    return result
+    return result  # type: ignore

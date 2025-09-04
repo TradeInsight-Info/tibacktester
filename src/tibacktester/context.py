@@ -871,7 +871,7 @@ class ExecContext(BaseContext):
             column ``col``.
         """
         if symbol in self._foreign:
-            return self._foreign[symbol]
+            return self._foreign[symbol]  # type: ignore
         if symbol not in self._sym_end_index:
             raise ValueError(f"Symbol {symbol!r} not found.")
         end_index = self._sym_end_index[symbol]
@@ -879,7 +879,7 @@ class ExecContext(BaseContext):
             bar_data = self._col_scope.bar_data_from_data_columns(
                 symbol, end_index
             )
-            self._foreign[symbol] = bar_data
+            self._foreign[symbol] = bar_data  # type: ignore
             return bar_data
         else:
             return self._col_scope.fetch(symbol, col, end_index)

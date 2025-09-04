@@ -49,7 +49,7 @@ def lookahead(request):
     return request.param
 
 
-@pytest.fixture()
+@pytest.fixture()  # type: ignore
 def dates():
     dates = pd.date_range(start="1/1/2018", end="1/1/2019").tolist()
     return sorted(dates + dates.copy())
@@ -2113,7 +2113,7 @@ class TestStrategy:
 
     def test_backtest_when_slippage(self, data_source_df):
         class FakeSlippageModel(SlippageModel):
-            def apply_slippage(
+            def apply_slippage(  # type: ignore
                 self, ctx: ExecContext, buy_shares, sell_shares
             ):
                 ctx.buy_shares = 99
@@ -2161,7 +2161,7 @@ class TestStrategy:
 
     def test_backtest_when_slippage_and_sell_all_shares(self, data_source_df):
         class FakeSlippageModel(SlippageModel):
-            def apply_slippage(
+            def apply_slippage( # type: ignore
                 self, ctx: ExecContext, buy_shares, sell_shares
             ):
                 if sell_shares:
@@ -2184,7 +2184,7 @@ class TestStrategy:
 
     def test_backtest_when_slippage_and_cover_all_shares(self, data_source_df):
         class FakeSlippageModel(SlippageModel):
-            def apply_slippage(
+            def apply_slippage(  # type: ignore
                 self, ctx: ExecContext, buy_shares, sell_shares
             ):
                 if buy_shares:
