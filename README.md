@@ -3,10 +3,17 @@
 > however our goal is to use the utils and libraries from pybroker to build a new backtesting engine,
 > to support these main unique features besides the good existing features in pybroker (numba acceleration, machine learning strategy support, etc):
 
-- Option Backtesting
-- Portfolio Backtesting / Multi-Asset Backtesting / Pair Trading Backtesting 
-- Strategy Optimization (through libraries and algorithms commonly used in machine learning and AI)
-- Basic built-in strategies library (to contain a few common strategies to test and use out of the box)
+- Option Backtesting. 
+Simulate and evaluate option trading strategies with historical data to analyze performance, risk, and return under different market conditions.
+
+- Multi-Asset & Portfolio Backtesting. 
+Support strategies that leverage correlations between different assets, enabling portfolio-level backtesting, multi-asset strategies, and pair trading approaches.
+
+- Strategy Optimization. 
+Optimize strategies using well-known libraries and algorithms from machine learning and AI, such as grid search, genetic algorithms, or reinforcement learning techniques.
+
+- Built-in Strategies Library. 
+Access a collection of pre-built, common trading strategies to test and deploy out of the box, making it easier to get started and benchmark performance.
 
 
 ## Why we create this new backtesting library?
@@ -14,11 +21,12 @@
 Pybroker is a great backtesting library, it is fast and with machine learning strategy support by default, 
 it has built-in mechanism to avoid forward looking bias, however, it has some limitations too.
 
-1. When I tried to use pybroker to test a pair trading strategy, which it means we trade Asset A based on Asset B's signal,
- I found it is not possible to do that in pybroker, because pybroker does not support multi asset backtesting at a time, 
- this is a limitation for many backtesting libraries, however, it is common in real world trading to trade multiple assets at the same time.
-
-2. Similar to many existing backtesting libraries, pybroker does not support option backtesting.
+1. When I tried to use pybroker to test a pair trading strategy, 
+using a common pair as an example, trade between KO and PEP based on their price ratio,
+In current pybroker design, when I trade KO, I cannot get information about PEP in the same execution function,
+If I provide a PEP dataframe globally, it will lose the advantage of pybroker's forward looking bias avoidance mechanism,
+2. No Options Backtesting
+Similar to many existing libraries, PyBroker does not support options backtesting. This restricts its usefulness for traders and researchers focused on derivative strategies
 
 
 ## Roadmap of TiBacktester
