@@ -82,7 +82,7 @@ def trades_df():
 
 
 def truncate(value, n):
-    return math.floor(value * 10 ** n) / 10 ** n
+    return math.floor(value * 10**n) / 10**n
 
 
 @pytest.mark.parametrize(
@@ -135,8 +135,8 @@ def test_drawdown_conf_when_invalid_params_then_error(n, n_boot, expected_msg):
 
 def test_drawdown_conf_when_length_mismatch_then_error():
     with pytest.raises(
-            ValueError,
-            match=re.escape("Param changes length does not match returns length."),
+        ValueError,
+        match=re.escape("Param changes length does not match returns length."),
     ):
         drawdown_conf(np.random.rand(100), np.random.rand(101), 10, 100)
 
@@ -162,9 +162,9 @@ def test_profit_factor(values, expected_pf):
     [
         ([0.1, -0.2, 0.3, 0, -0.4, 0.5], None, 0.167443),
         (
-                [0.1, -0.2, 0.3, 0, -0.4, 0.5],
-                252,
-                0.16744367165578425 * np.sqrt(252),
+            [0.1, -0.2, 0.3, 0, -0.4, 0.5],
+            252,
+            0.16744367165578425 * np.sqrt(252),
         ),
         ([1, 1, 1, 1], None, 0),
         ([1], None, 0),
@@ -179,14 +179,20 @@ def test_sharpe_ratio(values, obs, expected_sharpe):
 @pytest.mark.parametrize(
     "values, obs, risk_free_rate, expected_sharpe",
     [
-        ([0.1, -0.2, 0.3, 0, -0.4, 0.5], 252, 4,  2.649811 ),
+        ([0.1, -0.2, 0.3, 0, -0.4, 0.5], 252, 4, 2.649811),
         ([1, 1, 1, 1], 252, 4, 0),
         ([1], 252, 4, 0),
         ([], 252, 4, 0),
     ],
 )
-def test_sharpe_ratio_with_risk_free_rate(values, obs, risk_free_rate, expected_sharpe):
-    sharpe = calculate_sharpe_ratio(np.array(values), obs=obs, annualized_risk_free_rate_in_pct=risk_free_rate)
+def test_sharpe_ratio_with_risk_free_rate(
+    values, obs, risk_free_rate, expected_sharpe
+):
+    sharpe = calculate_sharpe_ratio(
+        np.array(values),
+        obs=obs,
+        annualized_risk_free_rate_in_pct=risk_free_rate,
+    )
     assert truncate(sharpe, 6) == truncate(expected_sharpe, 6)
 
 
@@ -194,15 +200,21 @@ def test_sharpe_ratio_with_risk_free_rate(values, obs, risk_free_rate, expected_
     "values, obs, risk_free_rate, expected_sharpe",
     [
         (
-                [0.1, -0.2, 0.3, 0, -0.4, 0.5],
-                252,
-                4,
-                2.649811, # 0.167443 * np.sqrt(252),
+            [0.1, -0.2, 0.3, 0, -0.4, 0.5],
+            252,
+            4,
+            2.649811,  # 0.167443 * np.sqrt(252),
         ),
     ],
 )
-def test_sharpe_ratio_with_obs_risk_free_rate(values, obs, risk_free_rate, expected_sharpe):
-    sharpe = calculate_sharpe_ratio(np.array(values), obs=obs, annualized_risk_free_rate_in_pct=risk_free_rate)
+def test_sharpe_ratio_with_obs_risk_free_rate(
+    values, obs, risk_free_rate, expected_sharpe
+):
+    sharpe = calculate_sharpe_ratio(
+        np.array(values),
+        obs=obs,
+        annualized_risk_free_rate_in_pct=risk_free_rate,
+    )
     assert truncate(sharpe, 6) == truncate(expected_sharpe, 6)
 
 
@@ -210,15 +222,21 @@ def test_sharpe_ratio_with_obs_risk_free_rate(values, obs, risk_free_rate, expec
     "values, obs, risk_free_rate, expected_sharpe",
     [
         (
-                [0.1, -0.2, 0.3, 0, -0.4, 0.5],
-                None,
-                4,
-                0.167443,
+            [0.1, -0.2, 0.3, 0, -0.4, 0.5],
+            None,
+            4,
+            0.167443,
         ),
     ],
 )
-def test_sharpe_ratio_without_obs_to_return_sr_per_bar(values, obs, risk_free_rate, expected_sharpe):
-    sharpe = calculate_sharpe_ratio(np.array(values), obs=obs, annualized_risk_free_rate_in_pct=risk_free_rate)
+def test_sharpe_ratio_without_obs_to_return_sr_per_bar(
+    values, obs, risk_free_rate, expected_sharpe
+):
+    sharpe = calculate_sharpe_ratio(
+        np.array(values),
+        obs=obs,
+        annualized_risk_free_rate_in_pct=risk_free_rate,
+    )
     assert truncate(sharpe, 6) == truncate(expected_sharpe, 6)
 
 
@@ -227,9 +245,9 @@ def test_sharpe_ratio_without_obs_to_return_sr_per_bar(values, obs, risk_free_ra
     [
         ([0.1, -0.2, 0.3, 0, -0.4, 0.5], None, 0.499999),
         (
-                [0.1, -0.2, 0.3, 0, -0.4, 0.5],
-                252,
-                0.4999999999999999 * np.sqrt(252),
+            [0.1, -0.2, 0.3, 0, -0.4, 0.5],
+            252,
+            0.4999999999999999 * np.sqrt(252),
         ),
         ([1, 1, 1, 1], None, 0),
         ([1], None, 0),
@@ -410,7 +428,7 @@ def test_win_loss_rate(values, expected_win_rate, expected_loss_rate):
     ],
 )
 def test_winning_losing_trades(
-        values, expected_winning_trades, expected_losing_trades
+    values, expected_winning_trades, expected_losing_trades
 ):
     pnls = np.array(values)
     winning_trades, losing_trades = winning_losing_trades(pnls)
@@ -519,7 +537,7 @@ def test_total_return_percent(initial_value, pnl, expected_return):
     ],
 )
 def test_annual_total_return_percent(
-        initial_value, pnl, bars_per_year, total_bars, expected_return
+    initial_value, pnl, bars_per_year, total_bars, expected_return
 ):
     return_pct = annual_total_return_percent(
         initial_value, pnl, bars_per_year, total_bars
@@ -533,9 +551,9 @@ class TestEvaluateMixin:
         [
             (None, 0.026013464180574847, 0.02727734785007549),
             (
-                    252,
-                    0.026013464180574847 * np.sqrt(252),
-                    0.02727734785007549 * np.sqrt(252),
+                252,
+                0.026013464180574847 * np.sqrt(252),
+                0.02727734785007549 * np.sqrt(252),
             ),
         ],
     )
@@ -543,15 +561,15 @@ class TestEvaluateMixin:
         "bootstrap_sample_size, bootstrap_samples", [(10, 100), (100_000, 100)]
     )
     def test_evaluate(
-            self,
-            bootstrap_sample_size,
-            bootstrap_samples,
-            portfolio_df,
-            trades_df,
-            calc_bootstrap,
-            bars_per_year,
-            expected_sharpe,
-            expected_sortino,
+        self,
+        bootstrap_sample_size,
+        bootstrap_samples,
+        portfolio_df,
+        trades_df,
+        calc_bootstrap,
+        bars_per_year,
+        expected_sharpe,
+        expected_sortino,
     ):
         mixin = EvaluateMixin()
         result = mixin.evaluate(
@@ -589,10 +607,10 @@ class TestEvaluateMixin:
         assert metrics.end_market_value == 693111.87
         assert metrics.total_pnl == 165740.2
         assert (
-                metrics.unrealized_pnl
-                == metrics.end_market_value
-                - metrics.initial_market_value
-                - metrics.total_pnl
+            metrics.unrealized_pnl
+            == metrics.end_market_value
+            - metrics.initial_market_value
+            - metrics.total_pnl
         )
         assert metrics.total_return_pct == 33.14804
         assert metrics.total_profit == 403511.07999999996
@@ -655,11 +673,11 @@ class TestEvaluateMixin:
         assert result.metrics is not None
         for field in get_type_hints(EvalMetrics):
             if field in (
-                    "calmar",
-                    "annual_return_pct",
-                    "annual_std_error",
-                    "annual_volatility_pct",
-                    "max_drawdown_date",
+                "calmar",
+                "annual_return_pct",
+                "annual_std_error",
+                "annual_volatility_pct",
+                "max_drawdown_date",
             ):
                 assert getattr(result.metrics, field) is None
             else:
@@ -667,7 +685,7 @@ class TestEvaluateMixin:
         assert result.bootstrap is None
 
     def test_evaluate_when_single_market_value(
-            self, trades_df, calc_bootstrap
+        self, trades_df, calc_bootstrap
     ):
         mixin = EvaluateMixin()
         result = mixin.evaluate(
@@ -685,11 +703,11 @@ class TestEvaluateMixin:
         assert result.metrics is not None
         for field in get_type_hints(EvalMetrics):
             if field in (
-                    "calmar",
-                    "annual_return_pct",
-                    "annual_std_error",
-                    "annual_volatility_pct",
-                    "max_drawdown_date",
+                "calmar",
+                "annual_return_pct",
+                "annual_std_error",
+                "annual_volatility_pct",
+                "max_drawdown_date",
             ):
                 assert getattr(result.metrics, field) is None
             else:

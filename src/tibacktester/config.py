@@ -6,7 +6,13 @@ This code is licensed under Apache 2.0 with Commons Clause license
 (see LICENSE for details).
 """
 
-from tibacktester.common import BarData, FeeInfo, FeeMode, PositionMode, PriceType
+from tibacktester.common import (
+    BarData,
+    FeeInfo,
+    FeeMode,
+    PositionMode,
+    PriceType,
+)
 from dataclasses import dataclass, field
 from decimal import Decimal
 from typing import Callable, Optional, Union
@@ -103,7 +109,9 @@ class StrategyConfig:
         PriceType, Callable[[str, BarData], Union[int, float, Decimal]]
     ] = field(default=PriceType.MIDDLE)
     bars_per_year: Optional[int] = field(default=None)
-    annualized_risk_free_rate_in_pct: float = field(default=0)  # Default 0% annual risk-free rate
+    annualized_risk_free_rate_in_pct: float = field(
+        default=0
+    )  # Default 0% annual risk-free rate
     return_signals: bool = field(default=False)
     return_stops: bool = field(default=False)
     round_test_result: bool = field(default=True)

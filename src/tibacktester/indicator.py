@@ -13,7 +13,12 @@ import operator as op
 import pandas as pd
 import tibacktester.vect as vect
 from tibacktester.cache import CacheDateFields, IndicatorCacheKey
-from tibacktester.common import BarData, DataCol, IndicatorSymbol, default_parallel
+from tibacktester.common import (
+    BarData,
+    DataCol,
+    IndicatorSymbol,
+    default_parallel,
+)
 from tibacktester.eval import iqr, relative_entropy
 from tibacktester.scope import StaticScope
 from tibacktester.vect import highv, lowv, returnv

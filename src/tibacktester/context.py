@@ -20,7 +20,14 @@ from tibacktester.common import (
 )
 from tibacktester.config import StrategyConfig
 from tibacktester.model import TrainedModel
-from tibacktester.portfolio import Entry, Order, Portfolio, Position, Stop, Trade
+from tibacktester.portfolio import (
+    Entry,
+    Order,
+    Portfolio,
+    Position,
+    Stop,
+    Trade,
+)
 from tibacktester.scope import (
     ColumnScope,
     IndicatorScope,
