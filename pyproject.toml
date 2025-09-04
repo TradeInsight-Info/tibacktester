@@ -4,7 +4,7 @@ version = "25.9.5"
 description = "TI-Backtester, yet another quantitative trading library."
 readme = "README.md"
 authors = [{ name = "tim-hub" }]
-requires-python = ">=3.12, <3.13"
+requires-python = ">=3.10, <3.13"
 license = { text = "Apache" }
 keywords = [
     'Algorithm Trading',
