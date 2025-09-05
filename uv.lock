@@ -3665,7 +3665,7 @@ wheels = [
 
 [[package]]
 name = "tibacktester"
-version = "25.9.5.post12"
+version = "25.9.5.post1209"
 source = { virtual = "." }
 dependencies = [
     { name = "akshare" },
