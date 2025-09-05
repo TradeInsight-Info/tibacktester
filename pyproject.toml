@@ -1,6 +1,6 @@
 [project]
 name = "tibacktester"
-version = "25.9.5-11"
+version = "25.9.5-12"
 description = "TI-Backtester, yet another quantitative trading library."
 readme = "README.md"
 authors = [{ name = "tim-hub" }]
